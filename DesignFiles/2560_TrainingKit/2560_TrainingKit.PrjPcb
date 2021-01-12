@@ -88,6 +88,22 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=FELYVUEL
 
+[Parameter1]
+Name=Project
+Value=2560_TrainingKit
+
+[Parameter2]
+Name=Title
+Value=2560_TrainingKit
+
+[Parameter3]
+Name=NotFitted
+Value=NF
+
+[Parameter4]
+Name=COMPANY
+Value=Embedsystems
+
 [Configuration1]
 Name=Sources
 ParameterCount=0
