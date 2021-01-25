@@ -88,21 +88,25 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=FELYVUEL
 
+[GeneratedDocument1]
+DocumentPath=Project Outputs for 2560_TrainingKit\Design Rule Check - pcbtest.html
+DItemRevisionGUID=
+
 [Parameter1]
-Name=Project
-Value=2560_TrainingKit
+Name=COMPANY
+Value=Embedsystems
 
 [Parameter2]
-Name=Title
-Value=2560_TrainingKit
-
-[Parameter3]
 Name=NotFitted
 Value=NF
 
+[Parameter3]
+Name=Project
+Value=2560_TrainingKit
+
 [Parameter4]
-Name=COMPANY
-Value=Embedsystems
+Name=Title
+Value=2560_TrainingKit
 
 [Configuration1]
 Name=Sources
