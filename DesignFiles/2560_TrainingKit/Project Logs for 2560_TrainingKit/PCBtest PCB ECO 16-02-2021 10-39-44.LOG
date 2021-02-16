@@ -1,0 +1,35 @@
+Change Component Designator: OldDesignator=BH? NewDesignator=BH1
+Change Component Designator: OldDesignator=C? NewDesignator=C1
+Change Component Designator: OldDesignator=C? NewDesignator=C2
+Change Component Designator: OldDesignator=D? NewDesignator=D1
+Change Component Designator: OldDesignator=DS? NewDesignator=DS1
+Change Component Designator: OldDesignator=ESP? NewDesignator=ESP1
+Change Component Designator: OldDesignator=HT? NewDesignator=HT1
+Change Component Designator: OldDesignator=K? NewDesignator=K1
+Change Component Designator: OldDesignator=KP? NewDesignator=KP1
+Change Component Designator: OldDesignator=LS? NewDesignator=LS1
+Change Component Designator: OldDesignator=R? NewDesignator=R1
+Change Component Designator: OldDesignator=RV? NewDesignator=RV1
+Change Component Designator: OldDesignator=U? NewDesignator=U1
+Change Component Designator: OldDesignator=U? NewDesignator=U2
+Change Component Designator: OldDesignator=U? NewDesignator=U3
+Change Component Designator: OldDesignator=u? NewDesignator=u4
+Change Component Designator: OldDesignator=U? NewDesignator=U5
+Change Component Designator: OldDesignator=U? NewDesignator=U6
+Change Component Designator: OldDesignator=U? NewDesignator=U7
+Change Component Designator: OldDesignator=U? NewDesignator=U8
+Change Component Designator: OldDesignator=U? NewDesignator=U9
+Change Component Designator: OldDesignator=VR? NewDesignator=VR1
+Change Component Designator: OldDesignator=VR? NewDesignator=VR2
+Change Class Name : Old Net Name=2560TK_Schematic New Net Name=[03] - 2560TK_Schematic
+Added Member To Class: ClassName=[03] - 2560TK_Schematic Member=Component C2 2200pF
+Added Member To Class: ClassName=[03] - 2560TK_Schematic Member=Component U1 ATTINY2313-20PU
+Added Member To Class: ClassName=[03] - 2560TK_Schematic Member=Component U2 ATMEGA2560-16AUR
+Added Member To Class: ClassName=[03] - 2560TK_Schematic Member=Component U3 AT24C32D-SSHM-T
+Added Member To Class: ClassName=[03] - 2560TK_Schematic Member=Component U5 L298N
+Added Member To Class: ClassName=[03] - 2560TK_Schematic Member=Component U6 SN74HC595NSR
+Added Member To Class: ClassName=[03] - 2560TK_Schematic Member=Component U7 SN74HC595NSR
+Added Member To Class: ClassName=[03] - 2560TK_Schematic Member=Component U8 DS3231SN
+Added Member To Class: ClassName=[03] - 2560TK_Schematic Member=Component U9 MC74HC595ADR2
+Added Member To Class: ClassName=[03] - 2560TK_Schematic Member=Component VR2 POT 10K
+Added Room: Name=[03] - 2560TK_Schematic
