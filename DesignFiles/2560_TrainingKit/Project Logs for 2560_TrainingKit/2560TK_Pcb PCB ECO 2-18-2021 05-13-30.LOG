@@ -1,0 +1,6 @@
+Added Component: Designator=SIM?(SIM800L_BO)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Shop"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://store.nerokas.co.ke/index.php?route=product/product&product_id=1266"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier1"; Value = "Nerokas"; VariantName = "[No Variations]"
+Added Member To Class: ClassName=[03] - 2560TK_Schematic Member=Component SIM? Sim800l Breakout
+Added Room: Name=[03] - 2560TK_Schematic
