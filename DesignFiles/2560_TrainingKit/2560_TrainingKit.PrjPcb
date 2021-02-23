@@ -123,6 +123,23 @@ GenerateClassCluster=0
 DocumentUniqueId=CYEXZSET
 
 [Document6]
+DocumentPath=[04] - 2560TK_Schematic_2.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=WBNVLPTJ
+
+[Document7]
 DocumentPath=[04] - REVISION HISTORY.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -139,7 +156,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=QIWPOGFT
 
-[Document7]
+[Document8]
 DocumentPath=2560TK_Pcb.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
