@@ -72,7 +72,7 @@ GenerateClassCluster=0
 DocumentUniqueId=FELYVUEL
 
 [Document3]
-DocumentPath=[01] - COVER PAGE.SchDoc
+DocumentPath=TK2560_CoverPage.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -89,7 +89,7 @@ GenerateClassCluster=0
 DocumentUniqueId=DTIKWLBQ
 
 [Document4]
-DocumentPath=[02] - BLOCK DIAGRAM.SchDoc
+DocumentPath=TK2560_BlockDiagram.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -106,7 +106,7 @@ GenerateClassCluster=0
 DocumentUniqueId=GOVQVHNV
 
 [Document5]
-DocumentPath=[03] - 2560TK_Schematic.SchDoc
+DocumentPath=TK2560_MCU.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -208,7 +208,24 @@ GenerateClassCluster=0
 DocumentUniqueId=WBNVLPTJ
 
 [Document11]
-DocumentPath=[04] - REVISION HISTORY.SchDoc
+DocumentPath=TK2560_ISP.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=OZTUAEOO
+
+[Document12]
+DocumentPath=TK2560_RevisionHistory.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -224,7 +241,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=QIWPOGFT
 
-[Document12]
+[Document13]
 DocumentPath=2560TK_Pcb.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -241,7 +258,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=DCQQDUHM
 
-[Document13]
+[Document14]
 DocumentPath=[03] - 2560TK_Schematic.Harness
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -258,7 +275,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document14]
+[Document15]
 DocumentPath=TK2560_OutputLEDs.Harness
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -274,23 +291,6 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
-
-[Document15]
-DocumentPath=TK2560_ISP.SchDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=OZTUAEOO
 
 [GeneratedDocument1]
 DocumentPath=Project Outputs for 2560_TrainingKit\Design Rule Check - 2560TK_Pcb.html
