@@ -1,0 +1,85 @@
+Removed Member From Class: ClassName=UsbTiny Programmer Member=D1
+Removed Member From Class: ClassName=microSD Member=IC1
+Removed Member From Class: ClassName=microSD Member=J1
+Removed Member From Class: ClassName=UsbTiny Programmer Member=L1
+Removed Member From Class: ClassName=Designator Member=R2
+Removed Member From Class: ClassName=Main Member=S2
+Removed Member From Class: ClassName=Motor Driver Member=SW2
+Change Net Name : Old Net Name=NetDS1_4 New Net Name=LCD.LCD_RS
+Change Net Name : Old Net Name=NetDS1_5 New Net Name=LCD.LCD_RW
+Change Net Name : Old Net Name=NetDS1_6 New Net Name=LCD.LCD_E
+Change Net Name : Old Net Name=NetDS1_11 New Net Name=LCD.LCD_DB4
+Change Net Name : Old Net Name=NetDS1_12 New Net Name=LCD.LCD_DB5
+Change Net Name : Old Net Name=NetDS1_13 New Net Name=LCD.LCD_DB6
+Change Net Name : Old Net Name=NetDS1_14 New Net Name=LCD.LCD_DB7
+Change Net Name : Old Net Name=NetDS1_15 New Net Name=LCD.LCD_BL
+Change Net Name : Old Net Name=NetIC1_10 New Net Name=WIFI_RX
+Change Net Name : Old Net Name=NetIC1_11 New Net Name=WIFI_TX
+Change Net Name : Old Net Name=NetIC2_10 New Net Name=SD_SPI.SD_MOSI
+Change Net Name : Old Net Name=NetIC2_11 New Net Name=SD_SPI.SD_SCK
+Change Net Name : Old Net Name=NetIC2_12 New Net Name=SD_SPI.SD_SS
+Change Net Name : Old Net Name=NetIC2_13 New Net Name=SD_SPI.SD_MISO
+Change Net Name : Old Net Name=NetKP1_1 New Net Name=KEYPAD.COL1
+Change Net Name : Old Net Name=NetKP1_2 New Net Name=KEYPAD.COL2
+Change Net Name : Old Net Name=NetKP1_3 New Net Name=KEYPAD.COL3
+Change Net Name : Old Net Name=NetKP1_4 New Net Name=KEYPAD.ROW1
+Change Net Name : Old Net Name=NetKP1_5 New Net Name=KEYPAD.ROW2
+Change Net Name : Old Net Name=NetKP1_6 New Net Name=KEYPAD.ROW3
+Change Net Name : Old Net Name=NetKP1_7 New Net Name=KEYPAD.ROW4
+Change Net Name : Old Net Name=NetR10_2 New Net Name=USER_LEDS.U_LED7
+Change Net Name : Old Net Name=NetR11_2 New Net Name=USER_LEDS.U_LED6
+Change Net Name : Old Net Name=NetR12_2 New Net Name=USER_LEDS.U_LED5
+Change Net Name : Old Net Name=NetR13_2 New Net Name=USER_LEDS.U_LED4
+Change Net Name : Old Net Name=NetR14_2 New Net Name=USER_LEDS.U_LED3
+Change Net Name : Old Net Name=NetR15_2 New Net Name=USER_LEDS.U_LED2
+Change Net Name : Old Net Name=NetR16_2 New Net Name=USER_LEDS.U_LED1
+Change Net Name : Old Net Name=NetR17_2 New Net Name=USER_LEDS.U_LED0
+Change Net Name : Old Net Name=NetR24_2 New Net Name=U_BTN2
+Change Net Name : Old Net Name=NetR28_1 New Net Name=GSM_RX
+Change Net Name : Old Net Name=NetR29_1 New Net Name=GSM_TX
+Change Net Name : Old Net Name=NetR32_1 New Net Name=ISP_SPI.ISP_MOSI
+Change Net Name : Old Net Name=NetR34_1 New Net Name=ISP_SPI.ISP_SCK
+Change Net Name : Old Net Name=NetR40_2 New Net Name=RELAY1_TRIG
+Change Net Name : Old Net Name=NetSW2_6 New Net Name=ISP_SPI.ISP_MISO
+Change Net Name : Old Net Name=NetSW2_8 New Net Name=ISP_SPI.ISP_RST
+Change Net Name : Old Net Name=NetU1_47 New Net Name=SHIFT_REG.SHIFT_DS
+Change Net Name : Old Net Name=NetU1_48 New Net Name=SHIFT_REG.ST_CP
+Change Net Name : Old Net Name=NetU1_49 New Net Name=SHIFT_REG.SH_CP
+Change Net Name : Old Net Name=NetU1_50 New Net Name=SHIFT_REG.SHIFT_RST
+Change Net Name : Old Net Name=NetU1_90 New Net Name=PORTF.PF7
+Change Net Name : Old Net Name=NetU1_91 New Net Name=PORTF.PF6
+Change Net Name : Old Net Name=NetU1_92 New Net Name=PORTF.PF5
+Change Net Name : Old Net Name=NetU1_93 New Net Name=PORTF.PF4
+Change Net Name : Old Net Name=NetU1_94 New Net Name=PORTF.PF3
+Change Net Name : Old Net Name=NetU1_95 New Net Name=PORTF.PF2
+Change Net Name : Old Net Name=NetU1_96 New Net Name=PORTF.PF1
+Change Net Name : Old Net Name=NetU1_97 New Net Name=PORTF.PF0
+Change Net Name : Old Net Name=SD_DET New Net Name=SD_SPI.SD_DET
+Added Pin To Net: NetName=MOTOR_IN1 Pin=U1-23
+Added Pin To Net: NetName=MOTOR_IN1 Pin=U9-5
+Added Net: Name=MOTOR_IN1
+Added Pin To Net: NetName=MOTOR_IN2 Pin=U1-24
+Added Pin To Net: NetName=MOTOR_IN2 Pin=U9-7
+Added Net: Name=MOTOR_IN2
+Added Pin To Net: NetName=MOTOR_IN3 Pin=U1-25
+Added Pin To Net: NetName=MOTOR_IN3 Pin=U9-10
+Added Net: Name=MOTOR_IN3
+Added Pin To Net: NetName=MOTOR_IN4 Pin=U1-26
+Added Pin To Net: NetName=MOTOR_IN4 Pin=U9-12
+Added Net: Name=MOTOR_IN4
+Added Pin To Net: NetName=U_BTN1 Pin=R22-2
+Added Pin To Net: NetName=U_BTN1 Pin=U1-65
+Added Net: Name=U_BTN1
+Added Pin To Net: NetName=U_BTN3 Pin=R26-2
+Added Pin To Net: NetName=U_BTN3 Pin=U1-67
+Added Net: Name=U_BTN3
+Added Member To Class: ClassName=Main Member=Component C2 100nF
+Added Member To Class: ClassName=UsbTiny Programmer Member=Component D24 Red
+Added Member To Class: ClassName=Main Member=Component FID2 FID_1MM
+Added Member To Class: ClassName=microSD Member=Component IC2 TXB0104DR
+Added Member To Class: ClassName=microSD Member=Component J8 DM3BT-DSF-PEJS
+Added Member To Class: ClassName=UsbTiny Programmer Member=Component L2 2.2µH
+Added Member To Class: ClassName=Main Member=Component MH1 MH_7.4MMC_3.2MMD
+Added Member To Class: ClassName=Designator Member=Component R30 2 kOhms
+Added Member To Class: ClassName=Main Member=Component S1 PTS645SM43SMTR92 LFS
+Added Member To Class: ClassName=Motor Driver Member=Component SW3 218-2LPST

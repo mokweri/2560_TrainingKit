@@ -1,0 +1,567 @@
+Removed Member From Class: ClassName=Designator Member=C?
+Removed Member From Class: ClassName=microSD Member=C?
+Removed Member From Class: ClassName=Motor Driver Member=C?
+Removed Member From Class: ClassName=Power Member=C?
+Removed Member From Class: ClassName=RTC Member=C?
+Removed Member From Class: ClassName=UsbTiny Programmer Member=C?
+Removed Member From Class: ClassName=Main Member=D?
+Removed Member From Class: ClassName=Motor Driver Member=D?
+Removed Member From Class: ClassName=Ouput Displays Member=D?
+Removed Member From Class: ClassName=Power Member=D?
+Removed Member From Class: ClassName=Relay Module Member=D?
+Removed Member From Class: ClassName=RTC Member=D?
+Removed Member From Class: ClassName=Designator Member=IC?
+Removed Member From Class: ClassName=Main Member=J?
+Removed Member From Class: ClassName=Motor Driver Member=J?
+Removed Member From Class: ClassName=Power Member=J?
+Removed Member From Class: ClassName=Relay Module Member=J?
+Removed Member From Class: ClassName=UsbTiny Programmer Member=J?
+Removed Member From Class: ClassName=Power Member=L?
+Removed Member From Class: ClassName=Input Keys Member=R?
+Removed Member From Class: ClassName=Main Member=R?
+Removed Member From Class: ClassName=microSD Member=R?
+Removed Member From Class: ClassName=Motor Driver Member=R?
+Removed Member From Class: ClassName=Ouput Displays Member=R?
+Removed Member From Class: ClassName=Power Member=R?
+Removed Member From Class: ClassName=Relay Module Member=R?
+Removed Member From Class: ClassName=RTC Member=R?
+Removed Member From Class: ClassName=UsbTiny Programmer Member=R?
+Removed Member From Class: ClassName=Input Keys Member=S?
+Removed Member From Class: ClassName=Main Member=SW?
+Removed Member From Class: ClassName=Main Member=U?
+Removed Member From Class: ClassName=Motor Driver Member=U?
+Removed Member From Class: ClassName=Ouput Displays Member=U?
+Removed Member From Class: ClassName=RTC Member=U?
+Removed Member From Class: ClassName=UsbTiny Programmer Member=U?
+Removed Member From Class: ClassName=UsbTiny Programmer Member=Y?
+Change Component Designator: OldDesignator=BH? NewDesignator=BH1
+Change Component Designator: OldDesignator=C? NewDesignator=C1
+Change Component Designator: OldDesignator=C? NewDesignator=C2
+Change Component Designator: OldDesignator=C? NewDesignator=C3
+Change Component Designator: OldDesignator=C? NewDesignator=C4
+Change Component Designator: OldDesignator=C? NewDesignator=C5
+Change Component Designator: OldDesignator=C? NewDesignator=C6
+Change Component Designator: OldDesignator=C? NewDesignator=C7
+Change Component Designator: OldDesignator=C? NewDesignator=C8
+Change Component Designator: OldDesignator=C? NewDesignator=C9
+Change Component Designator: OldDesignator=C? NewDesignator=C10
+Change Component Designator: OldDesignator=C? NewDesignator=C11
+Change Component Designator: OldDesignator=C? NewDesignator=C12
+Change Component Designator: OldDesignator=C? NewDesignator=C13
+Change Component Designator: OldDesignator=C? NewDesignator=C14
+Change Component Designator: OldDesignator=C? NewDesignator=C15
+Change Component Designator: OldDesignator=C? NewDesignator=C16
+Change Component Designator: OldDesignator=C? NewDesignator=C17
+Change Component Designator: OldDesignator=C? NewDesignator=C18
+Change Component Designator: OldDesignator=C? NewDesignator=C19
+Change Component Designator: OldDesignator=C? NewDesignator=C20
+Change Component Designator: OldDesignator=C? NewDesignator=C21
+Change Component Designator: OldDesignator=C? NewDesignator=C22
+Change Component Designator: OldDesignator=C? NewDesignator=C23
+Change Component Designator: OldDesignator=C? NewDesignator=C24
+Change Component Designator: OldDesignator=C? NewDesignator=C25
+Change Component Designator: OldDesignator=C? NewDesignator=C26
+Change Component Designator: OldDesignator=C? NewDesignator=C27
+Change Component Designator: OldDesignator=C? NewDesignator=C28
+Change Component Designator: OldDesignator=C? NewDesignator=C29
+Change Component Designator: OldDesignator=C? NewDesignator=C30
+Change Component Designator: OldDesignator=C? NewDesignator=C31
+Change Component Designator: OldDesignator=C? NewDesignator=C32
+Change Component Designator: OldDesignator=C? NewDesignator=C33
+Change Component Designator: OldDesignator=C? NewDesignator=C34
+Change Component Designator: OldDesignator=C? NewDesignator=C35
+Change Component Designator: OldDesignator=C? NewDesignator=C36
+Change Component Designator: OldDesignator=C? NewDesignator=C37
+Change Component Designator: OldDesignator=D? NewDesignator=D1
+Change Component Designator: OldDesignator=D? NewDesignator=D2
+Change Component Designator: OldDesignator=D? NewDesignator=D3
+Change Component Designator: OldDesignator=D? NewDesignator=D4
+Change Component Designator: OldDesignator=D? NewDesignator=D5
+Change Component Designator: OldDesignator=D? NewDesignator=D6
+Change Component Designator: OldDesignator=D? NewDesignator=D7
+Change Component Designator: OldDesignator=D? NewDesignator=D8
+Change Component Designator: OldDesignator=D? NewDesignator=D9
+Change Component Designator: OldDesignator=D? NewDesignator=D10
+Change Component Designator: OldDesignator=D? NewDesignator=D11
+Change Component Designator: OldDesignator=D? NewDesignator=D12
+Change Component Designator: OldDesignator=D? NewDesignator=D13
+Change Component Designator: OldDesignator=D? NewDesignator=D14
+Change Component Designator: OldDesignator=D? NewDesignator=D15
+Change Component Designator: OldDesignator=D? NewDesignator=D16
+Change Component Designator: OldDesignator=D? NewDesignator=D17
+Change Component Designator: OldDesignator=D? NewDesignator=D18
+Change Component Designator: OldDesignator=D? NewDesignator=D19
+Change Component Designator: OldDesignator=D? NewDesignator=D20
+Change Component Designator: OldDesignator=D? NewDesignator=D21
+Change Component Designator: OldDesignator=D? NewDesignator=D22
+Change Component Designator: OldDesignator=D? NewDesignator=D23
+Change Component Designator: OldDesignator=D? NewDesignator=D24
+Change Component Designator: OldDesignator=D? NewDesignator=D25
+Change Component Designator: OldDesignator=D? NewDesignator=D26
+Change Component Designator: OldDesignator=D? NewDesignator=D27
+Change Component Designator: OldDesignator=D? NewDesignator=D28
+Change Component Designator: OldDesignator=D? NewDesignator=D29
+Change Component Designator: OldDesignator=DS? NewDesignator=DS1
+Change Component Designator: OldDesignator=ESP? NewDesignator=ESP1
+Change Component Designator: OldDesignator=FB? NewDesignator=FB1
+Change Component Designator: OldDesignator=FID? NewDesignator=FID1
+Change Component Designator: OldDesignator=FID? NewDesignator=FID2
+Change Component Designator: OldDesignator=FID? NewDesignator=FID3
+Change Component Designator: OldDesignator=FID? NewDesignator=FID4
+Change Component Designator: OldDesignator=HT? NewDesignator=HT1
+Change Component Designator: OldDesignator=IC? NewDesignator=IC1
+Change Component Designator: OldDesignator=IC? NewDesignator=IC2
+Change Component Designator: OldDesignator=J? NewDesignator=J1
+Change Component Designator: OldDesignator=J? NewDesignator=J2
+Change Component Designator: OldDesignator=J? NewDesignator=J3
+Change Component Designator: OldDesignator=J? NewDesignator=J4
+Change Component Designator: OldDesignator=J? NewDesignator=J5
+Change Component Designator: OldDesignator=J? NewDesignator=J6
+Change Component Designator: OldDesignator=J? NewDesignator=J7
+Change Component Designator: OldDesignator=J? NewDesignator=J8
+Change Component Designator: OldDesignator=J? NewDesignator=J9
+Change Component Designator: OldDesignator=J? NewDesignator=J10
+Change Component Designator: OldDesignator=K? NewDesignator=K1
+Change Component Designator: OldDesignator=KP? NewDesignator=KP1
+Change Component Designator: OldDesignator=L? NewDesignator=L1
+Change Component Designator: OldDesignator=L? NewDesignator=L2
+Change Component Designator: OldDesignator=LS? NewDesignator=LS1
+Change Component Designator: OldDesignator=MH? NewDesignator=MH1
+Change Component Designator: OldDesignator=MH? NewDesignator=MH2
+Change Component Designator: OldDesignator=MH? NewDesignator=MH3
+Change Component Designator: OldDesignator=MH? NewDesignator=MH4
+Change Component Designator: OldDesignator=Q? NewDesignator=Q1
+Change Component Designator: OldDesignator=R? NewDesignator=R1
+Change Component Designator: OldDesignator=R? NewDesignator=R2
+Change Component Designator: OldDesignator=R? NewDesignator=R3
+Change Component Designator: OldDesignator=R? NewDesignator=R4
+Change Component Designator: OldDesignator=R? NewDesignator=R5
+Change Component Designator: OldDesignator=R? NewDesignator=R6
+Change Component Designator: OldDesignator=R? NewDesignator=R7
+Change Component Designator: OldDesignator=R? NewDesignator=R8
+Change Component Designator: OldDesignator=R? NewDesignator=R9
+Change Component Designator: OldDesignator=R? NewDesignator=R10
+Change Component Designator: OldDesignator=R? NewDesignator=R11
+Change Component Designator: OldDesignator=R? NewDesignator=R12
+Change Component Designator: OldDesignator=R? NewDesignator=R13
+Change Component Designator: OldDesignator=R? NewDesignator=R14
+Change Component Designator: OldDesignator=R? NewDesignator=R15
+Change Component Designator: OldDesignator=R? NewDesignator=R16
+Change Component Designator: OldDesignator=R? NewDesignator=R17
+Change Component Designator: OldDesignator=R? NewDesignator=R18
+Change Component Designator: OldDesignator=R? NewDesignator=R19
+Change Component Designator: OldDesignator=R? NewDesignator=R20
+Change Component Designator: OldDesignator=R? NewDesignator=R21
+Change Component Designator: OldDesignator=R? NewDesignator=R22
+Change Component Designator: OldDesignator=R? NewDesignator=R23
+Change Component Designator: OldDesignator=R? NewDesignator=R24
+Change Component Designator: OldDesignator=R? NewDesignator=R25
+Change Component Designator: OldDesignator=R? NewDesignator=R26
+Change Component Designator: OldDesignator=R? NewDesignator=R27
+Change Component Designator: OldDesignator=R? NewDesignator=R28
+Change Component Designator: OldDesignator=R? NewDesignator=R29
+Change Component Designator: OldDesignator=R? NewDesignator=R30
+Change Component Designator: OldDesignator=R? NewDesignator=R31
+Change Component Designator: OldDesignator=R? NewDesignator=R32
+Change Component Designator: OldDesignator=R? NewDesignator=R33
+Change Component Designator: OldDesignator=R? NewDesignator=R34
+Change Component Designator: OldDesignator=R? NewDesignator=R35
+Change Component Designator: OldDesignator=R? NewDesignator=R36
+Change Component Designator: OldDesignator=R? NewDesignator=R37
+Change Component Designator: OldDesignator=R? NewDesignator=R38
+Change Component Designator: OldDesignator=R? NewDesignator=R39
+Change Component Designator: OldDesignator=R? NewDesignator=R40
+Change Component Designator: OldDesignator=R? NewDesignator=R41
+Change Component Designator: OldDesignator=RV? NewDesignator=RV1
+Change Component Designator: OldDesignator=S? NewDesignator=S1
+Change Component Designator: OldDesignator=S? NewDesignator=S2
+Change Component Designator: OldDesignator=S? NewDesignator=S3
+Change Component Designator: OldDesignator=S? NewDesignator=S4
+Change Component Designator: OldDesignator=SIM? NewDesignator=SIM1
+Change Component Designator: OldDesignator=SW? NewDesignator=SW1
+Change Component Designator: OldDesignator=SW? NewDesignator=SW2
+Change Component Designator: OldDesignator=SW? NewDesignator=SW3
+Change Component Designator: OldDesignator=U3 NewDesignator=U1
+Change Component Designator: OldDesignator=U? NewDesignator=U2
+Change Component Designator: OldDesignator=U? NewDesignator=U3
+Change Component Designator: OldDesignator=U? NewDesignator=U4
+Change Component Designator: OldDesignator=U? NewDesignator=U5
+Change Component Designator: OldDesignator=U? NewDesignator=U6
+Change Component Designator: OldDesignator=U? NewDesignator=U7
+Change Component Designator: OldDesignator=U? NewDesignator=U8
+Change Component Designator: OldDesignator=U? NewDesignator=U9
+Change Component Designator: OldDesignator=U? NewDesignator=U10
+Change Component Designator: OldDesignator=U? NewDesignator=U11
+Change Component Designator: OldDesignator=Y? NewDesignator=Y1
+Change Component Designator: OldDesignator=Y? NewDesignator=Y2
+Change Net Name : Old Net Name=IN1 New Net Name=NetU1_26
+Change Net Name : Old Net Name=IN2 New Net Name=NetU1_25
+Change Net Name : Old Net Name=ISP_MISO New Net Name=NetSW2_6
+Change Net Name : Old Net Name=ISP_MOSI New Net Name=NetR32_1
+Change Net Name : Old Net Name=ISP_RST New Net Name=NetSW2_8
+Change Net Name : Old Net Name=ISP_SCK New Net Name=NetR34_1
+Change Net Name : Old Net Name=LCD_BL New Net Name=NetDS1_15
+Change Net Name : Old Net Name=LCD_DB4 New Net Name=NetDS1_11
+Change Net Name : Old Net Name=LCD_DB5 New Net Name=NetDS1_12
+Change Net Name : Old Net Name=LCD_DB6 New Net Name=NetDS1_13
+Change Net Name : Old Net Name=LCD_DB7 New Net Name=NetDS1_14
+Change Net Name : Old Net Name=LCD_E New Net Name=NetDS1_6
+Change Net Name : Old Net Name=LCD_RS New Net Name=NetDS1_4
+Change Net Name : Old Net Name=LCD_RW New Net Name=NetDS1_5
+Change Net Name : Old Net Name=NetC?_1 New Net Name=NetC32_1
+Change Net Name : Old Net Name=NetC?_2 New Net Name=NetC15_2
+Change Net Name : Old Net Name=NetD?_1 New Net Name=NetD1_1
+Change Net Name : Old Net Name=NetD?_2 New Net Name=NetD27_2
+Change Net Name : Old Net Name=NetD?_3 New Net Name=NetD28_3
+Change Net Name : Old Net Name=NetD?_4 New Net Name=NetD7_4
+Change Net Name : Old Net Name=NetD?_5 New Net Name=NetD7_5
+Change Net Name : Old Net Name=NetD?_6 New Net Name=NetD7_6
+Change Net Name : Old Net Name=NetD?_7 New Net Name=NetD7_7
+Change Net Name : Old Net Name=NetD?_9 New Net Name=NetD7_9
+Change Net Name : Old Net Name=NetD?_10 New Net Name=NetD7_10
+Change Net Name : Old Net Name=NetDS?_3 New Net Name=NetDS1_3
+Change Net Name : Old Net Name=NetESP?_4 New Net Name=NetESP1_4
+Change Net Name : Old Net Name=NetESP?_5 New Net Name=NetESP1_5
+Change Net Name : Old Net Name=NetIC?_2 New Net Name=NetIC2_2
+Change Net Name : Old Net Name=NetIC?_3 New Net Name=NetIC2_3
+Change Net Name : Old Net Name=NetIC?_4 New Net Name=NetIC2_4
+Change Net Name : Old Net Name=NetIC?_5 New Net Name=NetIC2_5
+Change Net Name : Old Net Name=NetIC?_10 New Net Name=NetIC1_10
+Change Net Name : Old Net Name=NetIC?_11 New Net Name=NetIC1_11
+Change Net Name : Old Net Name=NetJ?_1 New Net Name=NetJ3_1
+Change Net Name : Old Net Name=NetJ?_2 New Net Name=NetJ3_2
+Change Net Name : Old Net Name=NetJ?_9 New Net Name=NetJ8_9
+Change Net Name : Old Net Name=NetKP?_1 New Net Name=NetKP1_1
+Change Net Name : Old Net Name=NetKP?_2 New Net Name=NetKP1_2
+Change Net Name : Old Net Name=NetKP?_3 New Net Name=NetKP1_3
+Change Net Name : Old Net Name=NetKP?_4 New Net Name=NetKP1_4
+Change Net Name : Old Net Name=NetKP?_5 New Net Name=NetKP1_5
+Change Net Name : Old Net Name=NetKP?_6 New Net Name=NetKP1_6
+Change Net Name : Old Net Name=NetKP?_7 New Net Name=NetKP1_7
+Change Net Name : Old Net Name=NetQ?_1 New Net Name=NetQ1_1
+Change Net Name : Old Net Name=NetR?_1 New Net Name=NetR22_1
+Change Net Name : Old Net Name=NetR?_2 New Net Name=NetR2_2
+Change Net Name : Old Net Name=NetR?_3 New Net Name=NetR20_3
+Change Net Name : Old Net Name=NetR?_4 New Net Name=NetR19_4
+Change Net Name : Old Net Name=NetSW?_3 New Net Name=NetSW3_3
+Change Net Name : Old Net Name=NetU3_90 New Net Name=NetU1_90
+Change Net Name : Old Net Name=NetU3_91 New Net Name=NetU1_91
+Change Net Name : Old Net Name=NetU3_92 New Net Name=NetU1_92
+Change Net Name : Old Net Name=NetU3_93 New Net Name=NetU1_93
+Change Net Name : Old Net Name=NetU3_94 New Net Name=NetU1_94
+Change Net Name : Old Net Name=NetU3_95 New Net Name=NetU1_95
+Change Net Name : Old Net Name=NetU3_96 New Net Name=NetU1_96
+Change Net Name : Old Net Name=NetU3_97 New Net Name=NetU1_97
+Change Net Name : Old Net Name=RLY_TRIG New Net Name=NetR40_2
+Change Net Name : Old Net Name=SD_MISO New Net Name=NetIC2_13
+Change Net Name : Old Net Name=SD_MOSI New Net Name=NetIC2_10
+Change Net Name : Old Net Name=SD_SCK New Net Name=NetIC2_11
+Change Net Name : Old Net Name=SD_SS New Net Name=NetIC2_12
+Change Net Name : Old Net Name=SH_CP New Net Name=NetU1_49
+Change Net Name : Old Net Name=SHIFT_DS New Net Name=NetU1_47
+Change Net Name : Old Net Name=SHIFT_RST New Net Name=NetU1_50
+Change Net Name : Old Net Name=ST_CP New Net Name=NetU1_48
+Change Net Name : Old Net Name=USER_LED0 New Net Name=NetR17_2
+Change Net Name : Old Net Name=USER_LED1 New Net Name=NetR16_2
+Change Net Name : Old Net Name=USER_LED2 New Net Name=NetR15_2
+Change Net Name : Old Net Name=USER_LED3 New Net Name=NetR14_2
+Change Net Name : Old Net Name=USER_LED4 New Net Name=NetR13_2
+Change Net Name : Old Net Name=USER_LED5 New Net Name=NetR12_2
+Change Net Name : Old Net Name=USER_LED6 New Net Name=NetR11_2
+Change Net Name : Old Net Name=USER_LED7 New Net Name=NetR10_2
+Added Pin To Net: NetName=NetC14_2 Pin=C14-2
+Added Pin To Net: NetName=NetC14_2 Pin=U1-33
+Added Pin To Net: NetName=NetC14_2 Pin=Y1-2
+Added Net: Name=NetC14_2
+Added Pin To Net: NetName=NetC17_1 Pin=C17-1
+Added Pin To Net: NetName=NetC17_1 Pin=J2-1
+Added Pin To Net: NetName=NetC17_1 Pin=U3-1
+Added Net: Name=NetC17_1
+Added Pin To Net: NetName=NetC33_1 Pin=C33-1
+Added Pin To Net: NetName=NetC33_1 Pin=U10-5
+Added Pin To Net: NetName=NetC33_1 Pin=Y2-1
+Added Net: Name=NetC33_1
+Added Pin To Net: NetName=NetC34_1 Pin=C34-1
+Added Pin To Net: NetName=NetC34_1 Pin=J7-1
+Added Pin To Net: NetName=NetC34_1 Pin=L2-1
+Added Net: Name=NetC34_1
+Added Pin To Net: NetName=NetC35_1 Pin=C35-1
+Added Pin To Net: NetName=NetC35_1 Pin=J6-2
+Added Pin To Net: NetName=NetC35_1 Pin=L2-2
+Added Net: Name=NetC35_1
+Added Pin To Net: NetName=NetD2_2 Pin=D2-2
+Added Pin To Net: NetName=NetD2_2 Pin=L1-1
+Added Pin To Net: NetName=NetD2_2 Pin=U3-2
+Added Net: Name=NetD2_2
+Added Pin To Net: NetName=NetD3_1 Pin=D3-1
+Added Pin To Net: NetName=NetD3_1 Pin=R5-1
+Added Net: Name=NetD3_1
+Added Pin To Net: NetName=NetD4_1 Pin=D4-1
+Added Pin To Net: NetName=NetD4_1 Pin=R10-1
+Added Net: Name=NetD4_1
+Added Pin To Net: NetName=NetD5_1 Pin=D5-1
+Added Pin To Net: NetName=NetD5_1 Pin=R11-1
+Added Net: Name=NetD5_1
+Added Pin To Net: NetName=NetD6_1 Pin=D6-1
+Added Pin To Net: NetName=NetD6_1 Pin=R12-1
+Added Net: Name=NetD6_1
+Added Pin To Net: NetName=NetD7_1 Pin=D7-1
+Added Pin To Net: NetName=NetD7_1 Pin=U6-4
+Added Net: Name=NetD7_1
+Added Pin To Net: NetName=NetD7_2 Pin=D7-2
+Added Pin To Net: NetName=NetD7_2 Pin=U6-3
+Added Net: Name=NetD7_2
+Added Pin To Net: NetName=NetD8_1 Pin=D8-1
+Added Pin To Net: NetName=NetD8_1 Pin=R13-1
+Added Net: Name=NetD8_1
+Added Pin To Net: NetName=NetD9_1 Pin=D9-1
+Added Pin To Net: NetName=NetD9_1 Pin=R14-1
+Added Net: Name=NetD9_1
+Added Pin To Net: NetName=NetD10_1 Pin=D10-1
+Added Pin To Net: NetName=NetD10_1 Pin=R15-1
+Added Net: Name=NetD10_1
+Added Pin To Net: NetName=NetD11_1 Pin=D11-1
+Added Pin To Net: NetName=NetD11_1 Pin=R16-1
+Added Net: Name=NetD11_1
+Added Pin To Net: NetName=NetD12_1 Pin=D12-1
+Added Pin To Net: NetName=NetD12_1 Pin=R17-1
+Added Net: Name=NetD12_1
+Added Pin To Net: NetName=NetD13_1 Pin=D13-1
+Added Pin To Net: NetName=NetD13_1 Pin=R18-1
+Added Net: Name=NetD13_1
+Added Pin To Net: NetName=NetD14_1 Pin=D14-1
+Added Pin To Net: NetName=NetD14_1 Pin=D19-2
+Added Pin To Net: NetName=NetD14_1 Pin=J4-1
+Added Pin To Net: NetName=NetD14_1 Pin=U9-2
+Added Net: Name=NetD14_1
+Added Pin To Net: NetName=NetD15_1 Pin=D15-1
+Added Pin To Net: NetName=NetD15_1 Pin=D20-2
+Added Pin To Net: NetName=NetD15_1 Pin=J4-2
+Added Pin To Net: NetName=NetD15_1 Pin=U9-3
+Added Net: Name=NetD15_1
+Added Pin To Net: NetName=NetD16_1 Pin=D16-1
+Added Pin To Net: NetName=NetD16_1 Pin=D21-2
+Added Pin To Net: NetName=NetD16_1 Pin=J5-1
+Added Pin To Net: NetName=NetD16_1 Pin=U9-13
+Added Net: Name=NetD16_1
+Added Pin To Net: NetName=NetD17_1 Pin=D17-1
+Added Pin To Net: NetName=NetD17_1 Pin=D22-2
+Added Pin To Net: NetName=NetD17_1 Pin=J5-2
+Added Pin To Net: NetName=NetD17_1 Pin=U9-14
+Added Net: Name=NetD17_1
+Added Pin To Net: NetName=NetD18_1 Pin=D18-1
+Added Pin To Net: NetName=NetD18_1 Pin=R21-1
+Added Net: Name=NetD18_1
+Added Pin To Net: NetName=NetD23_1 Pin=D23-1
+Added Pin To Net: NetName=NetD23_1 Pin=R31-2
+Added Net: Name=NetD23_1
+Added Pin To Net: NetName=NetD24_1 Pin=D24-1
+Added Pin To Net: NetName=NetD24_1 Pin=R33-1
+Added Net: Name=NetD24_1
+Added Pin To Net: NetName=NetD27_1 Pin=D27-1
+Added Pin To Net: NetName=NetD27_1 Pin=K1-A2
+Added Pin To Net: NetName=NetD27_1 Pin=Q1-3
+Added Net: Name=NetD27_1
+Added Pin To Net: NetName=NetD28_1 Pin=D28-1
+Added Pin To Net: NetName=NetD28_1 Pin=R40-1
+Added Net: Name=NetD28_1
+Added Pin To Net: NetName=NetD28_2 Pin=D28-2
+Added Pin To Net: NetName=NetD28_2 Pin=D29-1
+Added Net: Name=NetD28_2
+Added Pin To Net: NetName=NetR4_1 Pin=R4-1
+Added Pin To Net: NetName=NetR4_1 Pin=R6-2
+Added Pin To Net: NetName=NetR4_1 Pin=U3-4
+Added Net: Name=NetR4_1
+Added Pin To Net: NetName=NetR7_1 Pin=R7-1
+Added Pin To Net: NetName=NetR7_1 Pin=R9-2
+Added Pin To Net: NetName=NetR7_1 Pin=U5-5
+Added Net: Name=NetR7_1
+Added Pin To Net: NetName=NetR19_3 Pin=R19-3
+Added Pin To Net: NetName=NetR19_3 Pin=U7-3
+Added Net: Name=NetR19_3
+Added Pin To Net: NetName=NetR20_2 Pin=R20-2
+Added Pin To Net: NetName=NetR20_2 Pin=U8-3
+Added Net: Name=NetR20_2
+Added Pin To Net: NetName=NetR20_4 Pin=R20-4
+Added Pin To Net: NetName=NetR20_4 Pin=U8-1
+Added Net: Name=NetR20_4
+Added Pin To Net: NetName=NetR21_2 Pin=R21-2
+Added Pin To Net: NetName=NetR21_2 Pin=SW3-4
+Added Pin To Net: NetName=NetR21_2 Pin=U9-9
+Added Net: Name=NetR21_2
+Added Pin To Net: NetName=NetR22_2 Pin=R22-2
+Added Pin To Net: NetName=NetR22_2 Pin=U1-67
+Added Net: Name=NetR22_2
+Added Pin To Net: NetName=NetR24_1 Pin=R24-1
+Added Pin To Net: NetName=NetR24_1 Pin=R25-1
+Added Pin To Net: NetName=NetR24_1 Pin=S3-3
+Added Pin To Net: NetName=NetR24_1 Pin=S3-4
+Added Net: Name=NetR24_1
+Added Pin To Net: NetName=NetR24_2 Pin=R24-2
+Added Pin To Net: NetName=NetR24_2 Pin=U1-66
+Added Net: Name=NetR24_2
+Added Pin To Net: NetName=NetR26_1 Pin=R26-1
+Added Pin To Net: NetName=NetR26_1 Pin=R27-1
+Added Pin To Net: NetName=NetR26_1 Pin=S4-3
+Added Pin To Net: NetName=NetR26_1 Pin=S4-4
+Added Net: Name=NetR26_1
+Added Pin To Net: NetName=NetR26_2 Pin=R26-2
+Added Pin To Net: NetName=NetR26_2 Pin=U1-65
+Added Net: Name=NetR26_2
+Added Pin To Net: NetName=NetR28_1 Pin=R28-1
+Added Pin To Net: NetName=NetR28_1 Pin=U1-3
+Added Net: Name=NetR28_1
+Added Pin To Net: NetName=NetR29_1 Pin=R29-1
+Added Pin To Net: NetName=NetR29_1 Pin=U1-2
+Added Net: Name=NetR29_1
+Added Pin To Net: NetName=NetR32_2 Pin=R32-2
+Added Pin To Net: NetName=NetR32_2 Pin=U11-6
+Added Net: Name=NetR32_2
+Added Pin To Net: NetName=NetR34_2 Pin=R34-2
+Added Pin To Net: NetName=NetR34_2 Pin=U11-11
+Added Net: Name=NetR34_2
+Added Pin To Net: NetName=NetR35_1 Pin=R35-1
+Added Pin To Net: NetName=NetR35_1 Pin=U10-1
+Added Net: Name=NetR35_1
+Added Pin To Net: NetName=NetU1_23 Pin=U1-23
+Added Pin To Net: NetName=NetU1_23 Pin=U9-12
+Added Net: Name=NetU1_23
+Added Pin To Net: NetName=NetU1_24 Pin=U1-24
+Added Pin To Net: NetName=NetU1_24 Pin=U9-10
+Added Net: Name=NetU1_24
+Added Member To Class: ClassName=Main Member=Component C1 10µF
+Added Member To Class: ClassName=Main Member=Component C3 10µF
+Added Member To Class: ClassName=Main Member=Component C4 100nF
+Added Member To Class: ClassName=Main Member=Component C5 10µF
+Added Member To Class: ClassName=Main Member=Component C6 100nF
+Added Member To Class: ClassName=Main Member=Component C7 10µF
+Added Member To Class: ClassName=Main Member=Component C8 100nF
+Added Member To Class: ClassName=Main Member=Component C9 10µF
+Added Member To Class: ClassName=Main Member=Component C10 100nF
+Added Member To Class: ClassName=Main Member=Component C11 10µF
+Added Member To Class: ClassName=Main Member=Component C12 100nF
+Added Member To Class: ClassName=Main Member=Component C13 100nF
+Added Member To Class: ClassName=Main Member=Component C14 22pF
+Added Member To Class: ClassName=Main Member=Component C15 22pF
+Added Member To Class: ClassName=Main Member=Component C16 0.1µF
+Added Member To Class: ClassName=Power Member=Component C17 100µF
+Added Member To Class: ClassName=Power Member=Component C18 220µF
+Added Member To Class: ClassName=Power Member=Component C19 0.1µF
+Added Member To Class: ClassName=Power Member=Component C20 10µF
+Added Member To Class: ClassName=Power Member=Component C21 10µF
+Added Member To Class: ClassName=Power Member=Component C22 100µF
+Added Member To Class: ClassName=Power Member=Component C23 1µF
+Added Member To Class: ClassName=Power Member=Component C24 330µF
+Added Member To Class: ClassName=Power Member=Component C25 100nF
+Added Member To Class: ClassName=RTC Member=Component C26 100nF
+Added Member To Class: ClassName=Motor Driver Member=Component C27 220µF
+Added Member To Class: ClassName=Designator Member=Component C28 100nF
+Added Member To Class: ClassName=Designator Member=Component C29 100nF
+Added Member To Class: ClassName=Designator Member=Component C30 100nF
+Added Member To Class: ClassName=UsbTiny Programmer Member=Component C31 100nF
+Added Member To Class: ClassName=UsbTiny Programmer Member=Component C32 30pF
+Added Member To Class: ClassName=UsbTiny Programmer Member=Component C33 30pF
+Added Member To Class: ClassName=UsbTiny Programmer Member=Component C34 100µF
+Added Member To Class: ClassName=UsbTiny Programmer Member=Component C35 100µF
+Added Member To Class: ClassName=microSD Member=Component C36 100nF
+Added Member To Class: ClassName=microSD Member=Component C37 100nF
+Added Member To Class: ClassName=Main Member=Component D1 BAT54HT1G
+Added Member To Class: ClassName=Power Member=Component D2 B340BQ-13-F
+Added Member To Class: ClassName=Power Member=Component D3 Red
+Added Member To Class: ClassName=Ouput Displays Member=Component D4 LED_5mm
+Added Member To Class: ClassName=Ouput Displays Member=Component D5 LED_5mm
+Added Member To Class: ClassName=Ouput Displays Member=Component D6 LED_5mm
+Added Member To Class: ClassName=Ouput Displays Member=Component D7 7SEG_1DG
+Added Member To Class: ClassName=Ouput Displays Member=Component D8 LED_5mm
+Added Member To Class: ClassName=Ouput Displays Member=Component D9 LED_5mm
+Added Member To Class: ClassName=Ouput Displays Member=Component D10 LED_5mm
+Added Member To Class: ClassName=Ouput Displays Member=Component D11 LED_5mm
+Added Member To Class: ClassName=Ouput Displays Member=Component D12 LED_5mm
+Added Member To Class: ClassName=RTC Member=Component D13 Red
+Added Member To Class: ClassName=Motor Driver Member=Component D14 1N4007FLTR
+Added Member To Class: ClassName=Motor Driver Member=Component D15 1N4007FLTR
+Added Member To Class: ClassName=Motor Driver Member=Component D16 1N4007FLTR
+Added Member To Class: ClassName=Motor Driver Member=Component D17 1N4007FLTR
+Added Member To Class: ClassName=Motor Driver Member=Component D18 Red
+Added Member To Class: ClassName=Motor Driver Member=Component D19 1N4007FLTR
+Added Member To Class: ClassName=Motor Driver Member=Component D20 1N4007FLTR
+Added Member To Class: ClassName=Motor Driver Member=Component D21 1N4007FLTR
+Added Member To Class: ClassName=Motor Driver Member=Component D22 1N4007FLTR
+Added Member To Class: ClassName=UsbTiny Programmer Member=Component D23 Green
+Added Member To Class: ClassName=UsbTiny Programmer Member=Component D25 MMSZ5227B-E3-08
+Added Member To Class: ClassName=UsbTiny Programmer Member=Component D26 MMSZ5227B-E3-08
+Added Member To Class: ClassName=Relay Module Member=Component D27 1N4007FLTR
+Added Member To Class: ClassName=Relay Module Member=Component D28 LTV-817S-TA1
+Added Member To Class: ClassName=Relay Module Member=Component D29 Red
+Added Member To Class: ClassName=Main Member=Component FID1 FID_1MM
+Added Member To Class: ClassName=Main Member=Component FID3 FID_1MM
+Added Member To Class: ClassName=Main Member=Component FID4 FID_1MM
+Added Member To Class: ClassName=Designator Member=Component IC1 TXB0104DR
+Added Member To Class: ClassName=Main Member=Component J1 ISP HDR
+Added Member To Class: ClassName=Power Member=Component J2 PJ-102AH
+Added Member To Class: ClassName=Motor Driver Member=Component J3 HDR_1x2
+Added Member To Class: ClassName=Motor Driver Member=Component J4 282834-2
+Added Member To Class: ClassName=Motor Driver Member=Component J5 282834-2
+Added Member To Class: ClassName=UsbTiny Programmer Member=Component J6 OUTPWR
+Added Member To Class: ClassName=UsbTiny Programmer Member=Component J7 61729-1011BLF
+Added Member To Class: ClassName=Relay Module Member=Component J9 JDVCC
+Added Member To Class: ClassName=Relay Module Member=Component J10 282834-3
+Added Member To Class: ClassName=Power Member=Component L1 33µH
+Added Member To Class: ClassName=Main Member=Component MH2 MH_7.4MMC_3.2MMD
+Added Member To Class: ClassName=Main Member=Component MH3 MH_7.4MMC_3.2MMD
+Added Member To Class: ClassName=Main Member=Component MH4 MH_7.4MMNC_3.2MMD
+Added Member To Class: ClassName=Main Member=Component R1 10 kOhms
+Added Member To Class: ClassName=Main Member=Component R2 22 Ohms
+Added Member To Class: ClassName=Main Member=Component R3 4.7 kOhms
+Added Member To Class: ClassName=Power Member=Component R4 3 kOhms
+Added Member To Class: ClassName=Power Member=Component R5 150 Ohms
+Added Member To Class: ClassName=Power Member=Component R6 1 kOhms
+Added Member To Class: ClassName=Power Member=Component R7 100 kOhms
+Added Member To Class: ClassName=Power Member=Component R8 470 Ohms
+Added Member To Class: ClassName=Power Member=Component R9 43 kOhms
+Added Member To Class: ClassName=Ouput Displays Member=Component R10 330 Ohms
+Added Member To Class: ClassName=Ouput Displays Member=Component R11 330 Ohms
+Added Member To Class: ClassName=Ouput Displays Member=Component R12 330 Ohms
+Added Member To Class: ClassName=Ouput Displays Member=Component R13 330 Ohms
+Added Member To Class: ClassName=Ouput Displays Member=Component R14 330 Ohms
+Added Member To Class: ClassName=Ouput Displays Member=Component R15 330 Ohms
+Added Member To Class: ClassName=Ouput Displays Member=Component R16 330 Ohms
+Added Member To Class: ClassName=Ouput Displays Member=Component R17 330 Ohms
+Added Member To Class: ClassName=RTC Member=Component R18 150 Ohms
+Added Member To Class: ClassName=RTC Member=Component R19 EXB-28V472JX
+Added Member To Class: ClassName=RTC Member=Component R20 EXB-28V472JX
+Added Member To Class: ClassName=Motor Driver Member=Component R21 150 Ohms
+Added Member To Class: ClassName=Input Keys Member=Component R22 220 Ohms
+Added Member To Class: ClassName=Input Keys Member=Component R23 10 kOhms
+Added Member To Class: ClassName=Input Keys Member=Component R24 220 Ohms
+Added Member To Class: ClassName=Input Keys Member=Component R25 10 kOhms
+Added Member To Class: ClassName=Input Keys Member=Component R26 220 Ohms
+Added Member To Class: ClassName=Input Keys Member=Component R27 10 kOhms
+Added Member To Class: ClassName=Designator Member=Component R28 1 kOhms
+Added Member To Class: ClassName=Designator Member=Component R29 1 kOhms
+Added Member To Class: ClassName=UsbTiny Programmer Member=Component R31 220 Ohms
+Added Member To Class: ClassName=UsbTiny Programmer Member=Component R32 1.5 kOhms
+Added Member To Class: ClassName=UsbTiny Programmer Member=Component R33 220 Ohms
+Added Member To Class: ClassName=UsbTiny Programmer Member=Component R34 1.5 kOhms
+Added Member To Class: ClassName=UsbTiny Programmer Member=Component R35 10 kOhms
+Added Member To Class: ClassName=UsbTiny Programmer Member=Component R36 33.2 Ohms
+Added Member To Class: ClassName=UsbTiny Programmer Member=Component R37 33.2 Ohms
+Added Member To Class: ClassName=microSD Member=Component R38 220 Ohms
+Added Member To Class: ClassName=microSD Member=Component R39 10 kOhms
+Added Member To Class: ClassName=Relay Module Member=Component R40 1 kOhms
+Added Member To Class: ClassName=Relay Module Member=Component R41 1 kOhms
+Added Member To Class: ClassName=Input Keys Member=Component S2 PTS645SM43SMTR92 LFS
+Added Member To Class: ClassName=Input Keys Member=Component S3 PTS645SM43SMTR92 LFS
+Added Member To Class: ClassName=Input Keys Member=Component S4 PTS645SM43SMTR92 LFS
+Added Member To Class: ClassName=Main Member=Component SW1 DIP SWITCH
+Added Member To Class: ClassName=Main Member=Component SW2 DIP SWITCH
+Added Member To Class: ClassName=Main Member=Component U2 SN74AHC1G09DBVR
+Added Member To Class: ClassName=Power Member=Component U4 TL1963A-33DCQR
+Added Member To Class: ClassName=Power Member=Component U5 MIC29302AWD-TR
+Added Member To Class: ClassName=Ouput Displays Member=Component U6 MC74HC595ADR2
+Added Member To Class: ClassName=RTC Member=Component U7 DS3231SN
+Added Member To Class: ClassName=RTC Member=Component U8 AT24C32D-SSHM-T
+Added Member To Class: ClassName=Motor Driver Member=Component U9 L298N
+Added Member To Class: ClassName=UsbTiny Programmer Member=Component U10 ATTINY2313-20PU
+Added Member To Class: ClassName=UsbTiny Programmer Member=Component U11 SN74AHC125NSR
+Added Member To Class: ClassName=UsbTiny Programmer Member=Component Y2 12MHz
