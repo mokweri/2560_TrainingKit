@@ -1,0 +1,100 @@
+Removed Pin From Net: NetName=+4V1 Pin=C28-2
+Removed Pin From Net: NetName=+3V3 Pin=C29-2
+Removed Pin From Net: NetName=GND Pin=ESP1-1
+Removed Pin From Net: NetName=+3V3 Pin=ESP1-6
+Removed Pin From Net: NetName=+3V3 Pin=ESP1-8
+Removed Pin From Net: NetName=+3V3 Pin=IC1-1
+Removed Pin From Net: NetName=+3V3 Pin=IC1-8
+Removed Pin From Net: NetName=+4V1 Pin=SIM1-2
+Removed Pin From Net: NetName=GND Pin=SIM1-6
+Added Component: Designator=SW4(CTS 218-2LPJ)
+Add component (AddParameter): Name = "Actuator Level"; Value = "Flush, Recessed"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Actuator Type"; Value = "Slide (Standard)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Circuit"; Value = "SPST"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.ctscorp.com/wp-content/uploads/218.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "DigiKey Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://digikey.com/product-detail/en/cts-electrocomponents/218-2LPST/CT2182LPST-ND/267319"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Finish"; Value = "Gold"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Material"; Value = "Beryllium Copper"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Current Rating (Amps)"; Value = "25mA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Features"; Value = "Epoxy Sealed Terminals, Tape Seal"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height Above Board"; Value = "0.104" (2.65mm)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LastUpdated"; Value = "04/01/2020 18:30:26"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lifecycle Status"; Value = "Active"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "CTS Electrocomponents"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Minimum Order"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Type"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Positions"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature"; Value = "-55°C ~ 85°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tube"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "218-2LPST"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Status"; Value = "Active"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartId"; Value = "3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pitch"; Value = "0.050" (1.27mm), Half"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "1.04"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Series"; Value = "218"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "DigiKey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "CT2182LPST-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Termination Style"; Value = "Gull Wing"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating"; Value = "24VDC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Washable"; Value = "Yes"; VariantName = "[No Variations]"
+Added Component: Designator=SW5(CTS 218-2LPJ)
+Add component (AddParameter): Name = "Actuator Level"; Value = "Flush, Recessed"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Actuator Type"; Value = "Slide (Standard)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Circuit"; Value = "SPST"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.ctscorp.com/wp-content/uploads/218.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "DigiKey Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://digikey.com/product-detail/en/cts-electrocomponents/218-2LPST/CT2182LPST-ND/267319"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Finish"; Value = "Gold"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Material"; Value = "Beryllium Copper"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Current Rating (Amps)"; Value = "25mA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Features"; Value = "Epoxy Sealed Terminals, Tape Seal"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height Above Board"; Value = "0.104" (2.65mm)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LastUpdated"; Value = "04/01/2020 18:30:26"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lifecycle Status"; Value = "Active"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "CTS Electrocomponents"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Minimum Order"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Type"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Positions"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature"; Value = "-55°C ~ 85°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tube"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "218-2LPST"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Status"; Value = "Active"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartId"; Value = "3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pitch"; Value = "0.050" (1.27mm), Half"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "1.04"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Series"; Value = "218"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "DigiKey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "CT2182LPST-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Termination Style"; Value = "Gull Wing"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating"; Value = "24VDC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Washable"; Value = "Yes"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=SW4-3
+Added Pin To Net: NetName=+3V3 Pin=SW4-4
+Added Pin To Net: NetName=GND Pin=SW5-3
+Added Pin To Net: NetName=+4V1 Pin=SW5-4
+Added Pin To Net: NetName=+4V1_GSM Pin=C28-2
+Added Pin To Net: NetName=+4V1_GSM Pin=SIM1-2
+Added Pin To Net: NetName=+4V1_GSM Pin=SW5-1
+Added Net: Name=+4V1_GSM
+Added Pin To Net: NetName=GND_GSM Pin=SIM1-6
+Added Pin To Net: NetName=GND_GSM Pin=SW5-2
+Added Net: Name=GND_GSM
+Added Pin To Net: NetName=GND_WIFI Pin=ESP1-1
+Added Pin To Net: NetName=GND_WIFI Pin=SW4-2
+Added Net: Name=GND_WIFI
+Added Pin To Net: NetName=NetC29_2 Pin=C29-2
+Added Pin To Net: NetName=NetC29_2 Pin=ESP1-6
+Added Pin To Net: NetName=NetC29_2 Pin=ESP1-8
+Added Pin To Net: NetName=NetC29_2 Pin=IC1-1
+Added Pin To Net: NetName=NetC29_2 Pin=IC1-8
+Added Pin To Net: NetName=NetC29_2 Pin=SW4-1
+Added Net: Name=NetC29_2
+Added Member To Class: ClassName=GPIO Member=Component J11 HDR_2x8
+Added Member To Class: ClassName=GSMWiFi Member=Component SW4 218-2LPST
+Added Member To Class: ClassName=GSMWiFi Member=Component SW5 218-2LPST
+Added Room: Name=Input Keys
+Added Room: Name=Main
+Added Room: Name=Ouput Displays
