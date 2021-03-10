@@ -1,7 +1,10 @@
 Protel Design System Design Rule Check
 PCB File : D:\2560_TrainingKit\DesignFiles\2560_TrainingKit\TK2560_PCB.PcbDoc
-Date     : 3/9/2021
-Time     : 20:27:44
+Date     : 10/03/2021
+Time     : 17:01:00
+
+Processing Rule : Clearance Constraint (Gap=0.3mm) (IsRegion),(All)
+Rule Violations :0
 
 Processing Rule : Clearance Constraint (Gap=0.2mm) (All),(All)
 Rule Violations :0
@@ -138,32 +141,6 @@ Processing Rule : Silk to Silk (Clearance=0.1mm) (All),(All)
 Rule Violations :0
 
 Processing Rule : Net Antennae (Tolerance=0mm) (All)
-   Violation between Net Antennae: Track (23.237mm,92.3mm)(23.237mm,94.987mm) on L2 
-   Violation between Net Antennae: Track (84.47mm,104.095mm)(86.975mm,106.6mm) on L1 
-Rule Violations :2
-
-Processing Rule : Room GSMWiFi (Bounding Region = (99.975mm, 91.4mm, 161.36mm, 126.88mm) (InComponentClass('GSMWiFi'))
-Rule Violations :0
-
-Processing Rule : Room RTC (Bounding Region = (66.772mm, 9.525mm, 112.05mm, 50.975mm) (InComponentClass('RTC'))
-Rule Violations :0
-
-Processing Rule : Room UsbTiny Programmer (Bounding Region = (132.64mm, 15.487mm, 200.7mm, 56.605mm) (InComponentClass('UsbTiny Programmer'))
-Rule Violations :0
-
-Processing Rule : Room GPIO (Bounding Region = (2.235mm, 24.13mm, 11.43mm, 77.47mm) (InComponentClass('GPIO'))
-Rule Violations :0
-
-Processing Rule : Room Motor Driver (Bounding Region = (164.025mm, 91.2mm, 200.2mm, 130.81mm) (InComponentClass('Motor Driver'))
-Rule Violations :0
-
-Processing Rule : Room microSD (Bounding Region = (93.125mm, 9.495mm, 126.515mm, 46.545mm) (InComponentClass('microSD'))
-Rule Violations :0
-
-Processing Rule : Room Relay Module (Bounding Region = (156.452mm, 131.044mm, 200.772mm, 149.341mm) (InComponentClass('Relay Module'))
-Rule Violations :0
-
-Processing Rule : Room Power (Bounding Region = (137.45mm, 57.8mm, 200.2mm, 92.3mm) (InComponentClass('Power'))
 Rule Violations :0
 
 Processing Rule : Component Clearance Constraint ( Horizontal Gap = 0.2mm, Vertical Gap = 0.2mm ) (All),(All) 
@@ -173,6 +150,6 @@ Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (Al
 Rule Violations :0
 
 
-Violations Detected : 88
+Violations Detected : 86
 Waived Violations : 0
-Time Elapsed        : 00:00:03
+Time Elapsed        : 00:00:01
