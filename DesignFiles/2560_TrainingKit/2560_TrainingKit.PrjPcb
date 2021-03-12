@@ -471,24 +471,24 @@ DocumentPath=Project Outputs for 2560_TrainingKit\Design Rule Check - TK2560_PCB
 DItemRevisionGUID=
 
 [Parameter1]
-Name=COMPANY
-Value=Embedsystems
+Name=VersionRevision
+Value=V1I1
 
 [Parameter2]
-Name=NotFitted
-Value=NF
+Name=Title
+Value=2560_TrainingKit
 
 [Parameter3]
 Name=Project
 Value=2560_TrainingKit
 
 [Parameter4]
-Name=Title
-Value=2560_TrainingKit
+Name=NotFitted
+Value=NF
 
 [Parameter5]
-Name=VersionRevision
-Value=V1
+Name=COMPANY
+Value=Embedsystems
 
 [Configuration1]
 Name=Sources
