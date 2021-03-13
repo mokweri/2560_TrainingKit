@@ -471,24 +471,24 @@ DocumentPath=Project Outputs for 2560_TrainingKit\Design Rule Check - TK2560_PCB
 DItemRevisionGUID=
 
 [Parameter1]
-Name=VersionRevision
-Value=V1I1
+Name=COMPANY
+Value=Embedsystems
 
 [Parameter2]
-Name=Title
-Value=2560_TrainingKit
+Name=NotFitted
+Value=NF
 
 [Parameter3]
 Name=Project
 Value=2560_TrainingKit
 
 [Parameter4]
-Name=NotFitted
-Value=NF
+Name=Title
+Value=2560_TrainingKit
 
 [Parameter5]
-Name=COMPANY
-Value=Embedsystems
+Name=VersionRevision
+Value=V1I1
 
 [Configuration1]
 Name=Sources
@@ -1505,6 +1505,13 @@ SelectedOnly=0
 UpdateVariants=1
 UpdateToLatestRevision=1
 PartTypes=0
+
+[NetInfos]
+Net1=NetName=+3V3|NetColor=$000083FD
+Net2=NetName=+5|NetColor=clAqua
+Net3=NetName=GND|NetColor=clBlue
+Net4=NetName=GND_GSM|NetColor=clBlue
+Net5=NetName=GND_WIFI|NetColor=clBlue
 
 [Comparison Options]
 ComparisonOptions0=Kind=Net|MinPercent=75|MinMatch=3|ShowMatch=-1|Confirm=-1|UseName=-1|InclAllRules=0

@@ -1,9 +1,0 @@
-Added Component: Designator=C?(CAP 0603_1608)
-Add component (AddParameter): Name = "Part Number"; Value = "C0603C222K5HACTU"; VariantName = "[No Variations]"
-Add component (AddParameter): Name = "Value"; Value = "2200pF"; VariantName = "[No Variations]"
-Added Component: Designator=R?(RES 0603_1608)
-Add component (AddParameter): Name = "Part Number"; Value = "ERJ-PB3B6202V"; VariantName = "[No Variations]"
-Add component (AddParameter): Name = "Value"; Value = "62 kOhms"; VariantName = "[No Variations]"
-Added Member To Class: ClassName=2560TK_Schematic Member=Component C? 2200pF
-Added Member To Class: ClassName=2560TK_Schematic Member=Component R? 62 kOhms
-Added Room: Name=2560TK_Schematic
