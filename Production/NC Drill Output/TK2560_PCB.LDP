@@ -1,0 +1,3 @@
+Layer Pairs Export File for PCB: D:\2560_TrainingKit\DesignFiles\2560_TrainingKit\TK2560_PCB.PcbDoc
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=tk2560_pcb-roundholes.txt|DrillLayers=gtl,gbl
+LayersSetName=Top_Bot_Slot_Holes|DrillFile=tk2560_pcb-slotholes.txt|DrillLayers=gtl,gbl
