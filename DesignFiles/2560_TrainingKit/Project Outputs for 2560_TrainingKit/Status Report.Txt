@@ -1,14 +1,15 @@
 Project Outputs Generation Report
 ---------------------------------
-Start Output Generation At 20:04:02 On 3/13/2021
+Start Output Generation At 13:18:32 On 17/03/2021
 
 Output: TK2560_PickNPlace
 Type  : Pick Place
 From  : Variant [[No Variations]] of PCB Document [TK2560_PCB.PcbDoc]
    Generated File[Pick Place for TK2560_PCB.txt]
+   Generated File[Pick Place for TK2560_PCB.csv]
 
 
-Files Generated   : 1
+Files Generated   : 2
 Documents Printed : 0
 
-Finished Output Generation At 20:04:08 On 3/13/2021
+Finished Output Generation At 13:18:40 On 17/03/2021
