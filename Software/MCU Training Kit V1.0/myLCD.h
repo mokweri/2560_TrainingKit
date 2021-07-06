@@ -25,6 +25,7 @@
 #define LCD_D5	2	//define MCU pin connected to LCD D4
 #define LCD_D6	1	//define MCU pin connected to LCD D5
 #define LCD_D7	0	//define MCU pin connected to LCD D6
+#define LCD_BL	4	//define MCU pin connected to LCD Back light
 #define LDP PORTA	//define MCU port connected to LCD data pins
 #define LCP PORTA	//define MCU port connected to LCD control pins
 #define LDDR DDRA	//define MCU direction register for port connected to LCD data pins
@@ -78,6 +79,7 @@ void LCDvisible(void);			//LCD visible
 void LCDcursorLeft(uint8_t);	//Shift cursor left by n
 void LCDcursorRight(uint8_t);	//shif cursor right by n
 void LCD_PrintString(const char *s,uint8_t x,uint8_t y);
+uint8_t reverse(uint8_t b);
 
 
 #endif /* MYLCD_H_ */

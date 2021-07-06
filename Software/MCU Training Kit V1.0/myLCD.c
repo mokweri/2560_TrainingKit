@@ -14,13 +14,17 @@
 
 void LCDinit(void)//Initializes LCD
 {
+	uint8_t temp;
+	
 	#ifdef LCD_4bit
 	//4 bit part
 	_delay_ms(15);
 	LDP=0x00;
 	LCP=0x00;
 	LDDR|=1<<LCD_D7|1<<LCD_D6|1<<LCD_D5|1<<LCD_D4;
-	LCDR|=1<<LCD_E|1<<LCD_RW|1<<LCD_RS;
+	LCDR|=1<<LCD_E|1<<LCD_RW|1<<LCD_RS|1<<LCD_BL;
+	LCP |=1<<LCD_BL; //turn on back light
+	
 	//---------one------
 	LDP=0<<LCD_D7|0<<LCD_D6|1<<LCD_D5|1<<LCD_D4; //4 bit mode
 	LCP|=1<<LCD_E|0<<LCD_RW|0<<LCD_RS;
@@ -49,6 +53,7 @@ void LCDinit(void)//Initializes LCD
 	_delay_ms(15);
 	LDP=0x00;
 	LCP=0x00;
+	
 	LDDR|=1<<LCD_D7|1<<LCD_D6|1<<LCD_D5|1<<LCD_D4|1<<LCD_D3|1<<LCD_D2|1<<LCD_D1|1<<LCD_D0;
 	LCDR|=1<<LCD_E|1<<LCD_RW|1<<LCD_RS;
 	//---------one------
@@ -89,14 +94,25 @@ void LCDsendChar(uint8_t ch)		//Sends Char to LCD
 
 	#ifdef LCD_4bit
 	//4 bit part
-	LDP=(ch&0b11110000);
+	//LDP=(ch&0b11110000);
+ 	LDP |=(((ch&0b10000000)>>7)<<LCD_D7);
+	LDP |=(((ch&0b01000000)>>6)<<LCD_D6);
+	LDP |=(((ch&0b00100000)>>5)<<LCD_D5);
+	LDP |=(((ch&0b00010000)>>4)<<LCD_D4);
+	
 	LCP|=1<<LCD_RS;
 	LCP|=1<<LCD_E;
 	_delay_ms(1);
 	LCP&=~(1<<LCD_E);
 	LCP&=~(1<<LCD_RS);
 	_delay_ms(1);
-	LDP=((ch&0b00001111)<<4);
+	//LDP=((ch&0b00001111)<<4);
+	uint8_t temp = ((ch&0b00001111)<<4);
+	LDP |=(((temp&0b10000000)>>7)<<LCD_D7);
+	LDP |=(((temp&0b01000000)>>6)<<LCD_D6);
+	LDP |=(((temp&0b00100000)>>5)<<LCD_D5);
+	LDP |=(((temp&0b00010000)>>4)<<LCD_D4);
+	
 	LCP|=1<<LCD_RS;
 	LCP|=1<<LCD_E;
 	_delay_ms(1);
@@ -119,12 +135,27 @@ void LCDsendCommand(uint8_t cmd)	//Sends Command to LCD
 {
 	#ifdef LCD_4bit
 	//4 bit part
-	LDP=(cmd&0b11110000);
+	//LDP=(cmd&0b11110000);
+	//--
+ 	LDP |=(((cmd&0b10000000)>>7)<<LCD_D7);
+ 	LDP |=(((cmd&0b01000000)>>6)<<LCD_D6);
+ 	LDP |=(((cmd&0b00100000)>>5)<<LCD_D5);
+ 	LDP |=(((cmd&0b00010000)>>4)<<LCD_D4);
+	//---
 	LCP|=1<<LCD_E;
 	_delay_ms(1);
 	LCP&=~(1<<LCD_E);
 	_delay_ms(1);
-	LDP=((cmd&0b00001111)<<4);
+	
+	//LDP=((cmd&0b00001111)<<4);
+	//--
+	uint8_t temp =((cmd&0b00001111)<<4);
+	LDP |=(((temp&0b10000000)>>7)<<LCD_D7);
+	LDP |=(((temp&0b01000000)>>6)<<LCD_D6);
+	LDP |=(((temp&0b00100000)>>5)<<LCD_D5);
+	LDP |=(((temp&0b00010000)>>4)<<LCD_D4);
+
+	//--
 	LCP|=1<<LCD_E;
 	_delay_ms(1);
 	LCP&=~(1<<LCD_E);
@@ -279,4 +310,11 @@ void LCDcursorRight(uint8_t n)	//Moves cursor by n poisitions left
 	{
 		LCDsendCommand(0x14);
 	}
+}
+
+uint8_t reverse(uint8_t b) {
+	b = (b & 0xF0) >> 4 | (b & 0x0F) << 4;
+	b = (b & 0xCC) >> 2 | (b & 0x33) << 2;
+	b = (b & 0xAA) >> 1 | (b & 0x55) << 1;
+	return b;
 }

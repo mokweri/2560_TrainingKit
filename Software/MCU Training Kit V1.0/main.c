@@ -16,7 +16,8 @@ unsigned char keys= 0xFF;
 #include <stdlib.h>
 
 //User-defined header files 
-#include "myLCD.h"
+//#include "myLCD.h"
+#include "lcd.h"
 #include "keypad.h"
 #include "LEDControl.h"
 #include "timer1.h"
@@ -31,11 +32,12 @@ void LCD_PrintInt(uint16_t n,uint8_t x,uint8_t y);
 int main(void)
 {
 	/*---Initialization---------*/
-	LCDinit();		//LCD Functionality
+	//LCDinit();		//LCD Functionality
+	lcd_init();
 	keypad_Init();	//KEYPAD Functionality
 	LED_Init();		//LED Control
 	timer1_Init();	//Timer1 Setup
-	ADC_init();		//Analog to Digital Conversion
+	//ADC_init();		//Analog to Digital Conversion
 	ClockInit();
 	HC595Init();
 	pwm_Init();
@@ -50,7 +52,10 @@ int main(void)
 	PCMSK1 |=(1<<PCINT11)|(1<<PCINT12)|(1<<PCINT13)|(1<<PCINT14); // Mask-pins 2,3,4,5 on Port J will interrupt
 	sei();
 	
-	LCDclr();
+	//LCDclr();
+	lcd_clear();
+	lcd_set_cursor(0,0);
+	lcd_puts("WOw");
 	
 	char time_string[11];
 	
@@ -64,16 +69,16 @@ int main(void)
 	while (1)
 	{
 				
-		uint16_t pot = ADC_read(0);
+		//uint16_t pot = ADC_read(0);
 		//--------------------
-		 pwm_out(0,pot/4);
+		// pwm_out(0,pot/4);
 		//-----------------------
-		LCD_PrintString("MCU TRAINING KIT",3,0);
+		//LCD_PrintString("MCU TRAINING KIT",3,0);
 		GetTimeString(time_string);
 		LCD_PrintString(time_string,4,1);
 		
-		LCD_PrintString("       ",0,2);		
-		LCD_PrintInt(pot,0,2);
+		//LCD_PrintString("       ",0,2);		
+		//LCD_PrintInt(pot,0,2);
 
 
 			
@@ -86,10 +91,10 @@ int main(void)
 		TinuDHT tinudht;
 		uint8_t tinudht_result = tinudht_read(&tinudht, TINUDHT_PIN);
 		if (tinudht_result == TINUDHT_OK) {
-			LCD_PrintInt(tinudht.humidity,8,2);
-			LCD_PrintInt(tinudht.temperature,10,2);
+			//LCD_PrintInt(tinudht.humidity,8,2);
+			//LCD_PrintInt(tinudht.temperature,10,2);
 			} else {
-			LCD_PrintString("ERR  ",8,2);
+			//LCD_PrintString("ERR  ",8,2);
 		}
 		_delay_ms(2000);
 		
@@ -108,6 +113,6 @@ ISR(PCINT1_vect){
 void LCD_PrintInt(uint16_t n,uint8_t x,uint8_t y){
 	char buffer[10];
 	itoa(n,buffer,10);
-	LCD_PrintString(buffer,x,y);
+	//LCD_PrintString(buffer,x,y);
 }
 
