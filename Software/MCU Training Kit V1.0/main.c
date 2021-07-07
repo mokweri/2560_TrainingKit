@@ -16,8 +16,8 @@ unsigned char keys= 0xFF;
 #include <stdlib.h>
 
 //User-defined header files 
-//#include "myLCD.h"
-#include "lcd.h"
+#include "BSP/lcd/LiquidCrystal.h"
+
 #include "keypad.h"
 #include "LEDControl.h"
 #include "timer1.h"
@@ -54,8 +54,8 @@ int main(void)
 	
 	//LCDclr();
 	lcd_clear();
-	lcd_set_cursor(0,0);
-	lcd_puts("WOw");
+	lcd_setCursor(0,0);
+	//lcd_puts("WOw");
 	
 	char time_string[11];
 	
@@ -73,7 +73,7 @@ int main(void)
 		//--------------------
 		// pwm_out(0,pot/4);
 		//-----------------------
-		//LCD_PrintString("MCU TRAINING KIT",3,0);
+		LCD_PrintString("MCU TRAINING KIT",0,0);
 		GetTimeString(time_string);
 		LCD_PrintString(time_string,4,1);
 		
@@ -88,15 +88,15 @@ int main(void)
 		Segment_Print(6);
 		//HC595Write(numbers[2],numbers[3]);
 		
-		TinuDHT tinudht;
-		uint8_t tinudht_result = tinudht_read(&tinudht, TINUDHT_PIN);
-		if (tinudht_result == TINUDHT_OK) {
-			//LCD_PrintInt(tinudht.humidity,8,2);
-			//LCD_PrintInt(tinudht.temperature,10,2);
-			} else {
-			//LCD_PrintString("ERR  ",8,2);
-		}
-		_delay_ms(2000);
+// 		TinuDHT tinudht;
+// 		uint8_t tinudht_result = tinudht_read(&tinudht, TINUDHT_PIN);
+// 		if (tinudht_result == TINUDHT_OK) {
+// 			LCD_PrintInt(tinudht.humidity,8,2);
+// 			LCD_PrintInt(tinudht.temperature,10,2);
+// 			} else {
+// 			LCD_PrintString("ERR  ",8,2);
+// 		}
+// 		_delay_ms(2000);
 		
 	}
 }
@@ -113,6 +113,6 @@ ISR(PCINT1_vect){
 void LCD_PrintInt(uint16_t n,uint8_t x,uint8_t y){
 	char buffer[10];
 	itoa(n,buffer,10);
-	//LCD_PrintString(buffer,x,y);
+	LCD_PrintString(buffer,x,y);
 }
 

@@ -125,6 +125,12 @@
     <Compile Include="adc.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="BSP\lcd\LiquidCrystal.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSP\lcd\LiquidCrystal.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="dht.h">
       <SubType>compile</SubType>
     </Compile>
@@ -140,22 +146,10 @@
     <Compile Include="keypad.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="lcd.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="lcd.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="LEDControl.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="main.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="myLCD.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="myLCD.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="pwm.h">
@@ -170,6 +164,10 @@
     <Compile Include="tinudht.h">
       <SubType>compile</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BSP" />
+    <Folder Include="BSP\lcd" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>
