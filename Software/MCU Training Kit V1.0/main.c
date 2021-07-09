@@ -42,6 +42,10 @@ int main(void)
 	HC595Init();
 	pwm_Init();
 	
+// 	SetHour(7);
+// 	SetMinute(26);
+// 	SetAmPm(1);
+	
 	
 	/*---------Button Setup-Pin Change Interrupt------------------*/
 	cli();
@@ -75,7 +79,7 @@ int main(void)
 		//-----------------------
 		LCD_PrintString("MCU TRAINING KIT",0,0);
 		GetTimeString(time_string);
-		LCD_PrintString(time_string,4,1);
+		LCD_PrintString(time_string,2,1);
 		
 		//LCD_PrintString("       ",0,2);		
 		//LCD_PrintInt(pot,0,2);
@@ -106,7 +110,7 @@ ISR(PCINT1_vect){
 	if (PINJ & 1<<PINJ2) {toggleLED(1); }
 	if (PINJ & 1<<PINJ3) {toggleLED(2); }
 	if (PINJ & 1<<PINJ4) {toggleLED(3); }
-	if (PINJ & 1<<PINJ5) {toggleLED(4); }
+	//if (PINJ & 1<<PINJ5) {toggleLED(4); }
 	
 }
 

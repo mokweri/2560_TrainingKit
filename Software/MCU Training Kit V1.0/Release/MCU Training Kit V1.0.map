@@ -325,7 +325,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0xa14
+.text           0x00000000      0xa06
  *(.vectors)
  .vectors       0x00000000       0xe4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega2560/avr6/crtatmega2560.o
                 0x00000000                __vector_default
@@ -543,15 +543,15 @@ END GROUP
                 0x000008f4       0x82 main.o
                 0x000008f4                main
  .text.__vector_10
-                0x00000976       0x8a main.o
+                0x00000976       0x7c main.o
                 0x00000976                __vector_10
- .text.libgcc   0x00000a00       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_tablejump2.o)
-                0x00000a00                __tablejump2__
-                0x00000a10                . = ALIGN (0x2)
+ .text.libgcc   0x000009f2       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_tablejump2.o)
+                0x000009f2                __tablejump2__
+                0x00000a02                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000a10        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
-                0x00000a10                _exit
-                0x00000a10                exit
+ .fini9         0x00000a02        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
+                0x00000a02                _exit
+                0x00000a02                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -570,11 +570,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000a10        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
+ .fini0         0x00000a02        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000a14                _etext = .
+                0x00000a06                _etext = .
 
-.data           0x00800200       0x48 load address 0x00000a14
+.data           0x00800200       0x48 load address 0x00000a06
                 0x00800200                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -607,8 +607,8 @@ END GROUP
                 0x0080025b                _displayfunction
                 0x0080025c                _initialized
                 0x0080025d                PROVIDE (__bss_end, .)
-                0x00000a14                __data_load_start = LOADADDR (.data)
-                0x00000a5c                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00000a06                __data_load_start = LOADADDR (.data)
+                0x00000a4e                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x0080025d        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
