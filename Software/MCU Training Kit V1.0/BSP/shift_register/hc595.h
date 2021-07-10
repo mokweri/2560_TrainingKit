@@ -12,15 +12,13 @@
 /***************************************
 Configure Connections
 ****************************************/
-
 #define HC595_PORT   PORTD
 #define HC595_DDR    DDRD
 
 #define HC595_DS_POS	PD4      //Data pin (DS) pin location
 #define HC595_ST_CP_POS PD5      //Store Clock (ST_CP) pin location
 #define HC595_SH_CP_POS PD6      //Shift Clock (SH_CP) pin location
-
-
+#define HC595_MR_POS	PD7      //Master Reclear, active low
 
 
 //Low level macros to change data (DS)lines
@@ -32,8 +30,10 @@ void HC595Pulse();
 void HC595Latch();
 void HC595Write(uint8_t data);
 
+/*
+//common cathode
 uint8_t numbers[12]={
-	0b00111111,	 	 //0
+	0b00111111,	 	 //0 B00111111
 	0b00000110,	 	 //1
 	0b01011011,	 	 //2
 	0b01001111,	 	 //3
@@ -46,12 +46,28 @@ uint8_t numbers[12]={
 	0b10000000,	 	 //db
 	0b01000000		 //-
 };
+*/
+uint8_t numbers[12]={
+	0b11000000,	 	 //0 B00111111
+	0b11111001,	 	 //1
+	0b10100100,	 	 //2
+	0b10110000,	 	 //3
+	0b10011001,	 	 //4
+	0b10010010,	 	 //5
+	0b10000010,	 	 //6
+	0b11111000,	 	 //7
+	0b10000000,	 	 //8
+	0b10010000,	 	 //9
+	0b01111111,	 	 //db
+	0b10111111		 //-
+};
 
 //Initialize HC595 System
 void HC595Init()
 {
 	//Make the Data(DS), Shift clock (SH_CP), Store Clock (ST_CP) lines output
-	HC595_DDR|=((1<<HC595_SH_CP_POS)|(1<<HC595_ST_CP_POS)|(1<<HC595_DS_POS));
+	HC595_DDR|=((1<<HC595_SH_CP_POS)|(1<<HC595_ST_CP_POS)|(1<<HC595_DS_POS)|(1<<HC595_MR_POS));
+	HC595_PORT |=(1<<HC595_MR_POS);
 }
 //Sends a clock pulse on SH_CP line
 void HC595Pulse()

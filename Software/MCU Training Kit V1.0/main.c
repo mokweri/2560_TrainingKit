@@ -17,14 +17,15 @@ unsigned char keys= 0xFF;
 
 //User-defined header files 
 #include "BSP/lcd/LiquidCrystal.h"
+#include "BSP/rtc/DS1307.h"
+#include "BSP/shift_register/hc595.h"
+
+#include "drivers/timer1.h"
+#include "drivers/adc.h"
+#include "drivers/pwm.h"
 
 #include "keypad.h"
 #include "LEDControl.h"
-#include "timer1.h"
-#include "adc.h"
-#include "rtc.h"
-#include "hc595.h"
-#include "pwm.h"
 #include "tinudht.h"
 
 void LCD_PrintInt(uint16_t n,uint8_t x,uint8_t y);
@@ -58,17 +59,19 @@ int main(void)
 	
 	//LCDclr();
 	lcd_clear();
-	lcd_setCursor(0,0);
-	//lcd_puts("WOw");
 	
-	char time_string[11];
-	
+	char time_string[11];	
 	int8_t temperature = 0;
 	int8_t humidity = 0;
 	
+	//buzzer
+// 	DDRE |=(1<<PE3);
+// 	PORTE |=(1<<PE3);
+	
 	//DHT11_Init();
-	#define TINUDHT_PIN PB6
+	#define TINUDHT_PIN PE4
 	_delay_ms(2000);
+
 	
 	while (1)
 	{
@@ -83,22 +86,24 @@ int main(void)
 		
 		//LCD_PrintString("       ",0,2);		
 		//LCD_PrintInt(pot,0,2);
+		
+		Segment_Print(GetSecond()/10);
 
 
 			
 		/*---Keypad--------------*/
 		read_keypad();
 		
-		Segment_Print(6);
+		
 		//HC595Write(numbers[2],numbers[3]);
 		
 // 		TinuDHT tinudht;
 // 		uint8_t tinudht_result = tinudht_read(&tinudht, TINUDHT_PIN);
 // 		if (tinudht_result == TINUDHT_OK) {
-// 			LCD_PrintInt(tinudht.humidity,8,2);
-// 			LCD_PrintInt(tinudht.temperature,10,2);
+// 			LCD_PrintInt(tinudht.humidity,8,1);
+// 			LCD_PrintInt(tinudht.temperature,10,1);
 // 			} else {
-// 			LCD_PrintString("ERR  ",8,2);
+// 			LCD_PrintString("ERR  ",8,1);
 // 		}
 // 		_delay_ms(2000);
 		

@@ -14,10 +14,10 @@
 #include <util/delay.h>
 
 //setup parameters
-#define DHT11_DDR DDRB
-#define DHT11_PORT PORTB
-#define DHT11_PIN PINB
-#define DHT11_INPUTPIN PB6
+#define DHT11_DDR DDRE
+#define DHT11_PORT PORTE
+#define DHT11_PIN PINE
+#define DHT11_INPUTPIN PE4
 
 #define DHT11_DATA_TEMPERATURE 0
 #define DHT11_DATA_HUMIDITY 1

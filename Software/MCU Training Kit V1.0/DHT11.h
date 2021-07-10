@@ -9,9 +9,9 @@
 #ifndef DHT11_H_
 #define DHT11_H_
 
-#define DHT_PORT_OUT PORTB
-#define DHT_PORT_IN PINB
-#define DHT_PIN PB0
+#define DHT_PORT_OUT PORTE
+#define DHT_PORT_IN PINE
+#define DHT_PIN PE4
 
 
 #define SET_BIT(byte, bit) ((byte) |= (1UL << (bit)))
