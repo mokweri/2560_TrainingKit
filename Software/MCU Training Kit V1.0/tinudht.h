@@ -33,6 +33,9 @@
 #define TINUDHT_BITLEN				5	// @ 1 MHz: 3..7
 // NOTE: This should change with the F_CPU change.
 
+
+#define IS_SET(byte,bit) (((byte) & (1UL << (bit))) >> (bit))
+
 // ----------------------------------------------------------------------------
 
 typedef union {
@@ -68,11 +71,11 @@ uint8_t tinudht_read(TinuDHT *ptinudht, uint8_t dht_pin) {
 	// Acknowledge from DHT11
 	// NOTE: the timeout should be the equivalent of ~ 80 uS
 	timeout = TINUDHT_ACK_TIMEOUT;
-	while(bit_is_clear(PINE, dht_pin))	// Wait for LO-to-HI
+	while(!IS_SET(PINE, dht_pin))	// Wait for LO-to-HI
 	if (--timeout == 0)
 	return TINUDHT_ERROR_ACK_TIMEOUT;
 	timeout = TINUDHT_ACK_TIMEOUT;
-	while(bit_is_set(PINE, dht_pin))	// Wait for HI-to-LO
+	while(IS_SET(PINE, dht_pin))	// Wait for HI-to-LO
 	if (--timeout == 0)
 	return TINUDHT_ERROR_ACK_TIMEOUT;
 
@@ -85,13 +88,13 @@ uint8_t tinudht_read(TinuDHT *ptinudht, uint8_t dht_pin) {
 		// Wait for the bit start
 		// NOTE: the timeout should be the equivalent of ~ 50 uS
 		timeout = TINUDHT_BITSTART_TIMEOUT;
-		while(bit_is_clear(PINE, dht_pin))	// Wait for LO-to-HI
+		while(!IS_SET(PINE, dht_pin))	// Wait for LO-to-HI
 		if (--timeout == 0)
 		return TINUDHT_ERROR_BIT_TIMEOUT;
 		// Wait for the bit end
 		// NOTE: the timeout should be the equivalent of ~ 70 uS
 		timeout = TINUDHT_BITEND_TIMEOUT;
-		while(bit_is_set(PINE, dht_pin))	// Wait for HI-to-LO
+		while(IS_SET(PINE, dht_pin))	// Wait for HI-to-LO
 		if (--timeout == 0)
 		return TINUDHT_ERROR_BIT_TIMEOUT;
 		// Determine the bit value

@@ -1241,18 +1241,18 @@ Disassembly of section .text:
  96a:	80 93 6c 00 	sts	0x006C, r24	; 0x80006c <__TEXT_REGION_LENGTH__+0x70006c>
  96e:	78 94       	sei
  970:	61 dc       	rcall	.-1854   	; 0x234 <lcd_clear>
- 972:	6b 9a       	sbi	0x0d, 3	; 13
- 974:	73 9a       	sbi	0x0e, 3	; 14
- 976:	2f ef       	ldi	r18, 0xFF	; 255
- 978:	88 e0       	ldi	r24, 0x08	; 8
- 97a:	9d e3       	ldi	r25, 0x3D	; 61
+ 972:	6f 9a       	sbi	0x0d, 7	; 13
+ 974:	77 9a       	sbi	0x0e, 7	; 14
+ 976:	2f e7       	ldi	r18, 0x7F	; 127
+ 978:	8a e1       	ldi	r24, 0x1A	; 26
+ 97a:	96 e0       	ldi	r25, 0x06	; 6
  97c:	21 50       	subi	r18, 0x01	; 1
  97e:	80 40       	sbci	r24, 0x00	; 0
  980:	90 40       	sbci	r25, 0x00	; 0
  982:	e1 f7       	brne	.-8      	; 0x97c <main+0x52>
  984:	00 c0       	rjmp	.+0      	; 0x986 <main+0x5c>
  986:	00 00       	nop
- 988:	73 98       	cbi	0x0e, 3	; 14
+ 988:	77 98       	cbi	0x0e, 7	; 14
  98a:	1a e0       	ldi	r17, 0x0A	; 10
  98c:	40 e0       	ldi	r20, 0x00	; 0
  98e:	60 e0       	ldi	r22, 0x00	; 0

@@ -97,7 +97,7 @@ Discarded input sections
  .progmem.gcc_sw_table.LED
                 0x00000000        0xe main.o
  .text.tinudht_read
-                0x00000000       0xee main.o
+                0x00000000      0x19a main.o
  .text.LCD_PrintInt
                 0x00000000       0x4a main.o
  .data.keys     0x00000000        0x1 main.o

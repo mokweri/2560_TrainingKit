@@ -69,8 +69,13 @@ int main(void)
 // 	PORTE |=(1<<PE3);
 	
 	//DHT11_Init();
-	#define TINUDHT_PIN PE4
+// 	#define TINUDHT_PIN PE4
+// 	_delay_ms(2000);
+	
+	DDRE |=(1<<7); //relay
+	PORTE |=(1<<7);
 	_delay_ms(2000);
+	PORTE &=~(1<<7);
 
 	
 	while (1)
