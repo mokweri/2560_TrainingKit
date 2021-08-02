@@ -6,13 +6,15 @@
  */ 
 
 #include <avr/io.h>
-#include "drivers/tk2560.h"
+//#include "drivers/tk2560.h"
+
 
 
 int main(void)
 {
     /* Replace with your application code */
-	pinMode(Pin_PB0, OUTPUT);
+	//pinMode(Pin_PB0, OUTPUT);
+	
     while (1) 
     {
     }
