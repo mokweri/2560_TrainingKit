@@ -20,7 +20,7 @@ drivers/gpio.d drivers/gpio.o: ../drivers/gpio.c ../drivers/gpio.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\string.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h \
- ../drivers/pins.h ../drivers/pin_remap.h
+ ../drivers/binary.h
 
 ../drivers/gpio.h:
 
@@ -66,6 +66,4 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h:
 
-../drivers/pins.h:
-
-../drivers/pin_remap.h:
+../drivers/binary.h:
