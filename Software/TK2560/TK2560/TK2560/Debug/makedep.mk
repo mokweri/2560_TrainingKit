@@ -4,5 +4,7 @@
 
 drivers\gpio.c
 
+drivers\pins.c
+
 main.c
 

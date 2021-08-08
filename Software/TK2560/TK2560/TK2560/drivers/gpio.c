@@ -41,3 +41,56 @@ void pinMode(uint8_t pin, uint8_t mode)
 	}
 		
 }
+
+void digitalWrite(uint8_t pin, uint8_t val)
+{
+	uint8_t bit = pinToBitMask(pin);
+	uint8_t port = pinToPort(pin);
+	volatile uint8_t *out;
+	
+	if (port == NOT_A_PIN) return;
+	
+	out = portOutputRegister(port);
+	
+	uint8_t oldSREG = SREG;
+	cli();
+	
+	if (val == LOW) {
+		*out &= ~bit;
+	} else {
+		*out |= bit;
+	}
+	
+	SREG = oldSREG;
+	
+}
+
+void togglePin(uint8_t pin)
+{
+	uint8_t bit = pinToBitMask(pin);
+	uint8_t port = pinToPort(pin);
+	volatile uint8_t *out;
+	
+	if (port == NOT_A_PIN) return;
+	
+	out = portOutputRegister(port);
+	
+	uint8_t oldSREG = SREG;
+	cli();
+	
+	//toggle
+	*out ^= bit;
+	
+	SREG = oldSREG;
+}
+
+int  digitalRead(uint8_t pin)
+{
+	uint8_t bit = pinToBitMask(pin);
+	uint8_t port = pinToPort(pin);
+	
+	if (port == NOT_A_PIN) return LOW;
+	
+	if (*portInputRegister(port) & bit) return HIGH;
+	return LOW;	
+}
