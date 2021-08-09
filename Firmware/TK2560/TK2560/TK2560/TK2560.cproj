@@ -134,6 +134,12 @@
     <Compile Include="drivers\pins_2560.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="drivers\pitches.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="drivers\timers.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="drivers\tk2560.h">
       <SubType>compile</SubType>
     </Compile>

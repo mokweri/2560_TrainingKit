@@ -6,5 +6,7 @@ drivers\gpio.c
 
 drivers\pins_2560.c
 
+drivers\timers.c
+
 main.c
 

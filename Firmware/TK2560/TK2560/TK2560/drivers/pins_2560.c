@@ -267,3 +267,109 @@ const PROGMEM uint8_t  pin_to_bit_mask_PGM[] = {
 	NOT_USED,	//		** 99 ** GND
 	NOT_USED,	//		** 100 ** AVCC
 };
+
+const PROGMEM uint8_t  pin_to_timer_PGM[] = {
+	// TIMERS
+	//-----------------------------------------------
+		NOT_ON_TIMER,	// 0
+		TIMER0B	,		// PG 5 ** 1 ** OC0B - PWM
+		NOT_ON_TIMER,	// PE 0 ** 2 ** USART0_RX
+		NOT_ON_TIMER,	// PE 1 ** 3 ** USART0_TX
+		NOT_ON_TIMER,	// PE 2 ** 4 **
+		TIMER3A,		// PE 3 ** 5 ** OC3A-PWM
+		TIMER3B,		// PE 4 ** 6 ** OC3B-PWM, INT4
+		TIMER3C,		// PE 5 ** 7 ** OC3C-PWM, INT5
+		NOT_ON_TIMER,	// PE 6 ** 8 ** INT6
+		NOT_ON_TIMER,	// PE 7 ** 9 ** INT7
+		NOT_ON_TIMER,	//		** 10 ** VCC
+		NOT_ON_TIMER,	//		** 11 ** GND
+		NOT_ON_TIMER,	// PH 0 ** 12 ** USART2_RX
+		NOT_ON_TIMER,	// PH 1 ** 13 ** USART2_TX
+		NOT_ON_TIMER,	// PH 2 ** 14 **
+		TIMER4A,		// PH 3 ** 15 ** OC4A-PWM
+		TIMER4B,		// PH 4 ** 16 ** OC4B-PWM
+		TIMER4C,		// PH 5 ** 17 ** OC4C-PWM
+		TIMER2B,		// PH 6 ** 18 ** OC2B-PWM
+		NOT_ON_TIMER,	// PB 0 ** 19 ** SPI_SS
+		NOT_ON_TIMER,	// PB 1 ** 20 ** SPI_SCK
+		NOT_ON_TIMER,	// PB 2 ** 21 ** SPI_MOSI
+		NOT_ON_TIMER,	// PB 3 ** 22 ** SPI_MISO
+		TIMER2A,		// PB 4 ** 23 ** OC2A-PWM, PCINT4
+		TIMER1A,		// PB 5 ** 24 ** OC1A-PWM, PCINT5
+		TIMER1B,		// PB 6 ** 25 ** OC1B-PWM, PCINT6
+		TIMER0A,		// PB 7 ** 26 ** OC0A/OC1C-PWM, PCINT7
+		NOT_ON_TIMER,	// PH 7 ** 27 **
+		NOT_ON_TIMER,	// PG 3 ** 28 **
+		NOT_ON_TIMER,	// PG 4 ** 29 **
+		NOT_ON_TIMER,	//		** 30 ** RESET
+		NOT_ON_TIMER,	//		** 31 ** VCC
+		NOT_ON_TIMER,	//		** 32 ** GND
+		NOT_ON_TIMER,	//		** 33 ** XTAL2
+		NOT_ON_TIMER,	//		** 34 ** XTAL1
+		NOT_ON_TIMER,	// PL 0 ** 35 **
+		NOT_ON_TIMER,	// PL 1 ** 36 **
+		NOT_ON_TIMER,	// PL 2 ** 37 **
+		TIMER5A,		// PL 3 ** 38 ** OC5A-PWM
+		TIMER5B,		// PL 4 ** 39 ** OC5B-PWM
+		TIMER5C,		// PL 5 ** 40 ** OC5C-PWM
+		NOT_ON_TIMER,	// PL 6 ** 41 **
+		NOT_ON_TIMER,	// PL 7 ** 42 **
+		NOT_ON_TIMER,	// PD 0 ** 43 ** I2C_SCL, INT0
+		NOT_ON_TIMER,	// PD 1 ** 44 ** I2C_SDA, INT1
+		NOT_ON_TIMER,	// PD 2 ** 45 ** USART1_RX, INT2
+		NOT_ON_TIMER,	// PD 3 ** 46 ** USART1_TX, INT3
+		NOT_ON_TIMER,	// PD 4 ** 47 **
+		NOT_ON_TIMER,	// PD 5 ** 48 **
+		NOT_ON_TIMER,	// PD 6 ** 49 **
+		NOT_ON_TIMER,	// PD 7 ** 50 **
+		NOT_ON_TIMER,	// PG 0 ** 51 **
+		NOT_ON_TIMER,	// PG 1 ** 52 **
+		NOT_ON_TIMER,	// PC 0 ** 53 **
+		NOT_ON_TIMER,	// PC 1 ** 54 **
+		NOT_ON_TIMER,	// PC 2 ** 55 **
+		NOT_ON_TIMER,	// PC 3 ** 56 **
+		NOT_ON_TIMER,	// PC 4 ** 57 **
+		NOT_ON_TIMER,	// PC 5 ** 58 **
+		NOT_ON_TIMER,	// PC 6 ** 59 **
+		NOT_ON_TIMER,	// PC 7 ** 60 **
+		NOT_ON_TIMER,	//		** 61 ** VCC
+		NOT_ON_TIMER,	//		** 62 ** GND
+		NOT_ON_TIMER,	// PJ 0 ** 63 ** USART3_RX
+		NOT_ON_TIMER,	// PJ 1 ** 64 ** USART3_TX
+		NOT_ON_TIMER,	// PJ 2 ** 65 ** PCINT11
+		NOT_ON_TIMER,	// PJ 3 ** 66 ** PCINT12
+		NOT_ON_TIMER,	// PJ 4 ** 67 ** PCINT13
+		NOT_ON_TIMER,	// PJ 5 ** 68 ** PCINT14
+		NOT_ON_TIMER,	// PJ 6 ** 69 ** PCINT15
+		NOT_ON_TIMER,	// PG 2 ** 70 **
+		NOT_ON_TIMER,	// PA 7 ** 71 **
+		NOT_ON_TIMER,	// PA 6 ** 72 **
+		NOT_ON_TIMER,	// PA 5 ** 73 **
+		NOT_ON_TIMER,	// PA 4 ** 74 **
+		NOT_ON_TIMER,	// PA 3 ** 75 **
+		NOT_ON_TIMER,	// PA 2 ** 76 **
+		NOT_ON_TIMER,	// PA 1 ** 77 **
+		NOT_ON_TIMER,	// PA 0 ** 78 **
+		NOT_ON_TIMER,	// PJ 7 ** 79 **
+		NOT_ON_TIMER,	//		** 80 ** VCC
+		NOT_ON_TIMER,	//		** 81 ** GND
+		NOT_ON_TIMER,	// PK 7 ** 82 ** ADC15, PCINT23
+		NOT_ON_TIMER,	// PK 6 ** 83 ** ADC14, PCINT22
+		NOT_ON_TIMER,	// PK 5 ** 84 ** ADC13, PCINT21
+		NOT_ON_TIMER,	// PK 4 ** 85 ** ADC12, PCINT20
+		NOT_ON_TIMER,	// PK 3 ** 86 ** ADC11, PCINT19
+		NOT_ON_TIMER,	// PK 2 ** 87 ** ADC10, PCINT18
+		NOT_ON_TIMER,	// PK 1 ** 88 ** ADC9, PCINT17
+		NOT_ON_TIMER,	// PK 0 ** 89 ** ADC8, PCINT16
+		NOT_ON_TIMER,	// PF 7 ** 90 ** ADC7
+		NOT_ON_TIMER,	// PF 6 ** 91 ** ADC6
+		NOT_ON_TIMER,	// PF 5 ** 92 ** ADC5
+		NOT_ON_TIMER,	// PF 4 ** 93 ** ADC4
+		NOT_ON_TIMER,	// PF 3 ** 94 ** ADC3
+		NOT_ON_TIMER,	// PF 2 ** 95 ** ADC2
+		NOT_ON_TIMER,	// PF 1 ** 96 ** ADC1
+		NOT_ON_TIMER,	// PF 0 ** 97 ** ADC0
+		NOT_ON_TIMER,	//		** 98 ** AREF
+		NOT_ON_TIMER,	//		** 99 ** GND
+		NOT_ON_TIMER,	//		** 100 ** AVCC
+};

@@ -52,7 +52,9 @@
 #define PK 11
 #define PL 12
 
-
+/************************************************************************/
+/* ATMEGA 2560 PIN MAP                                                 */
+/************************************************************************/
 #define Pin_PG5		1	// PG 5 ** 1 ** OC0B - PWM
 #define Pin_PE0		2	// PE 0 ** 2 ** USART0_RX
 #define Pin_PE1		3	// PE 1 ** 3 ** USART0_TX
@@ -61,7 +63,7 @@
 #define Pin_PE4		6	// PE 4 ** 6 ** OC3B-PWM, INT4
 #define Pin_PE5		7	// PE 5 ** 7 ** OC3C-PWM, INT5
 #define Pin_PE6		8	// PE 6 ** 8 ** INT6
-#define Pin_PE7		9	// PE 7 ** 9 ** INT7
+#define Pin_PE7		9	// PE 7 ** 9 ** INT7 
 	//		** 10 ** VCC
 	//		** 11 ** GND
 #define Pin_PH0		12	// PH 0 ** 12 ** USART2_RX
@@ -165,6 +167,32 @@ static const uint8_t MOSI = PIN_SPI_MOSI;
 static const uint8_t MISO = PIN_SPI_MISO;
 static const uint8_t SCK  = PIN_SPI_SCK;
 
+/************************************************************************/
+/*   TIMERS                                                             */
+/************************************************************************/
+#define NOT_ON_TIMER 0
+#define TIMER0A 1
+#define TIMER0B 2
+#define TIMER1A 3
+#define TIMER1B 4
+#define TIMER1C 5
+#define TIMER2  6
+#define TIMER2A 7
+#define TIMER2B 8
+
+#define TIMER3A 9
+#define TIMER3B 10
+#define TIMER3C 11
+#define TIMER4A 12
+#define TIMER4B 13
+#define TIMER4C 14
+#define TIMER4D 15
+#define TIMER5A 16
+#define TIMER5B 17
+#define TIMER5C 18
+
+
+
 // /* Status Register */
 #ifndef SREG
 #  if __AVR_ARCH__ >= 100
@@ -227,6 +255,12 @@ extern const PROGMEM uint8_t  pin_to_bit_mask_PGM[];
 #define portInputRegister(P) ( (volatile uint8_t *)( pgm_read_word( port_to_input_PGM + (P))) )
 #define portDDRRegister(P) ( (volatile uint8_t *)( pgm_read_word( port_to_ddr_PGM + (P))) )
 
+
+/************************************************************************/
+/*   APIs                                                               */
+/************************************************************************/
+void tone(uint8_t _pin, unsigned int frequency, unsigned long duration);
+void noTone(uint8_t _pin);
 
 
 #include "gpio.h"
