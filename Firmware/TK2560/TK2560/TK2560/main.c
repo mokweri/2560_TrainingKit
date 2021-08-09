@@ -15,15 +15,20 @@ int main(void)
 {
     /* Replace with your application code */
 	pinMode(Pin_PK0, OUTPUT);
+	pinMode(Pin_PK3, OUTPUT);
 	pinMode(Pin_PJ2, INPUT);
 	
     while (1) 
     {
+		/*
 		if (digitalRead(Pin_PJ2))
 		{
 			_delay_ms(70);
 			togglePin(Pin_PK0);
 		}
+		*/
+		togglePin(Pin_PK3);
+		_delay_ms(1000);
 		
 		
     }

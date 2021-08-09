@@ -4,7 +4,7 @@
 
 drivers\gpio.c
 
-drivers\pins.c
+drivers\pins_2560.c
 
 main.c
 
