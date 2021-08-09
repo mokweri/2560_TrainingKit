@@ -78,7 +78,7 @@ static int8_t toneBegin(uint8_t _pin)
 		// Set timer specific stuff
 		// All timers in CTC mode
 		// 8 bit timers will require changing prescalar values,
-		// whereas 16 bit timers are set to either ck/1 or ck/64 prescalar
+		// whereas 16 bit timers are set to either clk/1 or clk/64 prescalar
 		switch(_timer)
 		{
 			//TIMER 0 - 8 bit timer
@@ -167,31 +167,39 @@ void tone(uint8_t _pin, unsigned int frequency, unsigned long duration)
 			{
 				ocr = F_CPU / frequency / 2 / 8 - 1;
 				prescalarbits = 0b010; // clk/8 prescaler : For both timers
-			}
-			
-			if(ocr > 255)
-			{
-				ocr = F_CPU / frequency / 2 / 64 - 1;
-				prescalarbits = _timer == 0 ? 0b011 : 0b100; // clk/32 for timer 1: clk/64 for timer 2
-
+				
 				if (_timer == 2 && ocr > 255)
 				{
-					ocr = F_CPU / frequency / 2 / 128 - 1;
-					prescalarbits = 0b101; // clk/128
+					ocr = F_CPU / frequency / 2 / 32 - 1;
+					prescalarbits = 0b101; // clk/_
 				}
-
-				if (ocr > 255)
+				
+			
+				if(ocr > 255)
 				{
-					ocr = F_CPU / frequency / 2 / 256 - 1;
-					prescalarbits = _timer == 0 ? 0b100 : 0b110;  // clk/64 for timer 1: clk/256 for timer 2
+					ocr = F_CPU / frequency / 2 / 64 - 1;
+					prescalarbits = _timer == 0 ? 0b011 : 0b100; // clk/32 for timer 1: clk/64 for timer 2
+					
+					if (_timer == 2 && ocr > 255)
+					{
+						ocr = F_CPU / frequency / 2 / 128 - 1;
+						prescalarbits = 0b101;
+					}
+
 					if (ocr > 255)
 					{
-						// can't do any better than /1024
-						ocr = F_CPU / frequency / 2 / 1024 - 1;
-						prescalarbits = _timer == 0 ? 0b101 : 0b111; // clk/128 for timer 1: clk/1024 for timer 2
-					}
-				}				
+						ocr = F_CPU / frequency / 2 / 256 - 1;
+						prescalarbits = _timer == 0 ? 0b100 : 0b110;  // clk/64 for timer 1: clk/256 for timer 2
+						if (ocr > 255)
+						{
+							// can't do any better than /1024
+							ocr = F_CPU / frequency / 2 / 1024 - 1;
+							prescalarbits = _timer == 0 ? 0b101 : 0b111; // clk/128 for timer 1: clk/1024 for timer 2
+						}
+					}				
+				}
 			}
+				
 			
 			//2(b) Set the prescaler for 8 bit timers
 			      //TIMER 0
@@ -210,7 +218,7 @@ void tone(uint8_t _pin, unsigned int frequency, unsigned long duration)
 			ocr = F_CPU / frequency / 2 - 1;
 			
 			prescalarbits = 0b001; //clk1
-			if(ocr > 0xffff)//>65535
+			if(ocr > 0xffff) //>65535
 			{
 				ocr = F_CPU / frequency / 2 / 64 - 1;
 				prescalarbits = 0b011; //clk/64
@@ -283,9 +291,7 @@ void tone(uint8_t _pin, unsigned int frequency, unsigned long duration)
 				bitWrite(TIMSK5, OCIE5A, 1);
 			break;
 		}		
-
 	}
-	
 }
 
 
