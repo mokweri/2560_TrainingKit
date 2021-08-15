@@ -4,8 +4,9 @@
  * Created: 09/08/2021 11:26:26
  *  Author: OBED
  */ 
-#define F_CPU 1000000UL
+#define F_CPU 16000000UL
 #include <avr/interrupt.h>
+#include <util/delay.h>
 #include <avr/pgmspace.h>
 
 #include "tk2560.h"
@@ -149,6 +150,7 @@ void tone(uint8_t _pin, unsigned int frequency, unsigned long duration)
 	long toggle_count = 0;
 	uint32_t ocr = 0;
 	int8_t _timer;
+	sei();
 	
 	_timer = toneBegin(_pin);
 	
@@ -160,7 +162,7 @@ void tone(uint8_t _pin, unsigned int frequency, unsigned long duration)
 		//2. if we are using an 8 bit timer, scan through prescalers to find the best fit
 		if (_timer == 0 || _timer == 2)
 		{
-			ocr = F_CPU / frequency / 2 - 1;
+			ocr = (F_CPU / (frequency * 2)) - 1;
 			prescalarbits = 0b001; // clk/1 prescaler (No prescaling) : For both timers
 			
 			if (ocr > 255) // above prescaler failed
@@ -275,7 +277,8 @@ void tone(uint8_t _pin, unsigned int frequency, unsigned long duration)
 			case 3:
 				OCR3A = ocr;
 				timer3_toggle_count = toggle_count;
-				bitWrite(TIMSK3, OCIE3A, 1);
+				//bitWrite(TIMSK3, OCIE3A, 1);
+				TIMSK3 |= 1<<OCIE3A;
 			break;
 			
 			case 4:
@@ -414,13 +417,14 @@ ISR(TIMER3_COMPA_vect)
 	{
 		// toggle the pin
 		*timer3_pin_port ^= timer3_pin_mask;
-
+		
 		if (timer3_toggle_count > 0)
 			timer3_toggle_count--;
 	}
 	else
 	{
 		disableTimer(3);
+		
 		*timer3_pin_port &= ~(timer3_pin_mask);  // keep pin low after stop
 	}
 }

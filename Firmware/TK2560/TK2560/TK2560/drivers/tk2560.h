@@ -20,7 +20,7 @@
 
 #include "binary.h"
 
-#define F_CPU 1000000UL
+#define F_CPU 16000000UL
 #define HIGH	0x1
 #define LOW		0x0
 
