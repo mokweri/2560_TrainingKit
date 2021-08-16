@@ -49,6 +49,10 @@
 #define EXTERNAL_INT_6 6
 #define EXTERNAL_INT_7 7
 
+#define CHANGE	1
+#define FALLING 2
+#define RISING	3
+
 //PORTS
 #define PA 1
 #define PB 2
@@ -291,6 +295,10 @@ unsigned long millis(void);
 unsigned long micros(void);
 void delay_ms(unsigned long ms);
 void delay_us(unsigned int us);
+
+//External Interrupts
+void attachInterrupt(uint8_t interruptNum, void (*userFunc)(void), int mode);
+void detachInterrupt(uint8_t interruptNum);
 
 // Board support packages(BSPs)
 #include "bsp/lcd/lcd.h"
