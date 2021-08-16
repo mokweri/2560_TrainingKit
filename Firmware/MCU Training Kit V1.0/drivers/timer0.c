@@ -31,7 +31,6 @@ void timer0_mode_set(timer_mode_t timer_mode)
 		
 		break;
 		
-		case 
 	}
 	
 }

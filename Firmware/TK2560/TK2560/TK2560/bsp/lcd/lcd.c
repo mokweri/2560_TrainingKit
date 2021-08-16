@@ -1,14 +1,14 @@
 /*
- * LiquidCrystal.c
+ * lcd.c
  *
- * Created: 7/7/2021 20:52:13
- *  Author: Obed
+ * Created: 16/08/2021 14:08:27
+ *  Author: OBED
  */ 
 #define F_CPU 16000000UL
 
 #include <stdio.h>
 #include <util/delay.h>
-#include "LiquidCrystal.h"
+#include "lcd.h"
 
 
 void send(uint8_t, uint8_t);
@@ -26,6 +26,7 @@ uint8_t _initialized;
 
 uint8_t _numlines;
 uint8_t _row_offsets[4];
+
 
 void lcd_init(void)
 {
@@ -63,7 +64,7 @@ void lcd_init(void)
 	// SEE PAGE 45/46 FOR INITIALIZATION SPECIFICATION!
 	// according to datasheet, we need at least 40 ms after power rises above 2.7 V
 	// before sending commands. we'll wait 50
-	_delay_us(50000); 
+	_delay_us(50000);
 	// Now we pull both RS and R/W low to begin commands
 	LCD_PORT &=~(1<<LCD_RS);
 	LCD_PORT &=~(1<<LCD_EN);
@@ -80,18 +81,18 @@ void lcd_init(void)
 		// second try
 		write4bits(0x03);
 		_delay_us(4500); //wait min 4.1ms
-		  
+		
 		// third go!
 		write4bits(0x03);
 		_delay_us(150);
 
 		// finally, set to 4-bit interface
 		write4bits(0x02);
-	}else{
+		}else{
 		// this is according to the Hitachi HD44780 datasheet page 45 figure 23
 
 		// Send function set command sequence
-		command(LCD_FUNCTIONSET | _displayfunction); 
+		command(LCD_FUNCTIONSET | _displayfunction);
 		_delay_ms(4.5); // wait more than 4.1 ms
 
 		// second try
@@ -106,7 +107,7 @@ void lcd_init(void)
 	command(LCD_FUNCTIONSET | _displayfunction);
 
 	// turn the display on with no cursor or blinking default
-	_displaycontrol = LCD_DISPLAYON | LCD_CURSOROFF | LCD_BLINKOFF;	
+	_displaycontrol = LCD_DISPLAYON | LCD_CURSOROFF | LCD_BLINKOFF;
 	lcd_display_on();
 	
 	// clear it off
@@ -135,13 +136,13 @@ void lcd_clear()
 void lcd_home()
 {
 	command(LCD_RETURNHOME);  // set cursor position to zero
-	_delay_us(2000);  // this command takes a long time!	
+	_delay_us(2000);  // this command takes a long time!
 }
 
 void lcd_setCursor(uint8_t col, uint8_t row)
 {
 	lcd_setRowOffsets(0x00, 0x40, 0x14, 0x54);
-		
+	
 	const size_t max_lines = sizeof(_row_offsets) / sizeof(*_row_offsets);
 	if ( row >= max_lines ) {
 		row = max_lines - 1;    // we count rows starting w/ 0
@@ -149,7 +150,7 @@ void lcd_setCursor(uint8_t col, uint8_t row)
 	if ( row >= _numlines ) {
 		row = _numlines - 1;    // we count rows starting w/ 0
 	}
-	  
+	
 	command(LCD_SETDDRAMADDR | (col + _row_offsets[row]));
 	
 }
@@ -158,7 +159,7 @@ void lcd_setCursor(uint8_t col, uint8_t row)
 void lcd_display_on()
 {
 	_displaycontrol |= LCD_DISPLAYON;
-	command(LCD_DISPLAYCONTROL | _displaycontrol);	
+	command(LCD_DISPLAYCONTROL | _displaycontrol);
 }
 void lcd_display_off()
 {
@@ -175,19 +176,19 @@ void lcd_noCursor()
 void lcd_cursor()
 {
 	_displaycontrol |= LCD_CURSORON;
-	command(LCD_DISPLAYCONTROL | _displaycontrol);	
+	command(LCD_DISPLAYCONTROL | _displaycontrol);
 }
 
 // Turn on and off the blinking cursor
 void lcd_noBlink()
 {
 	_displaycontrol &= ~LCD_BLINKON;
-	command(LCD_DISPLAYCONTROL | _displaycontrol);	
+	command(LCD_DISPLAYCONTROL | _displaycontrol);
 }
 void lcd_blink()
 {
 	_displaycontrol |= LCD_BLINKON;
-	command(LCD_DISPLAYCONTROL | _displaycontrol);	
+	command(LCD_DISPLAYCONTROL | _displaycontrol);
 }
 
 // These commands scroll the display without changing the RAM
@@ -197,7 +198,7 @@ void lcd_scrollDisplayLeft()
 }
 void lcd_scrollDisplayRight()
 {
-	command(LCD_CURSORSHIFT | LCD_DISPLAYMOVE | LCD_MOVERIGHT);	
+	command(LCD_CURSORSHIFT | LCD_DISPLAYMOVE | LCD_MOVERIGHT);
 }
 
 // This is for text that flows Left to Right
@@ -211,31 +212,31 @@ void lcd_leftToRight()
 void lcd_rightToLeft()
 {
 	_displaymode &= ~LCD_ENTRYLEFT;
-	command(LCD_ENTRYMODESET | _displaymode);	
+	command(LCD_ENTRYMODESET | _displaymode);
 }
 
 // This will 'right justify' text from the cursor
 void lcd_autoscroll()
 {
 	_displaymode |= LCD_ENTRYSHIFTINCREMENT;
-	command(LCD_ENTRYMODESET | _displaymode);	
+	command(LCD_ENTRYMODESET | _displaymode);
 }
 // This will 'left justify' text from the cursor
 void lcd_noAutoscroll()
 {
 	_displaymode &= ~LCD_ENTRYSHIFTINCREMENT;
-	command(LCD_ENTRYMODESET | _displaymode);	
+	command(LCD_ENTRYMODESET | _displaymode);
 }
 
 // Allows us to fill the first 8 CGRAM locations
 // with custom characters
 void lcd_createChar(uint8_t location, uint8_t charmap[])
 {
-	  location &= 0x7; // we only have 8 locations 0-7
-	  command(LCD_SETCGRAMADDR | (location << 3));
-	  for (int i=0; i<8; i++) {
-		  write(charmap[i]);
-	  }	
+	location &= 0x7; // we only have 8 locations 0-7
+	command(LCD_SETCGRAMADDR | (location << 3));
+	for (int i=0; i<8; i++) {
+		write(charmap[i]);
+	}
 }
 
 
@@ -248,25 +249,25 @@ void command(uint8_t cmd)
 uint8_t write(uint8_t data)
 {
 	send(data, 1);
-	return 1; // assume success	
+	return 1; // assume success
 }
 
 /************ low level data pushing commands **********/
 void send(uint8_t value, uint8_t mode)
 {
 	if (mode){LCD_PORT |=(1<<LCD_RS);}else{
-		LCD_PORT &=~(1<<LCD_RS);}
-	
-	// if there is a RW pin indicated, set it low to Write
-	LCD_PORT &=~(1<<LCD_RW);
-	
-	if (_displayfunction & LCD_8BITMODE) 
-	{
-		write8bits(value);
+LCD_PORT &=~(1<<LCD_RS);}
+
+// if there is a RW pin indicated, set it low to Write
+LCD_PORT &=~(1<<LCD_RW);
+
+if (_displayfunction & LCD_8BITMODE)
+{
+	write8bits(value);
 	} else {
-		write4bits(value>>4);
-		write4bits(value);
-	}
+	write4bits(value>>4);
+	write4bits(value);
+}
 }
 
 void pulseEnable(void)
@@ -285,9 +286,9 @@ void write4bits(uint8_t value)
 	for(int i=0; i<4; i++)
 	{
 		if((value >> i) & 0x01)
-		{ 
-			LCD_PORT |=(1<<_data_pins[i]); 
-		}else{
+		{
+			LCD_PORT |=(1<<_data_pins[i]);
+			}else{
 			LCD_PORT &=~(1<<_data_pins[i]);
 		}
 	}

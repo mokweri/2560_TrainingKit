@@ -4,7 +4,7 @@
  * Author : OBED, EmbedSystems
  */ 
 
-#define F_CPU 1000000UL
+#define F_CPU 16000000UL
 
 //Global variables
 volatile unsigned long system_count = 0;
@@ -41,7 +41,7 @@ int main(void)
 	//ADC_init();		//Analog to Digital Conversion
 	ClockInit();
 	HC595Init();
-	pwm_Init();
+	//pwm_Init();
 	
 // 	SetHour(7);
 // 	SetMinute(26);

@@ -63,6 +63,12 @@ Discarded input sections
                 0x00000000       0x10 BSP/lcd/LiquidCrystal.o
  .text.lcd_createChar
                 0x00000000       0x36 BSP/lcd/LiquidCrystal.o
+ .text          0x00000000        0x0 drivers/timer0.o
+ .data          0x00000000        0x0 drivers/timer0.o
+ .bss           0x00000000        0x0 drivers/timer0.o
+ .text.timer0_mode_set
+                0x00000000       0x24 drivers/timer0.o
+ .comment       0x00000000       0x31 drivers/timer0.o
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
@@ -92,12 +98,14 @@ Discarded input sections
                 0x00000000       0x16 main.o
  .text.ADC_read
                 0x00000000       0x2a main.o
+ .text.pwm_Init
+                0x00000000       0x26 main.o
  .text.pwm_out  0x00000000       0x14 main.o
  .text.LED      0x00000000       0x96 main.o
  .progmem.gcc_sw_table.LED
                 0x00000000        0xe main.o
  .text.tinudht_read
-                0x00000000      0x19a main.o
+                0x00000000      0x1a0 main.o
  .text.LCD_PrintInt
                 0x00000000       0x4a main.o
  .data.keys     0x00000000        0x1 main.o
@@ -211,6 +219,7 @@ Linker script and memory map
 Address of section .data set to 0x800200
 LOAD C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega2560/avr6/crtatmega2560.o
 LOAD BSP/lcd/LiquidCrystal.o
+LOAD drivers/timer0.o
 LOAD main.o
 START GROUP
 LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libm.a
@@ -321,7 +330,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0xa5a
+.text           0x00000000      0xa6e
  *(.vectors)
  .vectors       0x00000000       0xe4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega2560/avr6/crtatmega2560.o
                 0x00000000                __vector_default
@@ -442,118 +451,115 @@ END GROUP
                 0x00000150                . = ALIGN (0x2)
  *(.text.*)
  .text.pulseEnable
-                0x00000150       0x14 BSP/lcd/LiquidCrystal.o
+                0x00000150       0x24 BSP/lcd/LiquidCrystal.o
                 0x00000150                pulseEnable
  .text.write4bits
-                0x00000164       0x5a BSP/lcd/LiquidCrystal.o
-                0x00000164                write4bits
+                0x00000174       0x5a BSP/lcd/LiquidCrystal.o
+                0x00000174                write4bits
  .text.write8bits
-                0x000001be       0x4a BSP/lcd/LiquidCrystal.o
-                0x000001be                write8bits
- .text.send     0x00000208       0x28 BSP/lcd/LiquidCrystal.o
-                0x00000208                send
- .text.command  0x00000230        0x4 BSP/lcd/LiquidCrystal.o
-                0x00000230                command
+                0x000001ce       0x4a BSP/lcd/LiquidCrystal.o
+                0x000001ce                write8bits
+ .text.send     0x00000218       0x28 BSP/lcd/LiquidCrystal.o
+                0x00000218                send
+ .text.command  0x00000240        0x4 BSP/lcd/LiquidCrystal.o
+                0x00000240                command
  .text.lcd_clear
-                0x00000234       0x12 BSP/lcd/LiquidCrystal.o
-                0x00000234                lcd_clear
+                0x00000244       0x12 BSP/lcd/LiquidCrystal.o
+                0x00000244                lcd_clear
  .text.lcd_setCursor
-                0x00000246       0x38 BSP/lcd/LiquidCrystal.o
-                0x00000246                lcd_setCursor
+                0x00000256       0x38 BSP/lcd/LiquidCrystal.o
+                0x00000256                lcd_setCursor
  .text.lcd_display_on
-                0x0000027e       0x10 BSP/lcd/LiquidCrystal.o
-                0x0000027e                lcd_display_on
+                0x0000028e       0x10 BSP/lcd/LiquidCrystal.o
+                0x0000028e                lcd_display_on
  .text.lcd_init
-                0x0000028e      0x102 BSP/lcd/LiquidCrystal.o
-                0x0000028e                lcd_init
- .text.write    0x00000390        0x8 BSP/lcd/LiquidCrystal.o
-                0x00000390                write
+                0x0000029e      0x114 BSP/lcd/LiquidCrystal.o
+                0x0000029e                lcd_init
+ .text.write    0x000003b2        0x8 BSP/lcd/LiquidCrystal.o
+                0x000003b2                write
  .text.lcd_puts
-                0x00000398       0x16 BSP/lcd/LiquidCrystal.o
-                0x00000398                lcd_puts
+                0x000003ba       0x16 BSP/lcd/LiquidCrystal.o
+                0x000003ba                lcd_puts
  .text.LCD_PrintString
-                0x000003ae       0x14 BSP/lcd/LiquidCrystal.o
-                0x000003ae                LCD_PrintString
- .text.I2CInit  0x000003c2       0x1c main.o
-                0x000003c2                I2CInit
+                0x000003d0       0x14 BSP/lcd/LiquidCrystal.o
+                0x000003d0                LCD_PrintString
+ .text.I2CInit  0x000003e4       0x1c main.o
+                0x000003e4                I2CInit
  .text.I2CStart
-                0x000003de       0x10 main.o
-                0x000003de                I2CStart
- .text.I2CStop  0x000003ee       0x10 main.o
-                0x000003ee                I2CStop
+                0x00000400       0x10 main.o
+                0x00000400                I2CStart
+ .text.I2CStop  0x00000410       0x10 main.o
+                0x00000410                I2CStop
  .text.I2CWriteByte
-                0x000003fe       0x3a main.o
-                0x000003fe                I2CWriteByte
+                0x00000420       0x3a main.o
+                0x00000420                I2CWriteByte
  .text.I2CReadByte
-                0x00000438       0x48 main.o
-                0x00000438                I2CReadByte
+                0x0000045a       0x48 main.o
+                0x0000045a                I2CReadByte
  .text.DS1307Read
-                0x00000480       0x40 main.o
-                0x00000480                DS1307Read
+                0x000004a2       0x40 main.o
+                0x000004a2                DS1307Read
  .text.DS1307Write
-                0x000004c0       0x30 main.o
-                0x000004c0                DS1307Write
+                0x000004e2       0x30 main.o
+                0x000004e2                DS1307Write
  .text.ClockInit
-                0x000004f0       0x52 main.o
-                0x000004f0                ClockInit
+                0x00000512       0x52 main.o
+                0x00000512                ClockInit
  .text.GetSecond
-                0x00000542       0x34 main.o
-                0x00000542                GetSecond
+                0x00000564       0x34 main.o
+                0x00000564                GetSecond
  .text.GetTimeString
-                0x00000576       0xb2 main.o
-                0x00000576                GetTimeString
+                0x00000598       0xb2 main.o
+                0x00000598                GetTimeString
  .text.HC595Init
-                0x00000628        0xa main.o
-                0x00000628                HC595Init
+                0x0000064a        0xa main.o
+                0x0000064a                HC595Init
  .text.HC595Pulse
-                0x00000632        0x6 main.o
-                0x00000632                HC595Pulse
+                0x00000654        0x6 main.o
+                0x00000654                HC595Pulse
  .text.HC595Latch
-                0x00000638       0x12 main.o
-                0x00000638                HC595Latch
+                0x0000065a       0x12 main.o
+                0x0000065a                HC595Latch
  .text.HC595Write
-                0x0000064a       0x20 main.o
-                0x0000064a                HC595Write
+                0x0000066c       0x20 main.o
+                0x0000066c                HC595Write
  .text.Segment_Print
-                0x0000066a       0x16 main.o
-                0x0000066a                Segment_Print
+                0x0000068c       0x16 main.o
+                0x0000068c                Segment_Print
  .text.timer1_Init
-                0x00000680       0x32 main.o
-                0x00000680                timer1_Init
+                0x000006a2       0x34 main.o
+                0x000006a2                timer1_Init
  .text.__vector_17
-                0x000006b2       0x6a main.o
-                0x000006b2                __vector_17
- .text.pwm_Init
-                0x0000071c       0x26 main.o
-                0x0000071c                pwm_Init
+                0x000006d6       0x6a main.o
+                0x000006d6                __vector_17
  .text.keypad_Init
-                0x00000742        0xa main.o
-                0x00000742                keypad_Init
+                0x00000740        0xa main.o
+                0x00000740                keypad_Init
  .text.read_keypad
-                0x0000074c      0x198 main.o
-                0x0000074c                read_keypad
+                0x0000074a      0x1b0 main.o
+                0x0000074a                read_keypad
  .text.LED_Init
-                0x000008e4        0xc main.o
-                0x000008e4                LED_Init
+                0x000008fa        0xc main.o
+                0x000008fa                LED_Init
  .text.toggleLED
-                0x000008f0       0x3a main.o
-                0x000008f0                toggleLED
+                0x00000906       0x3a main.o
+                0x00000906                toggleLED
  .text.startup.main
-                0x0000092a       0x88 main.o
-                0x0000092a                main
+                0x00000940       0x86 main.o
+                0x00000940                main
  .text.__vector_10
-                0x000009b2       0x7c main.o
-                0x000009b2                __vector_10
+                0x000009c6       0x7c main.o
+                0x000009c6                __vector_10
  .text.libgcc.div
-                0x00000a2e       0x18 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_udivmodqi4.o)
-                0x00000a2e                __udivmodqi4
- .text.libgcc   0x00000a46       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_tablejump2.o)
-                0x00000a46                __tablejump2__
-                0x00000a56                . = ALIGN (0x2)
+                0x00000a42       0x18 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_udivmodqi4.o)
+                0x00000a42                __udivmodqi4
+ .text.libgcc   0x00000a5a       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_tablejump2.o)
+                0x00000a5a                __tablejump2__
+                0x00000a6a                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000a56        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
-                0x00000a56                _exit
-                0x00000a56                exit
+ .fini9         0x00000a6a        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
+                0x00000a6a                _exit
+                0x00000a6a                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -572,11 +578,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000a56        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
+ .fini0         0x00000a6a        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000a5a                _etext = .
+                0x00000a6e                _etext = .
 
-.data           0x00800200       0x48 load address 0x00000a5a
+.data           0x00800200       0x48 load address 0x00000a6e
                 0x00800200                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -609,8 +615,8 @@ END GROUP
                 0x0080025b                _displayfunction
                 0x0080025c                _initialized
                 0x0080025d                PROVIDE (__bss_end, .)
-                0x00000a5a                __data_load_start = LOADADDR (.data)
-                0x00000aa2                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00000a6e                __data_load_start = LOADADDR (.data)
+                0x00000ab6                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x0080025d        0x0
                 [!provide]                PROVIDE (__noinit_start, .)

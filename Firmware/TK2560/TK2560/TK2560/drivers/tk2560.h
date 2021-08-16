@@ -39,6 +39,16 @@
 #define RAD_TO_DEG 57.295779513082320876798154814105
 #define EULER 2.718281828459045235360287471352
 
+#define EXTERNAL_NUM_INTERRUPTS 8 //for ATmega2560
+#define EXTERNAL_INT_0 0
+#define EXTERNAL_INT_1 1
+#define EXTERNAL_INT_2 2
+#define EXTERNAL_INT_3 3
+#define EXTERNAL_INT_4 4
+#define EXTERNAL_INT_5 5
+#define EXTERNAL_INT_6 6
+#define EXTERNAL_INT_7 7
+
 //PORTS
 #define PA 1
 #define PB 2
@@ -222,7 +232,7 @@ static const uint8_t SCK  = PIN_SPI_SCK;
 #define interrupts() sei()
 #define noInterrupts() cli()
 
-#define clockCyclesPerMicrosecond() ( F_CPU / 1000000L )
+#define clockCyclesPerMicrosecond() ( F_CPU / 1000000L ) //e.g. 16Mhz/1M = 16 clk cycles per microsecond
 #define clockCyclesToMicroseconds(a) ( (a) / clockCyclesPerMicrosecond() )
 #define microsecondsToClockCycles(a) ( (a) * clockCyclesPerMicrosecond() )
 
@@ -246,23 +256,43 @@ extern const PROGMEM uint16_t  port_to_input_PGM[];
 extern const PROGMEM uint16_t  port_to_output_PGM[];
 extern const PROGMEM uint8_t  pin_to_port_PGM[];
 extern const PROGMEM uint8_t  pin_to_bit_mask_PGM[];
+extern const PROGMEM uint8_t  pin_to_timer_PGM[];
 
 
 #define pinToPort(P) ( pgm_read_byte( pin_to_port_PGM + (P) ) )
 #define pinToBitMask(P) ( pgm_read_byte( pin_to_bit_mask_PGM + (P) ) )
-//#define pinToTimer(P) ( pgm_read_byte( pin_to_timer_PGM + (P) ) )
+#define pinToTimer(P) ( pgm_read_byte( pin_to_timer_PGM + (P) ) )
 #define portOutputRegister(P) ( (volatile uint8_t *)( pgm_read_word( port_to_output_PGM + (P))) )
 #define portInputRegister(P) ( (volatile uint8_t *)( pgm_read_word( port_to_input_PGM + (P))) )
 #define portDDRRegister(P) ( (volatile uint8_t *)( pgm_read_word( port_to_ddr_PGM + (P))) )
 
 
+
 /************************************************************************/
 /*   APIs                                                               */
 /************************************************************************/
+// Digital
+void pinMode(uint8_t pin, uint8_t mode);
+void digitalWrite(uint8_t pin, uint8_t val);
+void togglePin(uint8_t pin);
+int  digitalRead(uint8_t pin);
+
+// PWM
+void pwm_init(void);
+void analogWrite(uint8_t pin, int val);
+
+// Frequency generator - All timers[one Selected(3)]
 void tone(uint8_t _pin, unsigned int frequency, unsigned long duration);
 void noTone(uint8_t _pin);
 
+// Timer0 & Delay
+void millis_init(void);
+unsigned long millis(void);
+unsigned long micros(void);
+void delay_ms(unsigned long ms);
+void delay_us(unsigned int us);
 
-#include "gpio.h"
+// Board support packages(BSPs)
+#include "bsp/lcd/lcd.h"
 
 #endif /* TK2560_H_ */

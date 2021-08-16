@@ -4,7 +4,7 @@
  * Created: 02/08/2021 08:42:21
  *  Author: OBED
  */ 
-#include "gpio.h"
+#include "tk2560.h"
 
 
 void pinMode(uint8_t pin, uint8_t mode)

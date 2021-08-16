@@ -55,6 +55,7 @@ static uint8_t tone_pins[AVAILABLE_TONE_PINS] = { 255 /*, 255, 255, 255, 255, 25
 //INITIALIZATION	
 static int8_t toneBegin(uint8_t _pin)
 {
+	
 	int8_t _timer = -1;
 	
 	// if we're already using the pin, the timer should be configured.

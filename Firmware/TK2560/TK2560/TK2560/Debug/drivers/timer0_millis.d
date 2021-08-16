@@ -1,5 +1,5 @@
-drivers/pins_2560.d drivers/pins_2560.o: ../drivers/pins_2560.c \
- ../drivers/tk2560.h \
+drivers/timer0_millis.d drivers/timer0_millis.o: \
+ ../drivers/timer0_millis.c ../drivers/tk2560.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdbool.h \
