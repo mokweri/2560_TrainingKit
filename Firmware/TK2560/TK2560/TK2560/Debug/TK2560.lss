@@ -3033,10 +3033,10 @@ int main(void)
 	pinMode(Pin_PJ2, INPUT);
     1248:	81 e4       	ldi	r24, 0x41	; 65
     124a:	8c d9       	rcall	.-3304   	; 0x564 <pinMode>
-    124c:	6d e7       	ldi	r22, 0x7D	; 125
+    124c:	6f e3       	ldi	r22, 0x3F	; 63
     124e:	70 e0       	ldi	r23, 0x00	; 0
 	
-	analogWrite(Pin_PH3,125);
+	analogWrite(Pin_PH3,255/4);
     1250:	8f e0       	ldi	r24, 0x0F	; 15
     1252:	43 da       	rcall	.-2938   	; 0x6da <analogWrite>
     1254:	c1 e0       	ldi	r28, 0x01	; 1
@@ -3104,7 +3104,7 @@ int main(void)
     12b6:	cc 15       	cp	r28, r12
     12b8:	dd 05       	cpc	r29, r13
 	
-	analogWrite(Pin_PH3,125);
+	analogWrite(Pin_PH3,255/4);
 	
 
 	//Tone Example	

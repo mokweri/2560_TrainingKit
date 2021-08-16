@@ -42,7 +42,7 @@ int main(void)
 	pinMode(Pin_PK3, OUTPUT);
 	pinMode(Pin_PJ2, INPUT);
 	
-	analogWrite(Pin_PH3,125);
+	analogWrite(Pin_PH3,255/4);
 	
 
 	//Tone Example	
