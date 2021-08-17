@@ -16,6 +16,7 @@
 // 
 // 	}
 // }
+
 unsigned long period = 1000000;
 unsigned long time_now = 0;
 
@@ -29,6 +30,8 @@ int noteDurations[] = {
 	4, 8, 8, 4, 4, 4, 4, 4
 };
 
+void sdDetected(void);
+
 int main(void)
 {
 	millis_init();
@@ -37,6 +40,8 @@ int main(void)
 	lcd_init();
 	lcd_clear();
 	LCD_PrintString("MCU TRAINING KIT",0,0);
+	
+	attachInterrupt(EXTERNAL_INT_5,sdDetected, RISING);
 	
 	pinMode(Pin_PK4, OUTPUT);
 	pinMode(Pin_PK3, OUTPUT);
@@ -78,3 +83,7 @@ int main(void)
     }
 }
 
+void sdDetected(void)
+{
+	LCD_PrintString("SD Detected",0,1);
+}

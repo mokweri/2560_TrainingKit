@@ -6,6 +6,8 @@ bsp\lcd\lcd.c
 
 drivers\gpio.c
 
+drivers\interrupts.c
+
 drivers\pwm.c
 
 drivers\timer0_millis.c

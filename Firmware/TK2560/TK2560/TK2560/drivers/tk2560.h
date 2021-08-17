@@ -31,6 +31,7 @@
 #define NOT_A_PIN	0
 #define NOT_A_PORT	0
 #define NOT_USED	0
+#define NOT_AN_INTERRUPT	-1
 
 #define PI 3.1415926535897932384626433832795
 #define HALF_PI 1.5707963267948966192313216916398
@@ -52,6 +53,9 @@
 #define CHANGE	1
 #define FALLING 2
 #define RISING	3
+
+
+
 
 //PORTS
 #define PA 1
@@ -262,6 +266,30 @@ extern const PROGMEM uint8_t  pin_to_port_PGM[];
 extern const PROGMEM uint8_t  pin_to_bit_mask_PGM[];
 extern const PROGMEM uint8_t  pin_to_timer_PGM[];
 
+//PCINT pins
+// convert a normal pin to its PCINT number (0 - max 23), used by the user
+#define pinToPCICR(p)	( (((p) >= 19) && ((p) <= 26)) || \
+						  ((p) == 2)  || \
+						  (((p) >= 63) && ((p) <= 69)) || \
+						  (((p) >= 82) && ((p) <= 89)) ? (&PCICR) : ((uint8_t *)0) )
+
+#define pinToPCICRbit(p) ( (((p) >= 19) && ((p) <= 26)) ? 0:  \
+						   (((p) == 2) || ((p) >= 50) && ((p) <= 53)) ? 1 : \
+						   ((((p) >= 82) && ((p) <= 89)) ? 2 : \
+						   0 ) )
+
+#define pinToPCMSK(p) ( (((p) >= 19) && ((p) <= 26)) ? (&PCMSK0):  \
+						(((p) == 2) || ((p) >= 50) && ((p) <= 53)) ? (&PCMSK1) : \
+						((((p) >= 82) && ((p) <= 89)) ? (&PCMSK2) : \
+						((uint8_t *)0) ) )
+
+#define pinToPCMSKbit(p) ( (((p) >= 19) && ((p) <= 26)) ? ((p) - 19) : \
+						 ( ((p) == 2) ? 0 : \
+						 ( (((p) >= 63) && ((p) <= 69)) ? ((p) - 62) : \
+						 ( (((p) >= 82) && ((p) <= 89)) ? (89 - (p)) : \
+						 0 ) ) ) ) ) )
+
+#define pinToPinChangeInterrupt(p) (pinToPCICR(p) ? ((8 * (pinToPCICRbit(p) - PCIE0)) + pinToPCMSKbit(p)) : NOT_AN_INTERRUPT)
 
 #define pinToPort(P) ( pgm_read_byte( pin_to_port_PGM + (P) ) )
 #define pinToBitMask(P) ( pgm_read_byte( pin_to_bit_mask_PGM + (P) ) )
@@ -275,7 +303,7 @@ extern const PROGMEM uint8_t  pin_to_timer_PGM[];
 /************************************************************************/
 /*   APIs                                                               */
 /************************************************************************/
-// Digital
+// Digital I/O
 void pinMode(uint8_t pin, uint8_t mode);
 void digitalWrite(uint8_t pin, uint8_t val);
 void togglePin(uint8_t pin);
@@ -299,6 +327,8 @@ void delay_us(unsigned int us);
 //External Interrupts
 void attachInterrupt(uint8_t interruptNum, void (*userFunc)(void), int mode);
 void detachInterrupt(uint8_t interruptNum);
+
+//Pin change Interrupts
 
 // Board support packages(BSPs)
 #include "bsp/lcd/lcd.h"

@@ -9,7 +9,6 @@
 #include <avr/pgmspace.h>
 
 
-
 const PROGMEM uint16_t  port_to_ddr_PGM[] = {
 	NOT_A_PORT,
 	(uint16_t) &DDRA,
