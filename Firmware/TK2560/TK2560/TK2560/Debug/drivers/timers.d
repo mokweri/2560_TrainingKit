@@ -20,7 +20,8 @@ drivers/timers.d drivers/timers.o: ../drivers/timers.c \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdbool.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\string.h \
- ../drivers/binary.h ../bsp/lcd/lcd.h
+ ../drivers/binary.h ../drivers/pinChangeInterrupts.h \
+ ../drivers/pinChangeInterruptPins.h ../bsp/lcd/lcd.h
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h:
 
@@ -65,5 +66,9 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\string.h:
 
 ../drivers/binary.h:
+
+../drivers/pinChangeInterrupts.h:
+
+../drivers/pinChangeInterruptPins.h:
 
 ../bsp/lcd/lcd.h:

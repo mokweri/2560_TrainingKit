@@ -31,6 +31,9 @@ int noteDurations[] = {
 };
 
 void sdDetected(void);
+void Button1(void);
+void Button2(void);
+void Button3(void);
 
 int main(void)
 {
@@ -40,32 +43,40 @@ int main(void)
 	lcd_init();
 	lcd_clear();
 	LCD_PrintString("MCU TRAINING KIT",0,0);
+
+	//User LEDs
+	pinMode(Pin_PK0, OUTPUT);
+	pinMode(Pin_PK1, OUTPUT);
+	pinMode(Pin_PK2, OUTPUT);
+	
+	//Buttons - Pin change
+	pinMode(Pin_PJ2, INPUT);
+	pinMode(Pin_PJ3, INPUT);
+	pinMode(Pin_PJ4, INPUT);
+	attachPCINT(pinToPCINT(Pin_PJ2), Button1, RISING);
+	attachPCINT(pinToPCINT(Pin_PJ3), Button2, RISING);
+	attachPCINT(pinToPCINT(Pin_PJ4), Button3, RISING);
 	
 	attachInterrupt(EXTERNAL_INT_5,sdDetected, RISING);
-	
-	pinMode(Pin_PK4, OUTPUT);
-	pinMode(Pin_PK3, OUTPUT);
-	pinMode(Pin_PJ2, INPUT);
 	
 	analogWrite(Pin_PH3,255/4);
 	
 
 	//Tone Example	
-	for (int thisNote = 0; thisNote < 8; thisNote++) 
-	{
-		// to calculate the note duration, take one second divided by the note type.
-		//e.g. quarter note = 1000 / 4, eighth note = 1000/8, etc.
-		int noteDuration = 1000 / noteDurations[thisNote];
-		tone(Pin_PE3, melody[thisNote], noteDuration);
-		// to distinguish the notes, set a minimum time between them.
-		// the note's duration + 30% seems to work well:
-		int pauseBetweenNotes = noteDuration * 1.30;
-		delay_ms(pauseBetweenNotes);		
-		// stop the tone playing:
-		noTone(Pin_PE3);
-	}
+// 	for (int thisNote = 0; thisNote < 8; thisNote++) 
+// 	{
+// 		// to calculate the note duration, take one second divided by the note type.
+// 		//e.g. quarter note = 1000 / 4, eighth note = 1000/8, etc.
+// 		int noteDuration = 1000 / noteDurations[thisNote];
+// 		tone(Pin_PE3, melody[thisNote], noteDuration);
+// 		// to distinguish the notes, set a minimum time between them.
+// 		// the note's duration + 30% seems to work well:
+// 		int pauseBetweenNotes = noteDuration * 1.30;
+// 		delay_ms(pauseBetweenNotes);		
+// 		// stop the tone playing:
+// 		noTone(Pin_PE3);
+// 	}
 
-	
     while (1) 
     {
 		
@@ -77,8 +88,6 @@ int main(void)
 		}
 		*/
 		
-		delay_ms(1000);
-		togglePin(Pin_PK3);
 		
     }
 }
@@ -86,4 +95,18 @@ int main(void)
 void sdDetected(void)
 {
 	LCD_PrintString("SD Detected",0,1);
+}
+
+void Button1(void)
+{
+	togglePin(Pin_PK0);
+}
+void Button2(void)
+{
+	togglePin(Pin_PK1);
+}
+void Button3(void)
+{
+	togglePin(Pin_PK2);
+	
 }

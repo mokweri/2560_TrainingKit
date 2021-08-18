@@ -274,12 +274,12 @@ extern const PROGMEM uint8_t  pin_to_timer_PGM[];
 						  (((p) >= 82) && ((p) <= 89)) ? (&PCICR) : ((uint8_t *)0) )
 
 #define pinToPCICRbit(p) ( (((p) >= 19) && ((p) <= 26)) ? 0:  \
-						   (((p) == 2) || ((p) >= 50) && ((p) <= 53)) ? 1 : \
+						   (((p) == 2) || (((p) >= 63) && ((p) <= 69))) ? 1 : \
 						   ((((p) >= 82) && ((p) <= 89)) ? 2 : \
 						   0 ) )
 
 #define pinToPCMSK(p) ( (((p) >= 19) && ((p) <= 26)) ? (&PCMSK0):  \
-						(((p) == 2) || ((p) >= 50) && ((p) <= 53)) ? (&PCMSK1) : \
+						(((p) == 2) || ((p) >= 63) && ((p) <= 69)) ? (&PCMSK1) : \
 						((((p) >= 82) && ((p) <= 89)) ? (&PCMSK2) : \
 						((uint8_t *)0) ) )
 
@@ -287,7 +287,7 @@ extern const PROGMEM uint8_t  pin_to_timer_PGM[];
 						 ( ((p) == 2) ? 0 : \
 						 ( (((p) >= 63) && ((p) <= 69)) ? ((p) - 62) : \
 						 ( (((p) >= 82) && ((p) <= 89)) ? (89 - (p)) : \
-						 0 ) ) ) ) ) )
+						 0 ) ) ) ) 
 
 #define pinToPinChangeInterrupt(p) (pinToPCICR(p) ? ((8 * (pinToPCICRbit(p) - PCIE0)) + pinToPCMSKbit(p)) : NOT_AN_INTERRUPT)
 
@@ -329,6 +329,7 @@ void attachInterrupt(uint8_t interruptNum, void (*userFunc)(void), int mode);
 void detachInterrupt(uint8_t interruptNum);
 
 //Pin change Interrupts
+#include "pinChangeInterrupts.h"
 
 // Board support packages(BSPs)
 #include "bsp/lcd/lcd.h"

@@ -151,6 +151,12 @@
     <Compile Include="drivers\interrupts.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="drivers\pinChangeInterruptPins.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="drivers\pinChangeInterrupts.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="drivers\pinChangeInterrupts.h">
       <SubType>compile</SubType>
     </Compile>

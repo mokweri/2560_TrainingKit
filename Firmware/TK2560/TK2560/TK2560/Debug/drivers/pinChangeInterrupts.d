@@ -1,4 +1,5 @@
-drivers/interrupts.d drivers/interrupts.o: ../drivers/interrupts.c \
+drivers/pinChangeInterrupts.d drivers/pinChangeInterrupts.o: \
+ ../drivers/pinChangeInterrupts.c ../drivers/pinChangeInterrupts.h \
  ../drivers/tk2560.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
@@ -18,8 +19,9 @@ drivers/interrupts.d drivers/interrupts.o: ../drivers/interrupts.c \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h \
- ../drivers/binary.h ../drivers/pinChangeInterrupts.h \
- ../drivers/pinChangeInterruptPins.h ../bsp/lcd/lcd.h
+ ../drivers/binary.h ../drivers/pinChangeInterruptPins.h ../bsp/lcd/lcd.h
+
+../drivers/pinChangeInterrupts.h:
 
 ../drivers/tk2560.h:
 
@@ -60,8 +62,6 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h:
 
 ../drivers/binary.h:
-
-../drivers/pinChangeInterrupts.h:
 
 ../drivers/pinChangeInterruptPins.h:
 

@@ -8,6 +8,8 @@ drivers\gpio.c
 
 drivers\interrupts.c
 
+drivers\pinChangeInterrupts.c
+
 drivers\pwm.c
 
 drivers\timer0_millis.c

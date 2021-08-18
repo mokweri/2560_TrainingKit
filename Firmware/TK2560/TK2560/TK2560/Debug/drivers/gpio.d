@@ -17,7 +17,8 @@ drivers/gpio.d drivers/gpio.o: ../drivers/gpio.c ../drivers/tk2560.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h \
- ../drivers/binary.h ../bsp/lcd/lcd.h
+ ../drivers/binary.h ../drivers/pinChangeInterrupts.h \
+ ../drivers/pinChangeInterruptPins.h ../bsp/lcd/lcd.h
 
 ../drivers/tk2560.h:
 
@@ -58,5 +59,9 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h:
 
 ../drivers/binary.h:
+
+../drivers/pinChangeInterrupts.h:
+
+../drivers/pinChangeInterruptPins.h:
 
 ../bsp/lcd/lcd.h:

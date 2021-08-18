@@ -20,7 +20,9 @@ main.d main.o: .././main.c \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\string.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h \
- .././drivers/binary.h ../bsp/lcd/lcd.h .././drivers/pitches.h
+ .././drivers/binary.h .././drivers/pinChangeInterrupts.h \
+ .././drivers/tk2560.h .././drivers/pinChangeInterruptPins.h \
+ ../bsp/lcd/lcd.h .././drivers/pitches.h
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h:
 
@@ -65,6 +67,12 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h:
 
 .././drivers/binary.h:
+
+.././drivers/pinChangeInterrupts.h:
+
+.././drivers/tk2560.h:
+
+.././drivers/pinChangeInterruptPins.h:
 
 ../bsp/lcd/lcd.h:
 
