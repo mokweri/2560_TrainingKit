@@ -122,3 +122,4 @@ void LCD_PrintInt(uint16_t n,uint8_t x,uint8_t y){
 	itoa(n,buffer,10);
 	LCD_PrintString(buffer,x,y);
 }
+RAMEND

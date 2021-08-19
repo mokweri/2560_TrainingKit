@@ -151,6 +151,9 @@
     <Compile Include="drivers\gpio.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="drivers\hardwareSerial.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="drivers\interrupts.c">
       <SubType>compile</SubType>
     </Compile>
