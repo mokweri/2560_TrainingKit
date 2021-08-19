@@ -34,11 +34,13 @@ void sdDetected(void);
 void Button1(void);
 void Button2(void);
 void Button3(void);
+void LCD_PrintInt(uint16_t n,uint8_t x,uint8_t y);
 
 int main(void)
 {
 	millis_init();
 	pwm_init();
+	adc_init();
 	
 	lcd_init();
 	lcd_clear();
@@ -63,22 +65,27 @@ int main(void)
 	
 
 	//Tone Example	
-	for (int thisNote = 0; thisNote < 8; thisNote++) 
-	{
-		// to calculate the note duration, take one second divided by the note type.
-		//e.g. quarter note = 1000 / 4, eighth note = 1000/8, etc.
-		int noteDuration = 1000 / noteDurations[thisNote];
-		tone(Pin_PE3, melody[thisNote], noteDuration);
-		// to distinguish the notes, set a minimum time between them.
-		// the note's duration + 30% seems to work well:
-		int pauseBetweenNotes = noteDuration * 1.30;
-		delay_ms(pauseBetweenNotes);		
-		// stop the tone playing:
-		noTone(Pin_PE3);
-	}
+// 	for (int thisNote = 0; thisNote < 8; thisNote++) 
+// 	{
+// 		// to calculate the note duration, take one second divided by the note type.
+// 		//e.g. quarter note = 1000 / 4, eighth note = 1000/8, etc.
+// 		int noteDuration = 1000 / noteDurations[thisNote];
+// 		tone(Pin_PE3, melody[thisNote], noteDuration);
+// 		// to distinguish the notes, set a minimum time between them.
+// 		// the note's duration + 30% seems to work well:
+// 		int pauseBetweenNotes = noteDuration * 1.30;
+// 		delay_ms(pauseBetweenNotes);		
+// 		// stop the tone playing:
+// 		noTone(Pin_PE3);
+// 	}
 
     while (1) 
     {
+		int pot_val = analogRead(Pin_PF0);
+		
+		LCD_PrintInt(pot_val,4,1);
+		delay_ms(50);
+		LCD_PrintString("ADC:    ",0,1);//clear line
 		
 		/*
 		if (digitalRead(Pin_PJ2))
@@ -86,8 +93,7 @@ int main(void)
 			_delay_ms(70);
 			togglePin(Pin_PK0);
 		}
-		*/
-		
+		*/	
 		
     }
 }
@@ -109,4 +115,10 @@ void Button3(void)
 {
 	togglePin(Pin_PK2);
 	
+}
+
+void LCD_PrintInt(uint16_t n,uint8_t x,uint8_t y){
+	char buffer[10];
+	itoa(n,buffer,10);
+	LCD_PrintString(buffer,x,y);
 }

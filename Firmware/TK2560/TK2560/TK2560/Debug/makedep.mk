@@ -4,6 +4,8 @@
 
 bsp\lcd\lcd.c
 
+drivers\adc.c
+
 drivers\gpio.c
 
 drivers\interrupts.c

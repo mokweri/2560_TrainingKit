@@ -142,6 +142,9 @@
     <Compile Include="bsp\lcd\lcd.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="drivers\adc.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="drivers\binary.h">
       <SubType>compile</SubType>
     </Compile>

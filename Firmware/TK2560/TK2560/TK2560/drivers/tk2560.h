@@ -32,6 +32,7 @@
 #define NOT_A_PORT	0
 #define NOT_USED	0
 #define NOT_AN_INTERRUPT	-1
+#define NOT_ADC_PIN	-1
 
 #define PI 3.1415926535897932384626433832795
 #define HALF_PI 1.5707963267948966192313216916398
@@ -53,6 +54,8 @@
 #define CHANGE	1
 #define FALLING 2
 #define RISING	3
+
+#define DEFAULT 1
 
 
 
@@ -291,6 +294,10 @@ extern const PROGMEM uint8_t  pin_to_timer_PGM[];
 
 #define pinToPinChangeInterrupt(p) (pinToPCICR(p) ? ((8 * (pinToPCICRbit(p) - PCIE0)) + pinToPCMSKbit(p)) : NOT_AN_INTERRUPT)
 
+#define pinToADCChannel(p) ((((p) >= 90) && ((p) <= 97)) ? (97 - (p)) : \
+							(((p) >= 82) && ((p) <= 89)) ? (97 - (p)) : \
+							NOT_ADC_PIN	)
+
 #define pinToPort(P) ( pgm_read_byte( pin_to_port_PGM + (P) ) )
 #define pinToBitMask(P) ( pgm_read_byte( pin_to_bit_mask_PGM + (P) ) )
 #define pinToTimer(P) ( pgm_read_byte( pin_to_timer_PGM + (P) ) )
@@ -316,6 +323,11 @@ void analogWrite(uint8_t pin, int val);
 // Frequency generator - All timers[one Selected(3)]
 void tone(uint8_t _pin, unsigned int frequency, unsigned long duration);
 void noTone(uint8_t _pin);
+
+//ADC
+void adc_init(void);
+int analogRead(uint8_t pin);
+void analogReference(uint8_t mode);
 
 // Timer0 & Delay
 void millis_init(void);
