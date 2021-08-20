@@ -90,13 +90,24 @@ volatile rx_buffer_index_t _rx_buffer_tail;
 volatile tx_buffer_index_t _tx_buffer_head;
 volatile tx_buffer_index_t _tx_buffer_tail;
 
+unsigned long _startMillis;
+unsigned long _ttimeout; //DEFAULT timeout
+
 
 //APIs
 void Serial2_begin(unsigned long baud, uint8_t config );
+void Serial2_setTimeout(unsigned long timeout);
 int Serial2_available(void);
-int Serial2_read(void);
+
+int Serial2_read(void); //reads one byte
+int Serial2_timedRead(void); //reads one byte with timeout
+size_t Serial2_readBytes(char *buffer, size_t length);
+size_t Serial2_readBytesUntil(char terminator, char *buffer, size_t length);
+size_t Serial2_readAllBytes(char *buffer, size_t length);
+
 size_t Serial2_write(uint8_t c);
-size_t Serial2_write_(const uint8_t *buffer, size_t size);
+size_t Serial2_print(char *string);
+
 void Serial2_flush(void);
 void Serial2_end(void);
 

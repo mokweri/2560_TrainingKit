@@ -36,6 +36,8 @@ void Button2(void);
 void Button3(void);
 void LCD_PrintInt(uint16_t n,uint8_t x,uint8_t y);
 
+
+
 int main(void)
 {
 	millis_init();
@@ -81,7 +83,9 @@ int main(void)
 // 	}
 
 		
-
+	const int BUFFER_SIZE = 10;
+	char buf[BUFFER_SIZE];
+	
     while (1) 
     {
 		int pot_val = analogRead(Pin_PF0);
@@ -96,7 +100,19 @@ int main(void)
 			_delay_ms(70);
 			togglePin(Pin_PK0);
 		}
-		*/	
+		*/
+		lcd_setCursor(0,1);
+		if (Serial2_available())
+		{
+// 			int r = Serial2_timedRead();
+// 			LCD_PrintInt(r,0,1);
+// 			Serial2_write(r);
+
+			delay_ms(1000);//wait for all data
+			Serial2_readAllBytes(buf, BUFFER_SIZE);
+			Serial2_print(buf);		
+			
+		}
 		
     }
 }
@@ -108,11 +124,16 @@ void sdDetected(void)
 
 void Button1(void)
 {
-	char str[] = "Good";
+	//char str[] = "Good";
 	togglePin(Pin_PK0);
-	Serial2_write('G');
-	Serial2_write('o');
-	Serial2_write('o');
+// 	Serial2_write('G');
+// 	Serial2_write('o');
+// 	Serial2_write('o');
+// 	Serial2_write('o');
+// 	Serial2_write('o');
+// 	Serial2_write('o');
+// 	Serial2_write('d');
+	Serial2_print("Good stuff");
 
 }
 void Button2(void)
@@ -129,5 +150,6 @@ void LCD_PrintInt(uint16_t n,uint8_t x,uint8_t y){
 	char buffer[10];
 	itoa(n,buffer,10);
 	LCD_PrintString(buffer,x,y);
+	
 }
 

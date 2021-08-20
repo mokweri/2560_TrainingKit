@@ -16,6 +16,8 @@ void Serial2_begin(unsigned long baud, uint8_t config )
 	_tx_buffer_head = 0;
 	_tx_buffer_tail = 0;
 	
+	_ttimeout = 1000; //DEFAULT timeout
+	
 	//Try u2x mode first
 	uint16_t baud_setting = (F_CPU / 4 / baud - 1)/2; // check datasheet page 203
 	UCSR2A = 1 << U2X2; //Double speed mode
@@ -44,6 +46,18 @@ void Serial2_begin(unsigned long baud, uint8_t config )
 	
 }
 
+/*
+* Sets maximum milliseconds to wait for stream data, default is 1 second
+*/
+void Serial2_setTimeout(unsigned long timeout)
+{
+	_ttimeout = timeout;
+}
+
+/*
+* Get the number of bytes (characters) available for reading from the serial port. 
+* This is data that is already arrived and stored in the serial receive buffer (which holds 64 bytes).
+*/
 int Serial2_available(void)
 {
 	 return ((unsigned int)(SERIAL_RX_BUFFER_SIZE + _rx_buffer_head - _rx_buffer_tail)) % SERIAL_RX_BUFFER_SIZE;
@@ -59,6 +73,60 @@ int Serial2_read(void)
 		_rx_buffer_tail = (rx_buffer_index_t)(_rx_buffer_tail + 1) % SERIAL_RX_BUFFER_SIZE;
 		return c;
 	}
+}
+
+int Serial2_timedRead(void)
+{
+	  int c;
+	  _startMillis = millis();
+	  do {
+		  c = Serial2_read();
+		  if (c >= 0) return c;
+	  } while(millis() - _startMillis < _ttimeout);
+	  return -1;     // -1 indicates timeout
+}
+
+/*
+* Read characters from stream into buffer terminates if length characters have been read, or timeout (see setTimeout)
+* Returns the number of characters placed in the buffer
+* the buffer is NOT null terminated.
+*/
+size_t Serial2_readBytes(char *buffer, size_t length)
+{
+	size_t count = 0;
+	while (count < length) {
+		int c = Serial2_timedRead();
+		if (c < 0) break;
+		*buffer++ = (char)c;
+		count++;
+	}
+	return count;
+}
+
+size_t Serial2_readBytesUntil(char terminator, char *buffer, size_t length)
+{
+	size_t index = 0;
+	while (index < length) {
+		int c = Serial2_timedRead();
+		if (c < 0 || c == terminator) break;
+		*buffer++ = (char)c;
+		index++;
+	}
+	return index; // return number of characters, not including null terminator	
+}
+
+size_t Serial2_readAllBytes(char *buffer, size_t length)
+{
+	size_t index = 0;
+	
+	while(index < length )
+	{
+		int c = Serial2_timedRead();
+		if(c < 0 ) break;
+		*buffer++ = (char)c;
+		index++;		
+	}
+	return index;	
 }
 
 size_t Serial2_write(uint8_t c)
@@ -104,16 +172,14 @@ size_t Serial2_write(uint8_t c)
 	return 1;
 }
 
-size_t Serial2_write_(const uint8_t *buffer, size_t size)
-{
+size_t Serial2_print(char *string) {
 	size_t n = 0;
-	while (size--) {
-		if (Serial2_write(*buffer++)) n++;
-		else break;
+	for (char *it = string; *it; it++) {
+		Serial2_write((uint8_t)*it); 
+		n++;
 	}
 	return n;
 }
-
 
 void Serial2_flush(void)
 {
@@ -143,8 +209,10 @@ void Serial2_end(void)
 	_rx_buffer_head = _rx_buffer_tail;	
 }
 
-
-// Interrupt handlers
+/************************************************************************/
+/*         Interrupt handlers                                           */
+/************************************************************************/
+// Data Register Empty - ready to receive new data
 void _tx2_udr_empty_irq(void)
 {
 	// If interrupts are enabled, there must be more data in the output buffer. 
@@ -157,17 +225,17 @@ void _tx2_udr_empty_irq(void)
 	// clear the TXC bit -- "can be cleared by writing a one to its bit location". 
 	// This makes sure flush() won't return until the bytes actually got written. 
 	// Other r/w bits are preserved, and zeros written to the rest.
-	UCSR2A = (UCSR2A & ((1 << U2X2) | (1 << MPCM2))) | (1 << TXC2);
+	UCSR2A = ((UCSR2A) & ((1 << U2X2) | (1 << MPCM2))) | (1 << TXC2);
 	
 	if (_tx_buffer_head == _tx_buffer_tail) {
 		// Buffer empty, so disable interrupts
-		bitSet(UCSR2B, UDRIE2);
+		bitClear(UCSR2B, UDRIE2);
 	}
 }
 
 void _rx2_complete_irq(void)
 {
-	if (bit_is_clear(UCSR2A, UPE0)){
+	if (bit_is_clear(UCSR2A, UPE2)){
 		// No Parity error, read byte and store it in the buffer if there is room
 		unsigned char c = UDR2;
 		rx_buffer_index_t i = (unsigned int)(_rx_buffer_head + 1) % SERIAL_RX_BUFFER_SIZE;
@@ -185,7 +253,9 @@ void _rx2_complete_irq(void)
 	}
 }
 
-//IRQ
+/************************************************************************/
+/*					 ISRs                                                */
+/************************************************************************/
 ISR(USART2_RX_vect){
 	_rx2_complete_irq();
 }
