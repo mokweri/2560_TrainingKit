@@ -1,7 +1,7 @@
 Archive member included to satisfy reference by file (symbol)
 
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_udivmodsi4.o)
-                              drivers/timers.o (__udivmodsi4)
+                              drivers/hardwareSerial2.o (__udivmodsi4)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
                               C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega2560/avr6/crtatmega2560.o (exit)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_tablejump2.o)
@@ -38,11 +38,14 @@ timer2_pin_port     0x2               drivers/timers.o
 timer4_pin_mask     0x1               drivers/timers.o
 callbackPCINT16     0x2               drivers/pinChangeInterrupts.o
 callbackPCINT19     0x2               drivers/pinChangeInterrupts.o
+_tx_buffer_tail     0x1               drivers/adc.o
 _displaycontrol     0x1               bsp/lcd/lcd.o
 _numlines           0x1               bsp/lcd/lcd.o
 callbackPCINT9      0x2               drivers/pinChangeInterrupts.o
 callbackPCINT23     0x2               drivers/pinChangeInterrupts.o
+_tx_buffer          0x40              drivers/adc.o
 _data_pins          0x8               bsp/lcd/lcd.o
+_rx_buffer          0x40              drivers/adc.o
 _displaymode        0x1               bsp/lcd/lcd.o
 _displayfunction    0x1               bsp/lcd/lcd.o
 callbackPCINT11     0x2               drivers/pinChangeInterrupts.o
@@ -54,6 +57,7 @@ timer4_toggle_count
                     0x4               drivers/timers.o
 callbackPCINT4      0x2               drivers/pinChangeInterrupts.o
 callbackPCINT14     0x2               drivers/pinChangeInterrupts.o
+_tx_buffer_head     0x1               drivers/adc.o
 timer3_toggle_count
                     0x4               drivers/timers.o
 callbackPCINT13     0x2               drivers/pinChangeInterrupts.o
@@ -62,6 +66,7 @@ timer5_pin_port     0x2               drivers/timers.o
 callbackPCINT10     0x2               drivers/pinChangeInterrupts.o
 timer4_pin_port     0x2               drivers/timers.o
 timer0_pin_port     0x2               drivers/timers.o
+_rx_buffer_tail     0x1               drivers/adc.o
 callbackPCINT17     0x2               drivers/pinChangeInterrupts.o
 timer1_toggle_count
                     0x4               drivers/timers.o
@@ -78,6 +83,7 @@ timer2_toggle_count
                     0x4               drivers/timers.o
 _initialized        0x1               bsp/lcd/lcd.o
 callbackPCINT12     0x2               drivers/pinChangeInterrupts.o
+_rx_buffer_head     0x1               drivers/adc.o
 callbackPCINT20     0x2               drivers/pinChangeInterrupts.o
 
 Discarded input sections
@@ -144,6 +150,19 @@ Discarded input sections
  .text          0x00000000        0x0 drivers/pwm.o
  .data          0x00000000        0x0 drivers/pwm.o
  .bss           0x00000000        0x0 drivers/pwm.o
+ .text          0x00000000        0x0 drivers/hardwareSerial2.o
+ .data          0x00000000        0x0 drivers/hardwareSerial2.o
+ .bss           0x00000000        0x0 drivers/hardwareSerial2.o
+ .text.Serial2_available
+                0x00000000       0x18 drivers/hardwareSerial2.o
+ .text.Serial2_read
+                0x00000000       0x2e drivers/hardwareSerial2.o
+ .text.Serial2_write_
+                0x00000000       0x48 drivers/hardwareSerial2.o
+ .text.Serial2_flush
+                0x00000000       0x40 drivers/hardwareSerial2.o
+ .text.Serial2_end
+                0x00000000       0x2a drivers/hardwareSerial2.o
  .text          0x00000000        0x0 drivers/timer0_millis.o
  .data          0x00000000        0x0 drivers/timer0_millis.o
  .bss           0x00000000        0x0 drivers/timer0_millis.o
@@ -177,8 +196,6 @@ Discarded input sections
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_udivmodsi4.o)
  .text.libgcc.mul
                 0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_udivmodsi4.o)
- .text.libgcc.div
-                0x00000000       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_udivmodsi4.o)
  .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_udivmodsi4.o)
  .text.libgcc.prologue
                 0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_udivmodsi4.o)
@@ -315,6 +332,7 @@ LOAD drivers/gpio.o
 LOAD drivers/interrupts.o
 LOAD drivers/pinChangeInterrupts.o
 LOAD drivers/pwm.o
+LOAD drivers/hardwareSerial2.o
 LOAD drivers/timer0_millis.o
 LOAD drivers/pins_2560.o
 LOAD drivers/timers.o
@@ -428,7 +446,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x15ec
+.text           0x00000000     0x18de
  *(.vectors)
  .vectors       0x00000000       0xe4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega2560/avr6/crtatmega2560.o
                 0x00000000                __vector_default
@@ -533,10 +551,8 @@ END GROUP
                 0x000002be                __vector_27
                 0x000002be                __vector_33
                 0x000002be                __vector_47
-                0x000002be                __vector_52
                 0x000002be                __vector_37
                 0x000002be                __vector_44
-                0x000002be                __vector_51
                 0x000002be                __vector_21
                 0x000002be                __vector_15
                 0x000002be                __vector_36
@@ -602,173 +618,194 @@ END GROUP
                 0x000006b6                togglePin
  .text.nothing  0x000006ea        0x2 drivers/interrupts.o
  .text.attachInterrupt
-                0x000006ec       0xf8 drivers/interrupts.o
+                0x000006ec       0xfa drivers/interrupts.o
                 0x000006ec                attachInterrupt
  .text.__vector_1
-                0x000007e4       0x56 drivers/interrupts.o
-                0x000007e4                __vector_1
+                0x000007e6       0x56 drivers/interrupts.o
+                0x000007e6                __vector_1
  .text.__vector_2
-                0x0000083a       0x56 drivers/interrupts.o
-                0x0000083a                __vector_2
+                0x0000083c       0x56 drivers/interrupts.o
+                0x0000083c                __vector_2
  .text.__vector_3
-                0x00000890       0x56 drivers/interrupts.o
-                0x00000890                __vector_3
+                0x00000892       0x56 drivers/interrupts.o
+                0x00000892                __vector_3
  .text.__vector_4
-                0x000008e6       0x56 drivers/interrupts.o
-                0x000008e6                __vector_4
+                0x000008e8       0x56 drivers/interrupts.o
+                0x000008e8                __vector_4
  .text.__vector_5
-                0x0000093c       0x56 drivers/interrupts.o
-                0x0000093c                __vector_5
+                0x0000093e       0x56 drivers/interrupts.o
+                0x0000093e                __vector_5
  .text.__vector_6
-                0x00000992       0x56 drivers/interrupts.o
-                0x00000992                __vector_6
+                0x00000994       0x56 drivers/interrupts.o
+                0x00000994                __vector_6
  .text.__vector_7
-                0x000009e8       0x56 drivers/interrupts.o
-                0x000009e8                __vector_7
+                0x000009ea       0x56 drivers/interrupts.o
+                0x000009ea                __vector_7
  .text.__vector_8
-                0x00000a3e       0x56 drivers/interrupts.o
-                0x00000a3e                __vector_8
+                0x00000a40       0x56 drivers/interrupts.o
+                0x00000a40                __vector_8
  .text.enablePinChangeInterruptHelper
-                0x00000a94       0x90 drivers/pinChangeInterrupts.o
-                0x00000a94                enablePinChangeInterruptHelper
+                0x00000a96       0x90 drivers/pinChangeInterrupts.o
+                0x00000a96                enablePinChangeInterruptHelper
  .text.attachPinChangeInterrupt
-                0x00000b24      0x1ae drivers/pinChangeInterrupts.o
-                0x00000b24                attachPinChangeInterrupt
+                0x00000b26      0x1ae drivers/pinChangeInterrupts.o
+                0x00000b26                attachPinChangeInterrupt
  .text.PinChangeInterruptEventPCINT0
-                0x00000cd2        0xc drivers/pinChangeInterrupts.o
-                0x00000cd2                PinChangeInterruptEventPCINT0
+                0x00000cd4        0xc drivers/pinChangeInterrupts.o
+                0x00000cd4                PinChangeInterruptEventPCINT0
  .text.PinChangeInterruptEventPCINT1
-                0x00000cde        0xc drivers/pinChangeInterrupts.o
-                0x00000cde                PinChangeInterruptEventPCINT1
+                0x00000ce0        0xc drivers/pinChangeInterrupts.o
+                0x00000ce0                PinChangeInterruptEventPCINT1
  .text.PinChangeInterruptEventPCINT2
-                0x00000cea        0xc drivers/pinChangeInterrupts.o
-                0x00000cea                PinChangeInterruptEventPCINT2
+                0x00000cec        0xc drivers/pinChangeInterrupts.o
+                0x00000cec                PinChangeInterruptEventPCINT2
  .text.PinChangeInterruptEventPCINT3
-                0x00000cf6        0xc drivers/pinChangeInterrupts.o
-                0x00000cf6                PinChangeInterruptEventPCINT3
+                0x00000cf8        0xc drivers/pinChangeInterrupts.o
+                0x00000cf8                PinChangeInterruptEventPCINT3
  .text.PinChangeInterruptEventPCINT4
-                0x00000d02        0xc drivers/pinChangeInterrupts.o
-                0x00000d02                PinChangeInterruptEventPCINT4
+                0x00000d04        0xc drivers/pinChangeInterrupts.o
+                0x00000d04                PinChangeInterruptEventPCINT4
  .text.PinChangeInterruptEventPCINT5
-                0x00000d0e        0xc drivers/pinChangeInterrupts.o
-                0x00000d0e                PinChangeInterruptEventPCINT5
+                0x00000d10        0xc drivers/pinChangeInterrupts.o
+                0x00000d10                PinChangeInterruptEventPCINT5
  .text.PinChangeInterruptEventPCINT6
-                0x00000d1a        0xc drivers/pinChangeInterrupts.o
-                0x00000d1a                PinChangeInterruptEventPCINT6
+                0x00000d1c        0xc drivers/pinChangeInterrupts.o
+                0x00000d1c                PinChangeInterruptEventPCINT6
  .text.PinChangeInterruptEventPCINT7
-                0x00000d26        0xc drivers/pinChangeInterrupts.o
-                0x00000d26                PinChangeInterruptEventPCINT7
+                0x00000d28        0xc drivers/pinChangeInterrupts.o
+                0x00000d28                PinChangeInterruptEventPCINT7
  .text.__vector_9
-                0x00000d32       0x90 drivers/pinChangeInterrupts.o
-                0x00000d32                __vector_9
+                0x00000d34       0x90 drivers/pinChangeInterrupts.o
+                0x00000d34                __vector_9
  .text.PinChangeInterruptEventPCINT8
-                0x00000dc2        0xc drivers/pinChangeInterrupts.o
-                0x00000dc2                PinChangeInterruptEventPCINT8
+                0x00000dc4        0xc drivers/pinChangeInterrupts.o
+                0x00000dc4                PinChangeInterruptEventPCINT8
  .text.PinChangeInterruptEventPCINT9
-                0x00000dce        0xc drivers/pinChangeInterrupts.o
-                0x00000dce                PinChangeInterruptEventPCINT9
+                0x00000dd0        0xc drivers/pinChangeInterrupts.o
+                0x00000dd0                PinChangeInterruptEventPCINT9
  .text.PinChangeInterruptEventPCINT10
-                0x00000dda        0xc drivers/pinChangeInterrupts.o
-                0x00000dda                PinChangeInterruptEventPCINT10
+                0x00000ddc        0xc drivers/pinChangeInterrupts.o
+                0x00000ddc                PinChangeInterruptEventPCINT10
  .text.PinChangeInterruptEventPCINT11
-                0x00000de6        0xc drivers/pinChangeInterrupts.o
-                0x00000de6                PinChangeInterruptEventPCINT11
+                0x00000de8        0xc drivers/pinChangeInterrupts.o
+                0x00000de8                PinChangeInterruptEventPCINT11
  .text.PinChangeInterruptEventPCINT12
-                0x00000df2        0xc drivers/pinChangeInterrupts.o
-                0x00000df2                PinChangeInterruptEventPCINT12
+                0x00000df4        0xc drivers/pinChangeInterrupts.o
+                0x00000df4                PinChangeInterruptEventPCINT12
  .text.PinChangeInterruptEventPCINT13
-                0x00000dfe        0xc drivers/pinChangeInterrupts.o
-                0x00000dfe                PinChangeInterruptEventPCINT13
+                0x00000e00        0xc drivers/pinChangeInterrupts.o
+                0x00000e00                PinChangeInterruptEventPCINT13
  .text.PinChangeInterruptEventPCINT14
-                0x00000e0a        0xc drivers/pinChangeInterrupts.o
-                0x00000e0a                PinChangeInterruptEventPCINT14
+                0x00000e0c        0xc drivers/pinChangeInterrupts.o
+                0x00000e0c                PinChangeInterruptEventPCINT14
  .text.PinChangeInterruptEventPCINT15
-                0x00000e16        0xc drivers/pinChangeInterrupts.o
-                0x00000e16                PinChangeInterruptEventPCINT15
+                0x00000e18        0xc drivers/pinChangeInterrupts.o
+                0x00000e18                PinChangeInterruptEventPCINT15
  .text.__vector_10
-                0x00000e22       0x9a drivers/pinChangeInterrupts.o
-                0x00000e22                __vector_10
+                0x00000e24       0x9a drivers/pinChangeInterrupts.o
+                0x00000e24                __vector_10
  .text.PinChangeInterruptEventPCINT16
-                0x00000ebc        0xc drivers/pinChangeInterrupts.o
-                0x00000ebc                PinChangeInterruptEventPCINT16
+                0x00000ebe        0xc drivers/pinChangeInterrupts.o
+                0x00000ebe                PinChangeInterruptEventPCINT16
  .text.PinChangeInterruptEventPCINT17
-                0x00000ec8        0xc drivers/pinChangeInterrupts.o
-                0x00000ec8                PinChangeInterruptEventPCINT17
+                0x00000eca        0xc drivers/pinChangeInterrupts.o
+                0x00000eca                PinChangeInterruptEventPCINT17
  .text.PinChangeInterruptEventPCINT18
-                0x00000ed4        0xc drivers/pinChangeInterrupts.o
-                0x00000ed4                PinChangeInterruptEventPCINT18
+                0x00000ed6        0xc drivers/pinChangeInterrupts.o
+                0x00000ed6                PinChangeInterruptEventPCINT18
  .text.PinChangeInterruptEventPCINT19
-                0x00000ee0        0xc drivers/pinChangeInterrupts.o
-                0x00000ee0                PinChangeInterruptEventPCINT19
+                0x00000ee2        0xc drivers/pinChangeInterrupts.o
+                0x00000ee2                PinChangeInterruptEventPCINT19
  .text.PinChangeInterruptEventPCINT20
-                0x00000eec        0xc drivers/pinChangeInterrupts.o
-                0x00000eec                PinChangeInterruptEventPCINT20
+                0x00000eee        0xc drivers/pinChangeInterrupts.o
+                0x00000eee                PinChangeInterruptEventPCINT20
  .text.PinChangeInterruptEventPCINT21
-                0x00000ef8        0xc drivers/pinChangeInterrupts.o
-                0x00000ef8                PinChangeInterruptEventPCINT21
+                0x00000efa        0xc drivers/pinChangeInterrupts.o
+                0x00000efa                PinChangeInterruptEventPCINT21
  .text.PinChangeInterruptEventPCINT22
-                0x00000f04        0xc drivers/pinChangeInterrupts.o
-                0x00000f04                PinChangeInterruptEventPCINT22
+                0x00000f06        0xc drivers/pinChangeInterrupts.o
+                0x00000f06                PinChangeInterruptEventPCINT22
  .text.PinChangeInterruptEventPCINT23
-                0x00000f10        0xc drivers/pinChangeInterrupts.o
-                0x00000f10                PinChangeInterruptEventPCINT23
+                0x00000f12        0xc drivers/pinChangeInterrupts.o
+                0x00000f12                PinChangeInterruptEventPCINT23
  .text.__vector_11
-                0x00000f1c       0x92 drivers/pinChangeInterrupts.o
-                0x00000f1c                __vector_11
+                0x00000f1e       0x92 drivers/pinChangeInterrupts.o
+                0x00000f1e                __vector_11
  .text.pwm_init
-                0x00000fae       0x80 drivers/pwm.o
-                0x00000fae                pwm_init
+                0x00000fb0       0x80 drivers/pwm.o
+                0x00000fb0                pwm_init
  .text.analogWrite
-                0x0000102e      0x18c drivers/pwm.o
-                0x0000102e                analogWrite
+                0x00001030      0x18c drivers/pwm.o
+                0x00001030                analogWrite
+ .text.Serial2_begin
+                0x000011bc       0xb6 drivers/hardwareSerial2.o
+                0x000011bc                Serial2_begin
+ .text._tx2_udr_empty_irq
+                0x00001272       0x50 drivers/hardwareSerial2.o
+                0x00001272                _tx2_udr_empty_irq
+ .text.Serial2_write
+                0x000012c2       0xa0 drivers/hardwareSerial2.o
+                0x000012c2                Serial2_write
+ .text._rx2_complete_irq
+                0x00001362       0x34 drivers/hardwareSerial2.o
+                0x00001362                _rx2_complete_irq
+ .text.__vector_51
+                0x00001396       0x4e drivers/hardwareSerial2.o
+                0x00001396                __vector_51
+ .text.__vector_52
+                0x000013e4       0x4e drivers/hardwareSerial2.o
+                0x000013e4                __vector_52
  .text.millis_init
-                0x000011ba       0x26 drivers/timer0_millis.o
-                0x000011ba                millis_init
- .text.micros   0x000011e0       0x4c drivers/timer0_millis.o
-                0x000011e0                micros
+                0x00001432       0x26 drivers/timer0_millis.o
+                0x00001432                millis_init
+ .text.micros   0x00001458       0x4c drivers/timer0_millis.o
+                0x00001458                micros
  .text.delay_ms
-                0x0000122c       0x7a drivers/timer0_millis.o
-                0x0000122c                delay_ms
+                0x000014a4       0x7a drivers/timer0_millis.o
+                0x000014a4                delay_ms
  .text.__vector_23
-                0x000012a6       0x94 drivers/timer0_millis.o
-                0x000012a6                __vector_23
+                0x0000151e       0x94 drivers/timer0_millis.o
+                0x0000151e                __vector_23
  .text.disableTimer
-                0x0000133a       0x74 drivers/timers.o
-                0x0000133a                disableTimer
+                0x000015b2       0x74 drivers/timers.o
+                0x000015b2                disableTimer
  .text.__vector_32
-                0x000013ae       0xd0 drivers/timers.o
-                0x000013ae                __vector_32
+                0x00001626       0xd0 drivers/timers.o
+                0x00001626                __vector_32
  .text.sdDetected
-                0x0000147e        0xc main.o
-                0x0000147e                sdDetected
- .text.Button1  0x0000148a        0x6 main.o
-                0x0000148a                Button1
- .text.Button2  0x00001490        0x6 main.o
-                0x00001490                Button2
- .text.Button3  0x00001496        0x6 main.o
-                0x00001496                Button3
+                0x000016f6        0xe main.o
+                0x000016f6                sdDetected
+ .text.Button2  0x00001704        0x8 main.o
+                0x00001704                Button2
+ .text.Button3  0x0000170c        0x8 main.o
+                0x0000170c                Button3
+ .text.Button1  0x00001714       0x14 main.o
+                0x00001714                Button1
  .text.LCD_PrintInt
-                0x0000149c       0x46 main.o
-                0x0000149c                LCD_PrintInt
- .text.main     0x000014e2       0x90 main.o
-                0x000014e2                main
- .text.libgcc   0x00001572       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_tablejump2.o)
-                0x00001572                __tablejump2__
+                0x00001728       0x48 main.o
+                0x00001728                LCD_PrintInt
+ .text.main     0x00001770       0xb0 main.o
+                0x00001770                main
+ .text.libgcc.div
+                0x00001820       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_udivmodsi4.o)
+                0x00001820                __udivmodsi4
+ .text.libgcc   0x00001864       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_tablejump2.o)
+                0x00001864                __tablejump2__
  .text.avr-libc
-                0x00001582       0x14 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libc.a(itoa_ncheck.o)
-                0x00001582                __itoa_ncheck
+                0x00001874       0x14 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libc.a(itoa_ncheck.o)
+                0x00001874                __itoa_ncheck
  .text.avr-libc
-                0x00001596       0x32 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libc.a(utoa_ncheck.o)
-                0x00001596                __utoa_ncheck
-                0x00001598                __utoa_common
+                0x00001888       0x32 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libc.a(utoa_ncheck.o)
+                0x00001888                __utoa_ncheck
+                0x0000188a                __utoa_common
  .text.avr-libc
-                0x000015c8       0x20 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libc.a(strrev.o)
-                0x000015c8                strrev
-                0x000015e8                . = ALIGN (0x2)
+                0x000018ba       0x20 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libc.a(strrev.o)
+                0x000018ba                strrev
+                0x000018da                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000015e8        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
-                0x000015e8                _exit
-                0x000015e8                exit
+ .fini9         0x000018da        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
+                0x000018da                _exit
+                0x000018da                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -787,11 +824,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000015e8        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
+ .fini0         0x000018da        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
  *(.fini0)
-                0x000015ec                _etext = .
+                0x000018de                _etext = .
 
-.data           0x00800200       0x38 load address 0x000015ec
+.data           0x00800200       0x38 load address 0x000018de
                 0x00800200                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -810,7 +847,7 @@ END GROUP
                 0x00800238                _edata = .
                 0x00800238                PROVIDE (__data_end, .)
 
-.bss            0x00800238       0x7d
+.bss            0x00800238      0x101
                 0x00800238                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
@@ -839,59 +876,66 @@ END GROUP
                 0x00800258                _displaymode
                 0x00800259                _displayfunction
                 0x0080025a                _initialized
- COMMON         0x0080025b       0x30 drivers/pinChangeInterrupts.o
-                0x0080025b                callbackPCINT0
-                0x0080025d                callbackPCINT18
-                0x0080025f                callbackPCINT21
-                0x00800261                callbackPCINT1
-                0x00800263                callbackPCINT7
-                0x00800265                callbackPCINT16
-                0x00800267                callbackPCINT19
-                0x00800269                callbackPCINT9
-                0x0080026b                callbackPCINT23
-                0x0080026d                callbackPCINT11
-                0x0080026f                callbackPCINT6
-                0x00800271                callbackPCINT8
-                0x00800273                callbackPCINT2
-                0x00800275                callbackPCINT4
-                0x00800277                callbackPCINT14
-                0x00800279                callbackPCINT13
-                0x0080027b                callbackPCINT10
-                0x0080027d                callbackPCINT17
-                0x0080027f                callbackPCINT5
-                0x00800281                callbackPCINT22
-                0x00800283                callbackPCINT15
-                0x00800285                callbackPCINT3
-                0x00800287                callbackPCINT12
-                0x00800289                callbackPCINT20
- COMMON         0x0080028b       0x2a drivers/timers.o
-                0x0080028b                timer0_pin_mask
-                0x0080028c                timer3_pin_mask
-                0x0080028d                timer5_toggle_count
-                0x00800291                timer2_pin_port
-                0x00800293                timer4_pin_mask
-                0x00800294                timer3_pin_port
-                0x00800296                timer4_toggle_count
-                0x0080029a                timer3_toggle_count
-                0x0080029e                timer2_pin_mask
-                0x0080029f                timer5_pin_port
-                0x008002a1                timer4_pin_port
-                0x008002a3                timer0_pin_port
-                0x008002a5                timer1_toggle_count
-                0x008002a9                timer1_pin_mask
-                0x008002aa                timer1_pin_port
-                0x008002ac                timer0_toggle_count
-                0x008002b0                timer5_pin_mask
-                0x008002b1                timer2_toggle_count
-                0x008002b5                PROVIDE (__bss_end, .)
-                0x000015ec                __data_load_start = LOADADDR (.data)
-                0x00001624                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x0080025b       0x84 drivers/adc.o
+                0x0080025b                _tx_buffer_tail
+                0x0080025c                _tx_buffer
+                0x0080029c                _rx_buffer
+                0x008002dc                _tx_buffer_head
+                0x008002dd                _rx_buffer_tail
+                0x008002de                _rx_buffer_head
+ COMMON         0x008002df       0x30 drivers/pinChangeInterrupts.o
+                0x008002df                callbackPCINT0
+                0x008002e1                callbackPCINT18
+                0x008002e3                callbackPCINT21
+                0x008002e5                callbackPCINT1
+                0x008002e7                callbackPCINT7
+                0x008002e9                callbackPCINT16
+                0x008002eb                callbackPCINT19
+                0x008002ed                callbackPCINT9
+                0x008002ef                callbackPCINT23
+                0x008002f1                callbackPCINT11
+                0x008002f3                callbackPCINT6
+                0x008002f5                callbackPCINT8
+                0x008002f7                callbackPCINT2
+                0x008002f9                callbackPCINT4
+                0x008002fb                callbackPCINT14
+                0x008002fd                callbackPCINT13
+                0x008002ff                callbackPCINT10
+                0x00800301                callbackPCINT17
+                0x00800303                callbackPCINT5
+                0x00800305                callbackPCINT22
+                0x00800307                callbackPCINT15
+                0x00800309                callbackPCINT3
+                0x0080030b                callbackPCINT12
+                0x0080030d                callbackPCINT20
+ COMMON         0x0080030f       0x2a drivers/timers.o
+                0x0080030f                timer0_pin_mask
+                0x00800310                timer3_pin_mask
+                0x00800311                timer5_toggle_count
+                0x00800315                timer2_pin_port
+                0x00800317                timer4_pin_mask
+                0x00800318                timer3_pin_port
+                0x0080031a                timer4_toggle_count
+                0x0080031e                timer3_toggle_count
+                0x00800322                timer2_pin_mask
+                0x00800323                timer5_pin_port
+                0x00800325                timer4_pin_port
+                0x00800327                timer0_pin_port
+                0x00800329                timer1_toggle_count
+                0x0080032d                timer1_pin_mask
+                0x0080032e                timer1_pin_port
+                0x00800330                timer0_toggle_count
+                0x00800334                timer5_pin_mask
+                0x00800335                timer2_toggle_count
+                0x00800339                PROVIDE (__bss_end, .)
+                0x000018de                __data_load_start = LOADADDR (.data)
+                0x00001916                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x008002b5        0x0
+.noinit         0x00800339        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x008002b5                _end = .
+                0x00800339                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -940,6 +984,7 @@ END GROUP
  .comment       0x00000030       0x31 drivers/interrupts.o
  .comment       0x00000030       0x31 drivers/pinChangeInterrupts.o
  .comment       0x00000030       0x31 drivers/pwm.o
+ .comment       0x00000030       0x31 drivers/hardwareSerial2.o
  .comment       0x00000030       0x31 drivers/timer0_millis.o
  .comment       0x00000030       0x31 drivers/pins_2560.o
  .comment       0x00000030       0x31 drivers/timers.o
@@ -965,7 +1010,7 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x3e0
+.debug_aranges  0x00000000      0x450
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0xe8 bsp/lcd/lcd.o
@@ -980,60 +1025,65 @@ END GROUP
  .debug_aranges
                 0x000002d8       0x28 drivers/pwm.o
  .debug_aranges
-                0x00000300       0x48 drivers/timer0_millis.o
+                0x00000300       0x70 drivers/hardwareSerial2.o
  .debug_aranges
-                0x00000348       0x18 drivers/pins_2560.o
+                0x00000370       0x48 drivers/timer0_millis.o
  .debug_aranges
-                0x00000360       0x38 drivers/timers.o
+                0x000003b8       0x18 drivers/pins_2560.o
  .debug_aranges
-                0x00000398       0x48 main.o
+                0x000003d0       0x38 drivers/timers.o
+ .debug_aranges
+                0x00000408       0x48 main.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x3f52
+.debug_info     0x00000000     0x4a1d
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0xbbc C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega2560/avr6/crtatmega2560.o
  .debug_info    0x00000bbc      0xb05 bsp/lcd/lcd.o
- .debug_info    0x000016c1      0x16c drivers/adc.o
- .debug_info    0x0000182d      0x573 drivers/gpio.o
- .debug_info    0x00001da0      0x24c drivers/interrupts.o
- .debug_info    0x00001fec      0x960 drivers/pinChangeInterrupts.o
- .debug_info    0x0000294c      0x209 drivers/pwm.o
- .debug_info    0x00002b55      0x25d drivers/timer0_millis.o
- .debug_info    0x00002db2      0x183 drivers/pins_2560.o
- .debug_info    0x00002f35      0x9c3 drivers/timers.o
- .debug_info    0x000038f8      0x65a main.o
+ .debug_info    0x000016c1      0x20f drivers/adc.o
+ .debug_info    0x000018d0      0x616 drivers/gpio.o
+ .debug_info    0x00001ee6      0x2ef drivers/interrupts.o
+ .debug_info    0x000021d5      0xa03 drivers/pinChangeInterrupts.o
+ .debug_info    0x00002bd8      0x2ac drivers/pwm.o
+ .debug_info    0x00002e84      0x481 drivers/hardwareSerial2.o
+ .debug_info    0x00003305      0x300 drivers/timer0_millis.o
+ .debug_info    0x00003605      0x226 drivers/pins_2560.o
+ .debug_info    0x0000382b      0xa66 drivers/timers.o
+ .debug_info    0x00004291      0x78c main.o
 
-.debug_abbrev   0x00000000     0x1a64
+.debug_abbrev   0x00000000     0x1cb7
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0xb1a C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega2560/avr6/crtatmega2560.o
  .debug_abbrev  0x00000b1a      0x27f bsp/lcd/lcd.o
- .debug_abbrev  0x00000d99      0x10d drivers/adc.o
- .debug_abbrev  0x00000ea6      0x174 drivers/gpio.o
- .debug_abbrev  0x0000101a      0x10d drivers/interrupts.o
- .debug_abbrev  0x00001127      0x1bf drivers/pinChangeInterrupts.o
- .debug_abbrev  0x000012e6      0x135 drivers/pwm.o
- .debug_abbrev  0x0000141b      0x157 drivers/timer0_millis.o
- .debug_abbrev  0x00001572       0x9d drivers/pins_2560.o
- .debug_abbrev  0x0000160f      0x251 drivers/timers.o
- .debug_abbrev  0x00001860      0x204 main.o
+ .debug_abbrev  0x00000d99      0x114 drivers/adc.o
+ .debug_abbrev  0x00000ead      0x185 drivers/gpio.o
+ .debug_abbrev  0x00001032      0x11e drivers/interrupts.o
+ .debug_abbrev  0x00001150      0x1bf drivers/pinChangeInterrupts.o
+ .debug_abbrev  0x0000130f      0x14d drivers/pwm.o
+ .debug_abbrev  0x0000145c      0x1f7 drivers/hardwareSerial2.o
+ .debug_abbrev  0x00001653      0x157 drivers/timer0_millis.o
+ .debug_abbrev  0x000017aa       0xa4 drivers/pins_2560.o
+ .debug_abbrev  0x0000184e      0x251 drivers/timers.o
+ .debug_abbrev  0x00001a9f      0x218 main.o
 
-.debug_line     0x00000000     0x243d
+.debug_line     0x00000000     0x29ab
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x1f9 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega2560/avr6/crtatmega2560.o
  .debug_line    0x000001f9      0x689 bsp/lcd/lcd.o
- .debug_line    0x00000882      0x163 drivers/adc.o
- .debug_line    0x000009e5      0x20c drivers/gpio.o
- .debug_line    0x00000bf1      0x2ad drivers/interrupts.o
- .debug_line    0x00000e9e      0x906 drivers/pinChangeInterrupts.o
- .debug_line    0x000017a4      0x28b drivers/pwm.o
- .debug_line    0x00001a2f      0x237 drivers/timer0_millis.o
- .debug_line    0x00001c66       0xbb drivers/pins_2560.o
- .debug_line    0x00001d21      0x51c drivers/timers.o
- .debug_line    0x0000223d      0x200 main.o
+ .debug_line    0x00000882      0x177 drivers/adc.o
+ .debug_line    0x000009f9      0x220 drivers/gpio.o
+ .debug_line    0x00000c19      0x2c1 drivers/interrupts.o
+ .debug_line    0x00000eda      0x91a drivers/pinChangeInterrupts.o
+ .debug_line    0x000017f4      0x29f drivers/pwm.o
+ .debug_line    0x00001a93      0x4a2 drivers/hardwareSerial2.o
+ .debug_line    0x00001f35      0x24b drivers/timer0_millis.o
+ .debug_line    0x00002180       0xcf drivers/pins_2560.o
+ .debug_line    0x0000224f      0x530 drivers/timers.o
+ .debug_line    0x0000277f      0x22c main.o
 
-.debug_frame    0x00000000      0xb10
+.debug_frame    0x00000000      0xcc8
  *(.debug_frame)
  .debug_frame   0x00000000      0x1fc bsp/lcd/lcd.o
  .debug_frame   0x000001fc       0x44 drivers/adc.o
@@ -1041,35 +1091,38 @@ END GROUP
  .debug_frame   0x000002a0      0x304 drivers/interrupts.o
  .debug_frame   0x000005a4      0x2f8 drivers/pinChangeInterrupts.o
  .debug_frame   0x0000089c       0x44 drivers/pwm.o
- .debug_frame   0x000008e0       0xc4 drivers/timer0_millis.o
- .debug_frame   0x000009a4       0xdc drivers/timers.o
- .debug_frame   0x00000a80       0x90 main.o
+ .debug_frame   0x000008e0      0x1b8 drivers/hardwareSerial2.o
+ .debug_frame   0x00000a98       0xc4 drivers/timer0_millis.o
+ .debug_frame   0x00000b5c       0xdc drivers/timers.o
+ .debug_frame   0x00000c38       0x90 main.o
 
-.debug_str      0x00000000     0x1236
+.debug_str      0x00000000     0x13a8
  *(.debug_str)
  .debug_str     0x00000000      0x3e6 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega2560/avr6/crtatmega2560.o
- .debug_str     0x000003e6      0x392 bsp/lcd/lcd.o
+ .debug_str     0x000003e6      0x38c bsp/lcd/lcd.o
                                 0x3d0 (size before relaxing)
- .debug_str     0x00000778       0x83 drivers/adc.o
-                                0x1eb (size before relaxing)
- .debug_str     0x000007fb       0xb0 drivers/gpio.o
-                                0x252 (size before relaxing)
- .debug_str     0x000008ab       0xc6 drivers/interrupts.o
-                                0x25a (size before relaxing)
- .debug_str     0x00000971      0x5b7 drivers/pinChangeInterrupts.o
-                                0x754 (size before relaxing)
- .debug_str     0x00000f28       0x26 drivers/pwm.o
-                                0x1f6 (size before relaxing)
- .debug_str     0x00000f4e       0x71 drivers/timer0_millis.o
-                                0x22a (size before relaxing)
- .debug_str     0x00000fbf       0x17 drivers/pins_2560.o
-                                0x219 (size before relaxing)
- .debug_str     0x00000fd6      0x1c8 drivers/timers.o
-                                0x3db (size before relaxing)
- .debug_str     0x0000119e       0x98 main.o
-                                0x2d6 (size before relaxing)
+ .debug_str     0x00000772       0xfd drivers/adc.o
+                                0x26a (size before relaxing)
+ .debug_str     0x0000086f       0xb0 drivers/gpio.o
+                                0x2d1 (size before relaxing)
+ .debug_str     0x0000091f       0xc6 drivers/interrupts.o
+                                0x2d9 (size before relaxing)
+ .debug_str     0x000009e5      0x5b7 drivers/pinChangeInterrupts.o
+                                0x7d3 (size before relaxing)
+ .debug_str     0x00000f9c       0x26 drivers/pwm.o
+                                0x275 (size before relaxing)
+ .debug_str     0x00000fc2      0x105 drivers/hardwareSerial2.o
+                                0x32a (size before relaxing)
+ .debug_str     0x000010c7       0x71 drivers/timer0_millis.o
+                                0x2a9 (size before relaxing)
+ .debug_str     0x00001138       0x17 drivers/pins_2560.o
+                                0x298 (size before relaxing)
+ .debug_str     0x0000114f      0x1c8 drivers/timers.o
+                                0x45a (size before relaxing)
+ .debug_str     0x00001317       0x91 main.o
+                                0x36c (size before relaxing)
 
-.debug_loc      0x00000000     0x2b6a
+.debug_loc      0x00000000     0x30fd
  *(.debug_loc)
  .debug_loc     0x00000000      0x81b bsp/lcd/lcd.o
  .debug_loc     0x0000081b       0x66 drivers/adc.o
@@ -1077,9 +1130,10 @@ END GROUP
  .debug_loc     0x00000bd6      0x79a drivers/interrupts.o
  .debug_loc     0x00001370      0x835 drivers/pinChangeInterrupts.o
  .debug_loc     0x00001ba5       0xbc drivers/pwm.o
- .debug_loc     0x00001c61      0x24a drivers/timer0_millis.o
- .debug_loc     0x00001eab      0xb79 drivers/timers.o
- .debug_loc     0x00002a24      0x146 main.o
+ .debug_loc     0x00001c61      0x593 drivers/hardwareSerial2.o
+ .debug_loc     0x000021f4      0x24a drivers/timer0_millis.o
+ .debug_loc     0x0000243e      0xb79 drivers/timers.o
+ .debug_loc     0x00002fb7      0x146 main.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -1099,7 +1153,7 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000      0x378
+.debug_ranges   0x00000000      0x3d8
  *(.debug_ranges)
  .debug_ranges  0x00000000       0xd8 bsp/lcd/lcd.o
  .debug_ranges  0x000000d8       0x20 drivers/adc.o
@@ -1107,9 +1161,10 @@ END GROUP
  .debug_ranges  0x00000120       0x60 drivers/interrupts.o
  .debug_ranges  0x00000180      0x108 drivers/pinChangeInterrupts.o
  .debug_ranges  0x00000288       0x18 drivers/pwm.o
- .debug_ranges  0x000002a0       0x38 drivers/timer0_millis.o
- .debug_ranges  0x000002d8       0x68 drivers/timers.o
- .debug_ranges  0x00000340       0x38 main.o
+ .debug_ranges  0x000002a0       0x60 drivers/hardwareSerial2.o
+ .debug_ranges  0x00000300       0x38 drivers/timer0_millis.o
+ .debug_ranges  0x00000338       0x68 drivers/timers.o
+ .debug_ranges  0x000003a0       0x38 main.o
 
 .debug_macro
  *(.debug_macro)

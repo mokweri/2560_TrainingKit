@@ -12,6 +12,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
+#include <stdio.h>
 #include <math.h>
 
 #include <avr/io.h>
@@ -342,6 +343,9 @@ void detachInterrupt(uint8_t interruptNum);
 
 //Pin change Interrupts
 #include "pinChangeInterrupts.h"
+
+//Serial
+#include "hardwareSerial.h"
 
 // Board support packages(BSPs)
 #include "bsp/lcd/lcd.h"

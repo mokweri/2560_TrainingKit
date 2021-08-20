@@ -14,6 +14,8 @@ drivers\pinChangeInterrupts.c
 
 drivers\pwm.c
 
+drivers\hardwareSerial2.c
+
 drivers\timer0_millis.c
 
 drivers\pins_2560.c

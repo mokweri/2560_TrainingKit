@@ -41,6 +41,7 @@ int main(void)
 	millis_init();
 	pwm_init();
 	adc_init();
+	Serial2_begin(9600, SERIAL_8N1);
 	
 	lcd_init();
 	lcd_clear();
@@ -79,6 +80,8 @@ int main(void)
 // 		noTone(Pin_PE3);
 // 	}
 
+		
+
     while (1) 
     {
 		int pot_val = analogRead(Pin_PF0);
@@ -105,7 +108,12 @@ void sdDetected(void)
 
 void Button1(void)
 {
+	char str[] = "Good";
 	togglePin(Pin_PK0);
+	Serial2_write('G');
+	Serial2_write('o');
+	Serial2_write('o');
+
 }
 void Button2(void)
 {
@@ -122,4 +130,4 @@ void LCD_PrintInt(uint16_t n,uint8_t x,uint8_t y){
 	itoa(n,buffer,10);
 	LCD_PrintString(buffer,x,y);
 }
-RAMEND
+
