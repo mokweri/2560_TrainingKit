@@ -1,5 +1,5 @@
-drivers/hardwareSerial2.d drivers/hardwareSerial2.o: \
- ../drivers/hardwareSerial2.c ../drivers/hardwareSerial.h \
+drivers/hardwareSerial1.d drivers/hardwareSerial1.o: \
+ ../drivers/hardwareSerial1.c ../drivers/hardwareSerial.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\atomic.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sfr_defs.h \

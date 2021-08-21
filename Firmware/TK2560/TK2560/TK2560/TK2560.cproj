@@ -154,6 +154,9 @@
     <Compile Include="drivers\hardwareSerial.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="drivers\hardwareSerial0.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="drivers\interrupts.c">
       <SubType>compile</SubType>
     </Compile>

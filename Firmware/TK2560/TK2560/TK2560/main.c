@@ -43,7 +43,7 @@ int main(void)
 	millis_init();
 	pwm_init();
 	adc_init();
-	Serial2_begin(9600, SERIAL_8N1);
+	Serial0_begin(9600, SERIAL_8N1);
 	
 	lcd_init();
 	lcd_clear();
@@ -68,19 +68,19 @@ int main(void)
 	
 
 	//Tone Example	
-// 	for (int thisNote = 0; thisNote < 8; thisNote++) 
-// 	{
-// 		// to calculate the note duration, take one second divided by the note type.
-// 		//e.g. quarter note = 1000 / 4, eighth note = 1000/8, etc.
-// 		int noteDuration = 1000 / noteDurations[thisNote];
-// 		tone(Pin_PE3, melody[thisNote], noteDuration);
-// 		// to distinguish the notes, set a minimum time between them.
-// 		// the note's duration + 30% seems to work well:
-// 		int pauseBetweenNotes = noteDuration * 1.30;
-// 		delay_ms(pauseBetweenNotes);		
-// 		// stop the tone playing:
-// 		noTone(Pin_PE3);
-// 	}
+	for (int thisNote = 0; thisNote < 8; thisNote++) 
+	{
+		// to calculate the note duration, take one second divided by the note type.
+		//e.g. quarter note = 1000 / 4, eighth note = 1000/8, etc.
+		int noteDuration = 1000 / noteDurations[thisNote];
+		tone(Pin_PE3, melody[thisNote], noteDuration);
+		// to distinguish the notes, set a minimum time between them.
+		// the note's duration + 30% seems to work well:
+		int pauseBetweenNotes = noteDuration * 1.30;
+		delay_ms(pauseBetweenNotes);		
+		// stop the tone playing:
+		noTone(Pin_PE3);
+	}
 
 		
 	const int BUFFER_SIZE = 10;
@@ -102,15 +102,15 @@ int main(void)
 		}
 		*/
 		lcd_setCursor(0,1);
-		if (Serial2_available())
+		if (Serial0_available())
 		{
 // 			int r = Serial2_timedRead();
 // 			LCD_PrintInt(r,0,1);
 // 			Serial2_write(r);
 
 			delay_ms(1000);//wait for all data
-			Serial2_readAllBytes(buf, BUFFER_SIZE);
-			Serial2_print(buf);		
+			Serial0_readAllBytes(buf, BUFFER_SIZE);
+			Serial0_print(buf);		
 			
 		}
 		
@@ -133,7 +133,7 @@ void Button1(void)
 // 	Serial2_write('o');
 // 	Serial2_write('o');
 // 	Serial2_write('d');
-	Serial2_print("Good stuff");
+	Serial0_print("Good stuff");
 
 }
 void Button2(void)

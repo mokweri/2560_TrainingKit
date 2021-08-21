@@ -8,6 +8,8 @@ drivers\adc.c
 
 drivers\gpio.c
 
+drivers\hardwareSerial0.c
+
 drivers\interrupts.c
 
 drivers\pinChangeInterrupts.c
