@@ -48,6 +48,8 @@ int main(void)
 	lcd_init();
 	lcd_clear();
 	LCD_PrintString("MCU TRAINING KIT",0,0);
+	
+	ClockInit();
 
 	//User LEDs
 	pinMode(Pin_PK0, OUTPUT);
@@ -68,31 +70,37 @@ int main(void)
 	
 
 	//Tone Example	
-	for (int thisNote = 0; thisNote < 8; thisNote++) 
-	{
-		// to calculate the note duration, take one second divided by the note type.
-		//e.g. quarter note = 1000 / 4, eighth note = 1000/8, etc.
-		int noteDuration = 1000 / noteDurations[thisNote];
-		tone(Pin_PE3, melody[thisNote], noteDuration);
-		// to distinguish the notes, set a minimum time between them.
-		// the note's duration + 30% seems to work well:
-		int pauseBetweenNotes = noteDuration * 1.30;
-		delay_ms(pauseBetweenNotes);		
-		// stop the tone playing:
-		noTone(Pin_PE3);
-	}
+// 	for (int thisNote = 0; thisNote < 8; thisNote++) 
+// 	{
+// 		// to calculate the note duration, take one second divided by the note type.
+// 		//e.g. quarter note = 1000 / 4, eighth note = 1000/8, etc.
+// 		int noteDuration = 1000 / noteDurations[thisNote];
+// 		tone(Pin_PE3, melody[thisNote], noteDuration);
+// 		// to distinguish the notes, set a minimum time between them.
+// 		// the note's duration + 30% seems to work well:
+// 		int pauseBetweenNotes = noteDuration * 1.30;
+// 		delay_ms(pauseBetweenNotes);		
+// 		// stop the tone playing:
+// 		noTone(Pin_PE3);
+// 	}
 
 		
 	const int BUFFER_SIZE = 10;
 	char buf[BUFFER_SIZE];
+	char time_string[11];
 	
     while (1) 
     {
+		/*
 		int pot_val = analogRead(Pin_PF0);
 		
 		LCD_PrintInt(pot_val,4,1);
 		delay_ms(50);
 		LCD_PrintString("ADC:    ",0,1);//clear line
+		*/
+		
+		GetTimeString(time_string);
+		LCD_PrintString(time_string,2,1);
 		
 		/*
 		if (digitalRead(Pin_PJ2))

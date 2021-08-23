@@ -22,8 +22,9 @@ drivers/hardwareSerial0.d drivers/hardwareSerial0.o: \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdarg.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h \
- ../drivers/binary.h ../drivers/pinChangeInterrupts.h \
- ../drivers/pinChangeInterruptPins.h ../bsp/lcd/lcd.h
+ ../drivers/pinMap.h ../drivers/pinChangeInterrupts.h \
+ ../drivers/pinChangeInterruptPins.h ../drivers/twi.h ../bsp/lcd/lcd.h \
+ ../bsp/rtc/ds1307.h ../drivers/twi.h
 
 ../drivers/hardwareSerial.h:
 
@@ -71,10 +72,16 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h:
 
-../drivers/binary.h:
+../drivers/pinMap.h:
 
 ../drivers/pinChangeInterrupts.h:
 
 ../drivers/pinChangeInterruptPins.h:
 
+../drivers/twi.h:
+
 ../bsp/lcd/lcd.h:
+
+../bsp/rtc/ds1307.h:
+
+../drivers/twi.h:

@@ -21,10 +21,10 @@ drivers/pinChangeInterrupts.d drivers/pinChangeInterrupts.o: \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h \
- ../drivers/binary.h ../drivers/pinChangeInterruptPins.h \
+ ../drivers/pinMap.h ../drivers/pinChangeInterruptPins.h \
  ../drivers/hardwareSerial.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\atomic.h \
- ../bsp/lcd/lcd.h
+ ../drivers/twi.h ../bsp/lcd/lcd.h ../bsp/rtc/ds1307.h ../drivers/twi.h
 
 ../drivers/pinChangeInterrupts.h:
 
@@ -70,7 +70,7 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h:
 
-../drivers/binary.h:
+../drivers/pinMap.h:
 
 ../drivers/pinChangeInterruptPins.h:
 
@@ -78,4 +78,10 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\atomic.h:
 
+../drivers/twi.h:
+
 ../bsp/lcd/lcd.h:
+
+../bsp/rtc/ds1307.h:
+
+../drivers/twi.h:

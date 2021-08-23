@@ -35,12 +35,14 @@ LINKER_SCRIPT_DEP:=
 SUBDIRS :=  \
 ../bsp/ \
 ../bsp/lcd/ \
+../bsp/rtc \
 ../drivers
 
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
 ../bsp/lcd/lcd.c \
+../bsp/rtc/ds1307.c \
 ../drivers/adc.c \
 ../drivers/gpio.c \
 ../drivers/hardwareSerial0.c \
@@ -51,6 +53,7 @@ C_SRCS +=  \
 ../drivers/timer0_millis.c \
 ../drivers/pins_2560.c \
 ../drivers/timers.c \
+../drivers/twi.c \
 ../main.c
 
 
@@ -62,6 +65,7 @@ ASM_SRCS +=
 
 OBJS +=  \
 bsp/lcd/lcd.o \
+bsp/rtc/ds1307.o \
 drivers/adc.o \
 drivers/gpio.o \
 drivers/hardwareSerial0.o \
@@ -72,10 +76,12 @@ drivers/hardwareSerial2.o \
 drivers/timer0_millis.o \
 drivers/pins_2560.o \
 drivers/timers.o \
+drivers/twi.o \
 main.o
 
 OBJS_AS_ARGS +=  \
 bsp/lcd/lcd.o \
+bsp/rtc/ds1307.o \
 drivers/adc.o \
 drivers/gpio.o \
 drivers/hardwareSerial0.o \
@@ -86,10 +92,12 @@ drivers/hardwareSerial2.o \
 drivers/timer0_millis.o \
 drivers/pins_2560.o \
 drivers/timers.o \
+drivers/twi.o \
 main.o
 
 C_DEPS +=  \
 bsp/lcd/lcd.d \
+bsp/rtc/ds1307.d \
 drivers/adc.d \
 drivers/gpio.d \
 drivers/hardwareSerial0.d \
@@ -100,10 +108,12 @@ drivers/hardwareSerial2.d \
 drivers/timer0_millis.d \
 drivers/pins_2560.d \
 drivers/timers.d \
+drivers/twi.d \
 main.d
 
 C_DEPS_AS_ARGS +=  \
 bsp/lcd/lcd.d \
+bsp/rtc/ds1307.d \
 drivers/adc.d \
 drivers/gpio.d \
 drivers/hardwareSerial0.d \
@@ -114,6 +124,7 @@ drivers/hardwareSerial2.d \
 drivers/timer0_millis.d \
 drivers/pins_2560.d \
 drivers/timers.d \
+drivers/twi.d \
 main.d
 
 OUTPUT_FILE_PATH +=TK2560.elf
@@ -131,6 +142,13 @@ LINKER_SCRIPT_DEP+=
 
 # AVR32/GNU C Compiler
 bsp/lcd/lcd.o: ../bsp/lcd/lcd.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I".."  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega2560" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+bsp/rtc/ds1307.o: ../bsp/rtc/ds1307.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I".."  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega2560" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
@@ -201,6 +219,13 @@ drivers/pins_2560.o: ../drivers/pins_2560.c
 	
 
 drivers/timers.o: ../drivers/timers.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I".."  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega2560" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+drivers/twi.o: ../drivers/twi.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I".."  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega2560" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

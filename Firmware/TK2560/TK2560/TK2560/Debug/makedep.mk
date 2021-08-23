@@ -4,6 +4,8 @@
 
 bsp\lcd\lcd.c
 
+bsp\rtc\ds1307.c
+
 drivers\adc.c
 
 drivers\gpio.c
@@ -23,6 +25,8 @@ drivers\timer0_millis.c
 drivers\pins_2560.c
 
 drivers\timers.c
+
+drivers\twi.c
 
 main.c
 
