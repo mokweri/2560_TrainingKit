@@ -50,6 +50,7 @@ C_SRCS +=  \
 ../drivers/pinChangeInterrupts.c \
 ../drivers/pwm.c \
 ../drivers/hardwareSerial2.c \
+../drivers/spi.c \
 ../drivers/timer0_millis.c \
 ../drivers/pins_2560.c \
 ../drivers/timers.c \
@@ -73,6 +74,7 @@ drivers/interrupts.o \
 drivers/pinChangeInterrupts.o \
 drivers/pwm.o \
 drivers/hardwareSerial2.o \
+drivers/spi.o \
 drivers/timer0_millis.o \
 drivers/pins_2560.o \
 drivers/timers.o \
@@ -89,6 +91,7 @@ drivers/interrupts.o \
 drivers/pinChangeInterrupts.o \
 drivers/pwm.o \
 drivers/hardwareSerial2.o \
+drivers/spi.o \
 drivers/timer0_millis.o \
 drivers/pins_2560.o \
 drivers/timers.o \
@@ -105,6 +108,7 @@ drivers/interrupts.d \
 drivers/pinChangeInterrupts.d \
 drivers/pwm.d \
 drivers/hardwareSerial2.d \
+drivers/spi.d \
 drivers/timer0_millis.d \
 drivers/pins_2560.d \
 drivers/timers.d \
@@ -121,6 +125,7 @@ drivers/interrupts.d \
 drivers/pinChangeInterrupts.d \
 drivers/pwm.d \
 drivers/hardwareSerial2.d \
+drivers/spi.d \
 drivers/timer0_millis.d \
 drivers/pins_2560.d \
 drivers/timers.d \
@@ -198,6 +203,13 @@ drivers/pwm.o: ../drivers/pwm.c
 	
 
 drivers/hardwareSerial2.o: ../drivers/hardwareSerial2.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I".."  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega2560" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+drivers/spi.o: ../drivers/spi.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I".."  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega2560" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

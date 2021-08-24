@@ -132,7 +132,7 @@
 #define PIN_SPI_MISO  Pin_PB3
 #define PIN_SPI_SCK   Pin_PB1
 
-// static const uint8_t SS   = PIN_SPI_SS;
+static const uint8_t SS   = PIN_SPI_SS;
 static const uint8_t MOSI = PIN_SPI_MOSI;
 static const uint8_t MISO = PIN_SPI_MISO;
 static const uint8_t SCK  = PIN_SPI_SCK;

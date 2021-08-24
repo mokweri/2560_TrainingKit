@@ -184,6 +184,12 @@
     <Compile Include="drivers\hardwareSerial2.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="drivers\spi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="drivers\spi.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="drivers\timer0_millis.c">
       <SubType>compile</SubType>
     </Compile>
