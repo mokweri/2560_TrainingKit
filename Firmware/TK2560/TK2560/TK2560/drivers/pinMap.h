@@ -34,8 +34,8 @@
 #define Pin_PE5		7	// PE 5 ** 7 ** OC3C-PWM, INT5
 #define Pin_PE6		8	// PE 6 ** 8 ** INT6
 #define Pin_PE7		9	// PE 7 ** 9 ** INT7
-//		** 10 ** VCC
-//		** 11 ** GND
+// 		** 10 ** VCC
+// 		** 11 ** GND
 #define Pin_PH0		12	// PH 0 ** 12 ** USART2_RX
 #define Pin_PH1		13	// PH 1 ** 13 ** USART2_TX
 #define Pin_PH2		14	// PH 2 ** 14 **

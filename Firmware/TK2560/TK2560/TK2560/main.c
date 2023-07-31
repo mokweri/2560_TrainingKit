@@ -30,6 +30,107 @@ int noteDurations[] = {
 	4, 8, 8, 4, 4, 4, 4, 4
 };
 
+//birthday---------------------------------------------
+int speakerPin = Pin_PE3; // Buzzer pin Pin_PE3
+int length = 28; // the number of notes
+char notes[] = "GGAGcB GGAGdc GGxecBA yyecdc";
+int beats[] = {2,2,8,8,8,16,1,2,2,8,8,8,16,1,2,2,8,8,8,8,16,1,2,2,8,8,8,16};
+int tempo = 200;// time delay between notes
+
+void playTone(int tone, int duration) {
+	for (long i = 0; i < duration * 1000L; i += tone * 2) {
+		digitalWrite(speakerPin, HIGH);
+		delay_ms(tone);
+		digitalWrite(speakerPin, LOW);
+		delay_ms(tone);
+	}
+}
+
+void playNote(char note, int duration) {
+	char names[] = {'C', 'D', 'E', 'F', 'G', 'A', 'B', 'c', 'd', 'e', 'f', 'g', 'a', 'b', 'x', 'y' };
+
+	int tones[] = { 1915, 1700, 1519, 1432, 1275, 1136, 1014, 956,  834,  765,  593,  468,  346,  224, 655 , 715 };
+
+	int SPEE = 5;
+
+	// play the tone corresponding to the note name
+
+	for (int i = 0; i < 16; i++) 
+	{
+		if (names[i] == note) {
+			int newduration = duration/SPEE;
+			playTone(tones[i], newduration);
+		}
+	}
+}
+
+void birthday()
+{
+	#define buzz Pin_PE3
+	delay_ms(100);
+	tone(buzz, 131,250);
+	//delay_ms(250);
+	noTone(buzz);
+	delay_ms(125);
+	tone(buzz, 131,250);
+	//delay_ms(250);
+	tone(buzz, 147,500);
+	//delay_ms(500);
+	tone(buzz, 131,500);
+	//delay_ms(500);
+	tone(buzz, 175,500);
+	//delay_ms(500);
+	tone(buzz, 165,1000);
+	//delay_ms(1000);
+	tone(buzz, 131,250);
+	//delay_ms(250);
+	noTone(buzz);
+	delay_ms(125);
+	tone(buzz, 131,250);
+	//delay_ms(250);
+	tone(buzz, 147,500);
+	//delay_ms(500);
+	tone(buzz, 131,500);
+	//delay_ms(500);
+	tone(buzz, 196,500);
+	//delay_ms(500);
+	tone(buzz, 175,1000);
+	//delay_ms(1000);
+	tone(buzz, 131,250);
+	//delay_ms(250);
+	noTone(buzz);
+	delay_ms(125);
+	tone(buzz, 131,250);
+	//delay_ms(250);
+	tone(buzz, 262,500);
+	//delay_ms(500);
+	tone(buzz, 220,500);
+	//delay_ms(500);
+	tone(buzz, 175,500);
+	//delay_ms(500);
+	tone(buzz, 165,500);
+	//delay_ms(500);
+	tone(buzz, 147,500);
+	//delay_ms(500);
+	tone(buzz, 233,250);
+	//delay_ms(250);
+	noTone(buzz);
+	delay_ms(125);
+	tone(buzz, 233,250);
+	//delay_ms(250);
+	tone(buzz, 220,500);
+	//delay_ms(500);
+	tone(buzz, 175,500);
+	//delay_ms(500);
+	tone(buzz, 196,500);
+	//delay_ms(500);
+	tone(buzz, 175,1000);
+	//delay_ms(1000);
+	noTone(buzz);
+	delay_ms(100);
+}
+//-----------------------------------------
+
 void sdDetected(void);
 void Button1(void);
 void Button2(void);
@@ -68,8 +169,11 @@ int main(void)
 	
 	analogWrite(Pin_PH3,255/4);
 	
-
-	//Tone Example	
+	//buzzerpin
+	//pinMode(Pin_PE3, OUTPUT);
+	
+	birthday();
+// 	//Tone Example	
 // 	for (int thisNote = 0; thisNote < 8; thisNote++) 
 // 	{
 // 		// to calculate the note duration, take one second divided by the note type.
@@ -84,10 +188,9 @@ int main(void)
 // 		noTone(Pin_PE3);
 // 	}
 
-		
-	const int BUFFER_SIZE = 10;
-	char buf[BUFFER_SIZE];
-	char time_string[11];
+const int BUFFER_SIZE = 10;
+char buf[BUFFER_SIZE];
+char time_string[11];
 	
     while (1) 
     {
@@ -121,6 +224,16 @@ int main(void)
 			Serial0_print(buf);		
 			
 		}
+		
+// 		for (int i = 0; i < length; i++) {
+// 			if (notes[i] == ' ') {
+// 				delay_ms(beats[i] * tempo); // delay between notes
+// 				} else {
+// 				playNote(notes[i], beats[i] * tempo);
+// 			}
+// 			// time delay between notes
+// 			delay_ms(tempo);
+// 		}
 		
     }
 }
